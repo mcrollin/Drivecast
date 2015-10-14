@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4905E52C1BCDB9A800370531 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4905E52B1BCDB9A800370531 /* MapKit.framework */; };
+		493196071BCCF1DD001C3FBD /* SDCBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493196061BCCF1DD001C3FBD /* SDCBluetoothManager.swift */; settings = {ASSET_TAGS = (); }; };
+		4931960D1BCD4BE0001C3FBD /* SDCRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931960C1BCD4BE0001C3FBD /* SDCRemotePeripheral.swift */; settings = {ASSET_TAGS = (); }; };
+		4931960F1BCD4F20001C3FBD /* SDCBluetoothManagerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931960E1BCD4F20001C3FBD /* SDCBluetoothManagerConfiguration.swift */; settings = {ASSET_TAGS = (); }; };
+		4951C27D1BC2805F00594D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951C27C1BC2805F00594D37 /* AppDelegate.swift */; };
+		4951C27F1BC2805F00594D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951C27E1BC2805F00594D37 /* ViewController.swift */; };
+		4951C2821BC2805F00594D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951C2801BC2805F00594D37 /* Main.storyboard */; };
+		4951C2871BC2805F00594D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951C2861BC2805F00594D37 /* Assets.xcassets */; };
+		4951C28A1BC2805F00594D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951C2881BC2805F00594D37 /* LaunchScreen.storyboard */; };
+		4951C2951BC2805F00594D37 /* DrivecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951C2941BC2805F00594D37 /* DrivecastTests.swift */; };
+		4951C2A01BC2805F00594D37 /* DrivecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951C29F1BC2805F00594D37 /* DrivecastUITests.swift */; };
+		4951C2AF1BC281C300594D37 /* DCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951C2AE1BC281C300594D37 /* DCTLog.swift */; settings = {ASSET_TAGS = (); }; };
+		C18836A6A60F1247C985ECD0 /* Pods_Drivecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7A6B8602AEA8B20584B0EE /* Pods_Drivecast.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4951C2911BC2805F00594D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4951C2711BC2805F00594D37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4951C2781BC2805F00594D37;
+			remoteInfo = Drivecast;
+		};
+		4951C29C1BC2805F00594D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4951C2711BC2805F00594D37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4951C2781BC2805F00594D37;
+			remoteInfo = Drivecast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4905E52B1BCDB9A800370531 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		493196061BCCF1DD001C3FBD /* SDCBluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCBluetoothManager.swift; sourceTree = "<group>"; };
+		4931960C1BCD4BE0001C3FBD /* SDCRemotePeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCRemotePeripheral.swift; sourceTree = "<group>"; };
+		4931960E1BCD4F20001C3FBD /* SDCBluetoothManagerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCBluetoothManagerConfiguration.swift; sourceTree = "<group>"; };
+		4951C2791BC2805F00594D37 /* Drivecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drivecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4951C27C1BC2805F00594D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4951C27E1BC2805F00594D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4951C2811BC2805F00594D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4951C2861BC2805F00594D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4951C2891BC2805F00594D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4951C28B1BC2805F00594D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4951C2901BC2805F00594D37 /* DrivecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrivecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4951C2941BC2805F00594D37 /* DrivecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivecastTests.swift; sourceTree = "<group>"; };
+		4951C2961BC2805F00594D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4951C29B1BC2805F00594D37 /* DrivecastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrivecastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4951C29F1BC2805F00594D37 /* DrivecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivecastUITests.swift; sourceTree = "<group>"; };
+		4951C2A11BC2805F00594D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4951C2AE1BC281C300594D37 /* DCTLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCTLog.swift; sourceTree = "<group>"; };
+		4C7A6B8602AEA8B20584B0EE /* Pods_Drivecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drivecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF0D1C66F8AA22A601213AD /* Pods-Drivecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drivecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drivecast/Pods-Drivecast.release.xcconfig"; sourceTree = "<group>"; };
+		91F1C9AA9B0BD797567F41C6 /* Pods-Drivecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drivecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Drivecast/Pods-Drivecast.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4951C2761BC2805F00594D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4905E52C1BCDB9A800370531 /* MapKit.framework in Frameworks */,
+				C18836A6A60F1247C985ECD0 /* Pods_Drivecast.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C28D1BC2805F00594D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C2981BC2805F00594D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E6A17A7E8B3DE82C47ED0D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4905E52B1BCDB9A800370531 /* MapKit.framework */,
+				4C7A6B8602AEA8B20584B0EE /* Pods_Drivecast.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4929B0121BCE496100FE3D36 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				4951C2801BC2805F00594D37 /* Main.storyboard */,
+				4951C2881BC2805F00594D37 /* LaunchScreen.storyboard */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		4929B0131BCE499D00FE3D36 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				4951C2861BC2805F00594D37 /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		493196051BCCEF42001C3FBD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				493196061BCCF1DD001C3FBD /* SDCBluetoothManager.swift */,
+				4931960E1BCD4F20001C3FBD /* SDCBluetoothManagerConfiguration.swift */,
+				4931960C1BCD4BE0001C3FBD /* SDCRemotePeripheral.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		493196081BCD1FF3001C3FBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		493196091BCD1FF8001C3FBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4931960A1BCD2069001C3FBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4931960B1BCD2071001C3FBD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4951C27E1BC2805F00594D37 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4951C2701BC2805F00594D37 = {
+			isa = PBXGroup;
+			children = (
+				4951C27B1BC2805F00594D37 /* Drivecast */,
+				4951C2931BC2805F00594D37 /* DrivecastTests */,
+				4951C29E1BC2805F00594D37 /* DrivecastUITests */,
+				4951C27A1BC2805F00594D37 /* Products */,
+				6BD9B680F1F1E7AB2526064D /* Pods */,
+				0E6A17A7E8B3DE82C47ED0D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4951C27A1BC2805F00594D37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4951C2791BC2805F00594D37 /* Drivecast.app */,
+				4951C2901BC2805F00594D37 /* DrivecastTests.xctest */,
+				4951C29B1BC2805F00594D37 /* DrivecastUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4951C27B1BC2805F00594D37 /* Drivecast */ = {
+			isa = PBXGroup;
+			children = (
+				4951C28B1BC2805F00594D37 /* Info.plist */,
+				4951C27C1BC2805F00594D37 /* AppDelegate.swift */,
+				493196081BCD1FF3001C3FBD /* Extensions */,
+				4951C2AD1BC281A800594D37 /* Helpers */,
+				4929B0121BCE496100FE3D36 /* Interfaces */,
+				493196051BCCEF42001C3FBD /* Libraries */,
+				493196091BCD1FF8001C3FBD /* Protocols */,
+				4929B0131BCE499D00FE3D36 /* Ressources */,
+				4931960B1BCD2071001C3FBD /* ViewControllers */,
+				4931960A1BCD2069001C3FBD /* Views */,
+			);
+			path = Drivecast;
+			sourceTree = "<group>";
+		};
+		4951C2931BC2805F00594D37 /* DrivecastTests */ = {
+			isa = PBXGroup;
+			children = (
+				4951C2941BC2805F00594D37 /* DrivecastTests.swift */,
+				4951C2961BC2805F00594D37 /* Info.plist */,
+			);
+			path = DrivecastTests;
+			sourceTree = "<group>";
+		};
+		4951C29E1BC2805F00594D37 /* DrivecastUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4951C29F1BC2805F00594D37 /* DrivecastUITests.swift */,
+				4951C2A11BC2805F00594D37 /* Info.plist */,
+			);
+			path = DrivecastUITests;
+			sourceTree = "<group>";
+		};
+		4951C2AD1BC281A800594D37 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4951C2AE1BC281C300594D37 /* DCTLog.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6BD9B680F1F1E7AB2526064D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F1C9AA9B0BD797567F41C6 /* Pods-Drivecast.debug.xcconfig */,
+				7CF0D1C66F8AA22A601213AD /* Pods-Drivecast.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4951C2781BC2805F00594D37 /* Drivecast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4951C2A41BC2805F00594D37 /* Build configuration list for PBXNativeTarget "Drivecast" */;
+			buildPhases = (
+				C04A77E2D7CD969FA4BA212C /* Check Pods Manifest.lock */,
+				4951C2751BC2805F00594D37 /* Sources */,
+				4951C2761BC2805F00594D37 /* Frameworks */,
+				4951C2771BC2805F00594D37 /* Resources */,
+				DE91F331F3B7645BCA912FEC /* Embed Pods Frameworks */,
+				A0472C5699EFE214830CD35E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drivecast;
+			productName = Drivecast;
+			productReference = 4951C2791BC2805F00594D37 /* Drivecast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4951C28F1BC2805F00594D37 /* DrivecastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4951C2A71BC2805F00594D37 /* Build configuration list for PBXNativeTarget "DrivecastTests" */;
+			buildPhases = (
+				4951C28C1BC2805F00594D37 /* Sources */,
+				4951C28D1BC2805F00594D37 /* Frameworks */,
+				4951C28E1BC2805F00594D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4951C2921BC2805F00594D37 /* PBXTargetDependency */,
+			);
+			name = DrivecastTests;
+			productName = DrivecastTests;
+			productReference = 4951C2901BC2805F00594D37 /* DrivecastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4951C29A1BC2805F00594D37 /* DrivecastUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4951C2AA1BC2805F00594D37 /* Build configuration list for PBXNativeTarget "DrivecastUITests" */;
+			buildPhases = (
+				4951C2971BC2805F00594D37 /* Sources */,
+				4951C2981BC2805F00594D37 /* Frameworks */,
+				4951C2991BC2805F00594D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4951C29D1BC2805F00594D37 /* PBXTargetDependency */,
+			);
+			name = DrivecastUITests;
+			productName = DrivecastUITests;
+			productReference = 4951C29B1BC2805F00594D37 /* DrivecastUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4951C2711BC2805F00594D37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Safecast;
+				TargetAttributes = {
+					4951C2781BC2805F00594D37 = {
+						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4951C28F1BC2805F00594D37 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 4951C2781BC2805F00594D37;
+					};
+					4951C29A1BC2805F00594D37 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 4951C2781BC2805F00594D37;
+					};
+				};
+			};
+			buildConfigurationList = 4951C2741BC2805F00594D37 /* Build configuration list for PBXProject "Drivecast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4951C2701BC2805F00594D37;
+			productRefGroup = 4951C27A1BC2805F00594D37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4951C2781BC2805F00594D37 /* Drivecast */,
+				4951C28F1BC2805F00594D37 /* DrivecastTests */,
+				4951C29A1BC2805F00594D37 /* DrivecastUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4951C2771BC2805F00594D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4951C28A1BC2805F00594D37 /* LaunchScreen.storyboard in Resources */,
+				4951C2871BC2805F00594D37 /* Assets.xcassets in Resources */,
+				4951C2821BC2805F00594D37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C28E1BC2805F00594D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C2991BC2805F00594D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0472C5699EFE214830CD35E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Drivecast/Pods-Drivecast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C04A77E2D7CD969FA4BA212C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE91F331F3B7645BCA912FEC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Drivecast/Pods-Drivecast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4951C2751BC2805F00594D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4931960F1BCD4F20001C3FBD /* SDCBluetoothManagerConfiguration.swift in Sources */,
+				4931960D1BCD4BE0001C3FBD /* SDCRemotePeripheral.swift in Sources */,
+				493196071BCCF1DD001C3FBD /* SDCBluetoothManager.swift in Sources */,
+				4951C27F1BC2805F00594D37 /* ViewController.swift in Sources */,
+				4951C2AF1BC281C300594D37 /* DCTLog.swift in Sources */,
+				4951C27D1BC2805F00594D37 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C28C1BC2805F00594D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4951C2951BC2805F00594D37 /* DrivecastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4951C2971BC2805F00594D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4951C2A01BC2805F00594D37 /* DrivecastUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4951C2921BC2805F00594D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4951C2781BC2805F00594D37 /* Drivecast */;
+			targetProxy = 4951C2911BC2805F00594D37 /* PBXContainerItemProxy */;
+		};
+		4951C29D1BC2805F00594D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4951C2781BC2805F00594D37 /* Drivecast */;
+			targetProxy = 4951C29C1BC2805F00594D37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4951C2801BC2805F00594D37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4951C2811BC2805F00594D37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4951C2881BC2805F00594D37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4951C2891BC2805F00594D37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4951C2A21BC2805F00594D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4951C2A31BC2805F00594D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4951C2A51BC2805F00594D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F1C9AA9B0BD797567F41C6 /* Pods-Drivecast.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drivecast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4951C2A61BC2805F00594D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF0D1C66F8AA22A601213AD /* Pods-Drivecast.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drivecast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4951C2A81BC2805F00594D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DrivecastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.DrivecastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drivecast.app/Drivecast";
+			};
+			name = Debug;
+		};
+		4951C2A91BC2805F00594D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DrivecastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.DrivecastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drivecast.app/Drivecast";
+			};
+			name = Release;
+		};
+		4951C2AB1BC2805F00594D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DrivecastUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.DrivecastUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Drivecast;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4951C2AC1BC2805F00594D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DrivecastUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.DrivecastUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Drivecast;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4951C2741BC2805F00594D37 /* Build configuration list for PBXProject "Drivecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4951C2A21BC2805F00594D37 /* Debug */,
+				4951C2A31BC2805F00594D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4951C2A41BC2805F00594D37 /* Build configuration list for PBXNativeTarget "Drivecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4951C2A51BC2805F00594D37 /* Debug */,
+				4951C2A61BC2805F00594D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4951C2A71BC2805F00594D37 /* Build configuration list for PBXNativeTarget "DrivecastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4951C2A81BC2805F00594D37 /* Debug */,
+				4951C2A91BC2805F00594D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4951C2AA1BC2805F00594D37 /* Build configuration list for PBXNativeTarget "DrivecastUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4951C2AB1BC2805F00594D37 /* Debug */,
+				4951C2AC1BC2805F00594D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4951C2711BC2805F00594D37 /* Project object */;
+}

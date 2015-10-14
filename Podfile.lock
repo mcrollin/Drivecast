@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (3.0.0)
+  - AngleGradientLayer (1.2.3)
+  - Decodable (0.3.2)
+  - DynamicColor (2.0.0)
+  - ReactiveCocoa (3.0.0-swift2):
+    - ReactiveCocoa/UI (= 3.0.0-swift2)
+    - Result (~> 0.6-beta.1)
+  - ReactiveCocoa/Core (3.0.0-swift2):
+    - ReactiveCocoa/no-arc
+    - Result (~> 0.6-beta.1)
+  - ReactiveCocoa/no-arc (3.0.0-swift2):
+    - Result (~> 0.6-beta.1)
+  - ReactiveCocoa/UI (3.0.0-swift2):
+    - ReactiveCocoa/Core
+    - Result (~> 0.6-beta.1)
+  - Result (0.6.0-beta.4)
+
+DEPENDENCIES:
+  - Alamofire (= 3.0.0)
+  - AngleGradientLayer (= 1.2.3)
+  - Decodable (= 0.3.2)
+  - DynamicColor (= 2.0.0)
+  - ReactiveCocoa (= 3.0.0-swift2)
+
+SPEC CHECKSUMS:
+  Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
+  AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
+  Decodable: 467819459fd22e7852f1f5244916e2e170016004
+  DynamicColor: bd4ccde8466ccbf0dd40900aa8be93a5ea482724
+  ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
+  Result: f7927152cbaec0c043abb06ba0bc432678818418
+
+COCOAPODS: 0.39.0
