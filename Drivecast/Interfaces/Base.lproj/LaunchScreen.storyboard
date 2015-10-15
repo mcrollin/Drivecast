@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SafecastLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-xb-REn">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SafecastLettersBig" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-xb-REn">
+                                <rect key="frame" x="172" y="284.5" width="256" height="31"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SafecastLogo" width="60" height="60"/>
+        <image name="SafecastLettersBig" width="256" height="31"/>
     </resources>
 </document>
