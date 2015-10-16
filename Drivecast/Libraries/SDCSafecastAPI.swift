@@ -103,7 +103,6 @@ extension SDCSafecastAPI {
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    log("RESULT \(json)")
                     var json    = JSON(json)
                     
                     // Adding the email to the json data

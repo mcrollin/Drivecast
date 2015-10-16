@@ -102,3 +102,9 @@ extension SDCImport: JSONDecodable {
             measurementsAdded: statusDetailsJson["measurements_added"].boolValue)
     }
 }
+
+// MARK - Equatable
+// Comparision method betweee two SDCImport
+func ==(lhs: SDCImport, rhs: SDCImport) -> Bool {
+    return lhs.id == rhs.id
+}

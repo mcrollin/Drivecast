@@ -10,6 +10,7 @@
 		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
+		494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769C1BD0EBC100B86491 /* JSONEncodable.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +68,7 @@
 		494C768F1BD05AB600B86491 /* SDCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUser.swift; sourceTree = "<group>"; };
 		494C76911BD05F6000B86491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCCircleTransitionAnimator.swift; sourceTree = "<group>"; };
+		494C769C1BD0EBC100B86491 /* JSONEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
 		49B0FA261BD007F50078490C /* SDCUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewController.swift; sourceTree = "<group>"; };
 		49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewModel.swift; sourceTree = "<group>"; };
 		49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardViewModel.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */,
 				49FC9A851BCFB852006FA40E /* JSONDecodable.swift */,
+				494C769C1BD0EBC100B86491 /* JSONEncodable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */,
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
 				49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */,
+				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,
 				49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */,

@@ -31,19 +31,31 @@ class SDCSignInViewController: UIViewController {
         configureView()
         configureTabBar()
         
-//        SDCSafecastAPI.signInUser("###@###.###", password: "##########") { result in
-//            switch result {
-//            case .Success(let user):
-//                log(user)
-//                
-        self.presentMenu()
-//            case .Failure(let error):
-//                log(error)
-//            }
-//        }
-        
-        // @todo: Implement sign in
-//        performSelector(Selector("loadMenu"), withObject: nil, afterDelay: 3.0)
+        if let user = SDCUser.authenticatedUser {
+            log("USER DOES EXISTS: \(user)")
+            SDCSafecastAPI.retrieveUser(user.id, email: user.email) { result in
+                switch result {
+                case .Success(let user):
+                    SDCUser.authenticatedUser = user
+                case .Failure(let error):
+                    log(error)
+                }
+                
+                self.presentMenu()
+            }
+        } else {
+            log("USER DOES NOT EXISTS")
+            SDCSafecastAPI.signInUser("rollin.marc@gmail.com", password: "o8oufW0h73") { result in
+                switch result {
+                case .Success(let user):
+                    SDCUser.authenticatedUser = user
+                    
+                    self.presentMenu()
+                case .Failure(let error):
+                    log(error)
+                }
+            }
+        }
     }
 }
 

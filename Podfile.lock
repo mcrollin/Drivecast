@@ -23,7 +23,7 @@ DEPENDENCIES:
   - AngleGradientLayer (= 1.2.3)
   - DynamicColor (= 2.0.0)
   - ReactiveCocoa (= 3.0.0-swift2)
-  - SnapKit
+  - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
   - SwiftyJSON (= 2.3.0)
 
