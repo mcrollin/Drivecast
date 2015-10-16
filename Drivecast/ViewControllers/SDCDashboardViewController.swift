@@ -42,12 +42,24 @@ extension SDCDashboardViewController {
             style: UIBarButtonItemStyle.Plain,
             target: self, action: Selector("openAboutModal")
         )
+        
+        #if DEBUG
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage.Asset.Dot.image,
+            style: UIBarButtonItemStyle.Plain,
+            target: self, action: Selector("close")
+        )
+        #endif
+    }
+
+    func close() {
+        tabBarController?.navigationController?.popViewControllerAnimated(true)
     }
     
     func openAboutModal() {
         let about = UIStoryboard.Scene.Main.aboutViewController()
         
-        self.presentViewController(about, animated: true, completion: nil)
+        presentViewController(about, animated: true, completion: nil)
     }
 }
 

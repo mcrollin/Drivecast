@@ -17,16 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Dot" translatesAutoresizingMaskIntoConstraints="NO" id="BYx-dq-UkS">
+                                <rect key="frame" x="298" y="298" width="4" height="4"/>
+                                <animations/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SafecastLettersBig" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-xb-REn">
-                                <rect key="frame" x="172" y="284.5" width="256" height="31"/>
+                                <rect key="frame" x="223" y="239" width="154" height="19"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4vk-87-6e7"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S9O-md-18T"/>
                             <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="V9g-ea-QNa"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eNo-zK-hje"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="u6S-XO-eNJ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +42,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SafecastLettersBig" width="256" height="31"/>
+        <image name="Dot" width="4" height="4"/>
+        <image name="SafecastLettersBig" width="154" height="19"/>
     </resources>
 </document>

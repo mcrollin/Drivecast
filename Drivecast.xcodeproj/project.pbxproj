@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; settings = {ASSET_TAGS = (); }; };
+		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
+		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2C1BD00FDB0078490C /* SDCAboutTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */; settings = {ASSET_TAGS = (); }; };
 		49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A211BCFB5D4006FA40E /* AppDelegate.swift */; };
 		49FC9A371BCFB5D4006FA40E /* DrivecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A361BCFB5D4006FA40E /* DrivecastTests.swift */; };
 		49FC9A421BCFB5D4006FA40E /* DrivecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A411BCFB5D4006FA40E /* DrivecastUITests.swift */; };
@@ -60,12 +64,16 @@
 
 /* Begin PBXFileReference section */
 		257394F867C97FD4FC62AE03 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		494C768F1BD05AB600B86491 /* SDCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUser.swift; sourceTree = "<group>"; };
+		494C76911BD05F6000B86491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCCircleTransitionAnimator.swift; sourceTree = "<group>"; };
 		49B0FA261BD007F50078490C /* SDCUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewController.swift; sourceTree = "<group>"; };
 		49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewModel.swift; sourceTree = "<group>"; };
 		49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardViewModel.swift; sourceTree = "<group>"; };
 		49B0FA2C1BD00FDB0078490C /* SDCAboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCAboutTableViewController.swift; sourceTree = "<group>"; };
 		49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCAboutViewModel.swift; sourceTree = "<group>"; };
 		49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewController.swift; sourceTree = "<group>"; };
+		49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementColorLUT.swift; sourceTree = "<group>"; };
 		49FC9A1E1BCFB5D4006FA40E /* Drivecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drivecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FC9A211BCFB5D4006FA40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49FC9A2D1BCFB5D4006FA40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 				49FC9A711BCFB852006FA40E /* UIColor.swift */,
 				49FC9A721BCFB852006FA40E /* UIImage.swift */,
 				49FC9A731BCFB852006FA40E /* UIStoryboard.swift */,
+				494C76911BD05F6000B86491 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 				49FC9A7E1BCFB852006FA40E /* SDCRemotePeripheral.swift */,
 				49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */,
 				49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */,
+				49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -233,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				49FC9A821BCFB852006FA40E /* SDCImport.swift */,
+				494C768F1BD05AB600B86491 /* SDCUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 		49FC9A8F1BCFB852006FA40E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,9 +524,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */,
+				49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */,
 				49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */,
+				494C76921BD05F6000B86491 /* String.swift in Sources */,
 				49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */,
 				49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */,
+				494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */,
+				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,
 				49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */,
 				49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */,
 				49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */,

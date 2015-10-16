@@ -9,15 +9,15 @@
 import Foundation
 import SwiftyJSON
 
-//enum SCRImportProgress {
-//    case Uploaded
-//    case Processed
-//    case MetadataAdded
-//    case Submitted
-//    case Approved
-//    case Rejected
-//    case Live
-//}
+enum SDCImportProgress {
+    case Uploaded
+    case Processed
+    case MetadataAdded
+    case Submitted
+    case Approved
+    case Rejected
+    case Live
+}
 
 struct SDCImport {
     let id: Int
@@ -46,13 +46,31 @@ struct SDCImport {
         let createMap: Bool
         let measurementsAdded: Bool
     }
+    
+    var progress:SDCImportProgress {
+        if (!statusDetails.processFile || !statusDetails.importLogs) {
+            return .Uploaded
+        } else if (cities != "" || credits != "") {
+            return .Processed
+        } else if (self.status == "processed") {
+            return .MetadataAdded
+        } else if (status == "submitted") {
+            return .Submitted
+        } else if (approved && !statusDetails.measurementsAdded) {
+            return .Approved
+        } else if (!approved) {
+            return .Rejected
+        }
+        
+        return .Live
+    }
 }
 
 // MARK - JSONDecodable
 extension SDCImport: JSONDecodable {
     
     // Initializing a SDCImport object based on a json object
-    init?(json: JSON) throws {
+    init(json: JSON) {
         let statusDetailsJson   = json["status_details"]
         let utcFormatter        = NSDateFormatter()
         utcFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"

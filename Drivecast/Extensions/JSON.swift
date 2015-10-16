@@ -10,11 +10,11 @@ import Foundation
 import SwiftyJSON
 
 extension JSON: JSONCollectionDecodable {
-    static func collection<T: JSONDecodable>(json: Array<JSON>) throws -> [T] {
+    static func collection<T: JSONDecodable>(json: Array<JSON>) -> [T] {
         var collection = [T]()
         
         for element in json {
-            collection.append(try T(json: element)!)
+            collection.append(T(json: element))
         }
         
         return collection
