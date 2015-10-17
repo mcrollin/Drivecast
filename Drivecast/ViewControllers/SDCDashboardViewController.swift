@@ -47,12 +47,14 @@ extension SDCDashboardViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.Dot.image,
             style: UIBarButtonItemStyle.Plain,
-            target: self, action: Selector("close")
+            target: self, action: Selector("deauthenticate")
         )
         #endif
     }
 
-    func close() {
+    func deauthenticate() {
+        SDCUser.authenticatedUser = nil
+        
         tabBarController?.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -65,6 +67,7 @@ extension SDCDashboardViewController {
 
 // MARK - Signal Bindings
 extension SDCDashboardViewController {
+    
     func bindViewModel() {
     }
 }

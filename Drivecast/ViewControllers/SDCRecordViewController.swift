@@ -37,8 +37,9 @@ extension SDCRecordViewController {
             action: Selector("cancelConnection")
         )
 
-        activityMonitor.startAnimating()
         view.addSubview(activityMonitor)
+        
+        activityMonitor.startAnimating()
         activityMonitor.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(self.view)
         }

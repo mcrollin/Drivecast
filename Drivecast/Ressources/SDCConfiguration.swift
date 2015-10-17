@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DynamicColor
 
 /**
     Struct providing simple configuration.

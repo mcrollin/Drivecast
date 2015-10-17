@@ -12,6 +12,7 @@ extension UIImage {
         case Upload = "Upload"
         case SafecastLettersBig = "SafecastLettersBig"
         case SafecastLettersSmall = "SafecastLettersSmall"
+        case Separator = "Separator"
 
         var image: UIImage {
             return UIImage(asset: self)

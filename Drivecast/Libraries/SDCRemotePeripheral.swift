@@ -63,7 +63,7 @@ extension SDCRemotePeripheral {
         }
         
         // Starts the service discovery process
-        peripheral.discoverServices(configuration?.dataServiceIdentifiers);
+        peripheral.discoverServices(configuration?.dataServiceIdentifiers)
     }
 }
 

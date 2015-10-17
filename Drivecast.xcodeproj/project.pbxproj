@@ -11,6 +11,11 @@
 		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
 		494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769C1BD0EBC100B86491 /* JSONEncodable.swift */; settings = {ASSET_TAGS = (); }; };
+		494C769F1BD1329F00B86491 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769E1BD1329F00B86491 /* UIView.swift */; settings = {ASSET_TAGS = (); }; };
+		494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; settings = {ASSET_TAGS = (); }; };
+		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; settings = {ASSET_TAGS = (); }; };
+		498274251BD1713D003445B0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274241BD1713D003445B0 /* UIButton.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +74,11 @@
 		494C76911BD05F6000B86491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCCircleTransitionAnimator.swift; sourceTree = "<group>"; };
 		494C769C1BD0EBC100B86491 /* JSONEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
+		494C769E1BD1329F00B86491 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewModel.swift; sourceTree = "<group>"; };
+		498274201BD16D3B003445B0 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
+		498274221BD16F66003445B0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		498274241BD1713D003445B0 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		49B0FA261BD007F50078490C /* SDCUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewController.swift; sourceTree = "<group>"; };
 		49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewModel.swift; sourceTree = "<group>"; };
 		49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardViewModel.swift; sourceTree = "<group>"; };
@@ -203,10 +213,13 @@
 			isa = PBXGroup;
 			children = (
 				49FC9A6F1BCFB852006FA40E /* JSON.swift */,
+				494C76911BD05F6000B86491 /* String.swift */,
 				49FC9A711BCFB852006FA40E /* UIColor.swift */,
 				49FC9A721BCFB852006FA40E /* UIImage.swift */,
 				49FC9A731BCFB852006FA40E /* UIStoryboard.swift */,
-				494C76911BD05F6000B86491 /* String.swift */,
+				494C769E1BD1329F00B86491 /* UIView.swift */,
+				498274221BD16F66003445B0 /* UITextField.swift */,
+				498274241BD1713D003445B0 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				49FC9A751BCFB852006FA40E /* DCTLog.swift */,
+				498274201BD16D3B003445B0 /* RACHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -289,6 +303,7 @@
 				49FC9A8E1BCFB852006FA40E /* SDCRecordViewModel.swift */,
 				49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */,
 				49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */,
+				494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -536,20 +551,25 @@
 				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,
 				49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */,
 				49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */,
+				494C769F1BD1329F00B86491 /* UIView.swift in Sources */,
 				49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */,
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
 				49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */,
+				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
 				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
+				498274251BD1713D003445B0 /* UIButton.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,
 				49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */,
 				49FC9AA51BCFB852006FA40E /* SDCRecordViewModel.swift in Sources */,
 				49FC9A9F1BCFB852006FA40E /* JSONDecodable.swift in Sources */,
+				498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */,
 				49FC9A921BCFB852006FA40E /* UIColor.swift in Sources */,
 				49FC9A9A1BCFB852006FA40E /* SDCRemotePeripheral.swift in Sources */,
 				49FC9A901BCFB852006FA40E /* JSON.swift in Sources */,
 				49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */,
 				49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */,
+				494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */,
 				49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */,
 				49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */,
 				49FC9A9D1BCFB852006FA40E /* SDCImport.swift in Sources */,

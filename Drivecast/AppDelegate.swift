@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,8 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIWindow.appearance().tintColor             = mainColor
         UIAlertView.appearance().tintColor          = mainColor
         UIActionSheet.appearance().tintColor        = mainColor
+        UIButton.appearance().tintColor             = mainColor
         UITabBar.appearance().translucent           = false
         UINavigationBar.appearance().translucent    = false
+        
+        // Handles all keyboard events
+        IQKeyboardManager.sharedManager().enable = true
     }
 }
 

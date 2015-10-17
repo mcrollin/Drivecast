@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (3.0.0)
   - AngleGradientLayer (1.2.3)
-  - DynamicColor (2.0.0)
+  - IQKeyboardManagerSwift (3.3.2)
   - ReactiveCocoa (3.0.0-swift2):
     - ReactiveCocoa/UI (= 3.0.0-swift2)
     - Result (~> 0.6-beta.1)
@@ -21,7 +21,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 3.0.0)
   - AngleGradientLayer (= 1.2.3)
-  - DynamicColor (= 2.0.0)
+  - IQKeyboardManagerSwift (= 3.3.2)
   - ReactiveCocoa (= 3.0.0-swift2)
   - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
@@ -30,7 +30,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
   AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
-  DynamicColor: bd4ccde8466ccbf0dd40900aa8be93a5ea482724
+  IQKeyboardManagerSwift: 40a9f6a3a5f60bc311aad5ab3265b9de5ecb9367
   ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
   Result: f7927152cbaec0c043abb06ba0bc432678818418
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87

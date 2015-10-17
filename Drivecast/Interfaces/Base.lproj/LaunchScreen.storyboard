@@ -27,12 +27,12 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S9O-md-18T"/>
-                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="V9g-ea-QNa"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eNo-zK-hje"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="u6S-XO-eNJ"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="3pB-GY-f2s"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RFt-2N-hM0"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wAT-4h-MCH"/>
+                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yea-ZF-BMf"/>
                         </constraints>
                     </view>
                 </viewController>
