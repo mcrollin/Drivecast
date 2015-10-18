@@ -18,16 +18,19 @@ struct SDCSignInViewModel {
     let passwordTextEnabled = MutableProperty<Bool>(false)
     let signInButtonEnabled = MutableProperty<Bool>(false)
     let signInFormIsVisible = MutableProperty<Bool>(false)
-    let userIsAuthenticated = MutableProperty<Bool>(SDCUser.authenticatedUser != nil)
+    let userIsAuthenticated = MutableProperty<Bool>(false)
     
     // Action
-    private(set) var signInAction: Action<AnyObject?, Bool, NoError>? = nil
+    private(set) var signInAction: Action<AnyObject?, Bool, SDCSafecastAPI.UserError>? = nil
     
     init() {
         enableSignIn()
         initializeSignInAction()
     }
     
+    // Check if the user is authenticated
+    // If so, retrieves the user's latest information
+    // otherwise prompts the sign in form
     func checkAuthentication() {
         if let user = SDCUser.authenticatedUser {
             SDCSafecastAPI.retrieveUser(user.id, email: user.email) { result in
@@ -48,7 +51,8 @@ struct SDCSignInViewModel {
         }
     }
     
-    private func signIn(email: String, password: String) {
+    // Makes the API call to sign in the user
+    private func signIn(email: String, password: String, completion: SDCSafecastAPI.ResultUser) {
         signInButtonEnabled.value   = false
         signInFormIsVisible.value   = false
         emailTextEnabled.value      = false
@@ -62,7 +66,6 @@ struct SDCSignInViewModel {
                 SDCUser.authenticatedUser       = user
                 self.userIsAuthenticated.value  = true
             case .Failure(let error):
-                // @todo: Need to prompt a message to the user (reg exp to find the right error)
                 log(error)
                 
                 self.signInButtonEnabled.value  = true
@@ -70,6 +73,8 @@ struct SDCSignInViewModel {
                 self.passwordTextEnabled.value  = true
                 self.signInFormIsVisible.value  = true
             }
+            
+            completion(result)
         }
     }
     
@@ -81,10 +86,16 @@ struct SDCSignInViewModel {
                 let email       = self.emailText.value
                 let password    = self.passwordText.value
                 
-                self.signIn(email, password: password)
-                
-                sendNext(sink, true)
-                sendCompleted(sink)
+                self.signIn(email, password: password) { result in
+                    switch result {
+                    case .Success(_):
+                        sendNext(sink, true)
+                        sendCompleted(sink)
+                    case .Failure(let error):
+                        sendNext(sink, false)
+                        sendError(sink, error as! SDCSafecastAPI.UserError)
+                    }
+                }
             }
         }
     }

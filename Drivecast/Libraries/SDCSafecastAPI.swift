@@ -23,6 +23,10 @@ struct SDCSafecastAPI {
 
 // MARK - Import
 extension SDCSafecastAPI {
+    // Error enum
+    enum ImportError: ErrorType {
+        case Network(String)
+    }
     
     typealias SDCSafecastAPIResultImports   = SDCSafecastAPIResult<[SDCImport]> -> Void
     typealias SDCSafecastAPIResultImport    = SDCSafecastAPIResult<SDCImport> -> Void
@@ -41,7 +45,7 @@ extension SDCSafecastAPI {
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(error))
+                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
                 }
         }
     }
@@ -64,7 +68,7 @@ extension SDCSafecastAPI {
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(error))
+                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
                 }
         }
     }
@@ -88,14 +92,15 @@ extension SDCSafecastAPI {
 extension SDCSafecastAPI {
     // Error enum
     enum UserError: ErrorType {
-        case CouldNotFoundAPIKey(String)
-        case CouldNotFoundId(String)
+        case APIKeyCouldNotBeFound(String)
+        case UserIdCouldNotBeFound(String)
+        case Network(String)
     }
     
-    typealias SDCSafecastAPIResultUser = SDCSafecastAPIResult<SDCUser> -> Void
+    typealias ResultUser = SDCSafecastAPIResult<SDCUser> -> Void
     
     // Retrieving the user
-    static func retrieveUser(id: Int, email: String, completion: SDCSafecastAPIResultUser) {
+    static func retrieveUser(id: Int, email: String, completion: ResultUser) {
         let request = SDCSafecastAPIRouter.User(id)
         
         Alamofire.request(request)
@@ -112,13 +117,13 @@ extension SDCSafecastAPI {
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(error))
+                    completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))
                 }
         }
     }
     
     // Retrieving the user's id
-    private static func retrieveUserId(email: String, completion: SDCSafecastAPIResultUser) {
+    private static func retrieveUserId(email: String, completion: ResultUser) {
         let request = SDCSafecastAPIRouter.Dashboard()
         
         Alamofire.request(request)
@@ -127,19 +132,19 @@ extension SDCSafecastAPI {
                 switch response.result {
                 case .Success(let string):
                     guard let id = Int(string.regexpFind("id=\"edit_user_([0-9]*)\"")!) else {
-                        return completion(.Failure(SDCSafecastAPI.UserError.CouldNotFoundId(string)))
+                        return completion(.Failure(SDCSafecastAPI.UserError.UserIdCouldNotBeFound(string)))
                     }
                     
                     retrieveUser(id, email: email, completion: completion)
                     
                 case .Failure(let error):
-                    completion(.Failure(error))
+                    completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))
                 }
         }
     }
     
     // Signin in
-    static func signInUser(email: String, password: String, completion: SDCSafecastAPIResultUser) {
+    static func signInUser(email: String, password: String, completion: ResultUser) {
         // Trim the email from any whitespace character
         let email = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     
@@ -151,13 +156,23 @@ extension SDCSafecastAPI {
                 switch response.result {
                 case .Success(let string):
                     guard let _ = string.regexpFind("(Retrieve your API key)") else {
-                        return completion(.Failure(SDCSafecastAPI.UserError.CouldNotFoundAPIKey(string)))
+                        // Retrieve the error message
+                        guard let message = string.regexpFind("\"alert\">&times;</button>([^<]*)") else {
+                            log(string)
+                            
+                            return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound("Something wrong happened, please try again later.")))
+                        }
+                        
+                        // Trimming white spaces and return characters from the error message
+                        let trimmedMessage = message.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                        
+                        return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(trimmedMessage)))
                     }
                     
                     retrieveUserId(email, completion: completion)
                     
                 case .Failure(let error):
-                    completion(.Failure(error))
+                    completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))
                 }
         }
     }

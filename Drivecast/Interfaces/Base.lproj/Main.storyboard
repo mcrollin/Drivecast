@@ -143,6 +143,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-Jw-Fl5">
                                 <rect key="frame" x="165" y="513.5" width="270" height="286"/>
                                 <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="you@domain.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-XM-qZP">
+                                        <rect key="frame" x="0.0" y="0.5" width="270" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="es5-TT-ZJY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2kl-ZW-yFd">
                                         <rect key="frame" x="0.0" y="65" width="270" height="50"/>
                                         <animations/>
@@ -189,20 +203,6 @@
                                             <constraint firstAttribute="height" constant="1" id="IeL-IY-bjf"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="you@domain.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-XM-qZP">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="es5-TT-ZJY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Separator" translatesAutoresizingMaskIntoConstraints="NO" id="Hv6-24-oVb">
                                         <rect key="frame" x="129" y="215" width="12" height="1"/>
                                         <animations/>
@@ -246,7 +246,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.75216349647576808" green="0.79412416225580318" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.75216349647576808" green="0.79412416225580318" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FBa-Jw-Fl5" firstAttribute="leading" secondItem="T5X-6o-ivX" secondAttribute="leading" priority="900" constant="30" id="7rZ-jJ-ikB"/>
                             <constraint firstItem="aIQ-Wc-XTJ" firstAttribute="top" secondItem="35o-6u-NTE" secondAttribute="bottom" constant="40" placeholder="YES" id="8sY-Q5-fNz"/>

@@ -47,10 +47,10 @@ class SDCCircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioni
         
         // Animate
         let maskLayerAnimation = CABasicAnimation(keyPath: "path")
-        maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
-        maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
-        maskLayerAnimation.duration = self.transitionDuration(transitionContext)
-        maskLayerAnimation.delegate = self
+        maskLayerAnimation.fromValue    = circleMaskPathInitial.CGPath
+        maskLayerAnimation.toValue      = circleMaskPathFinal.CGPath
+        maskLayerAnimation.duration     = self.transitionDuration(transitionContext)
+        maskLayerAnimation.delegate     = self
         maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
     }
     

@@ -201,11 +201,36 @@ extension SDCSignInViewController {
         // Visually enable/disable the signInButton
         viewModel.signInButtonEnabled.producer.startWithNext { enabled in
             self.animateSignInButton(enabled)
+            self.passwordTextField.returnKeyType = enabled ? .Go : .Done
         }
         
         // Binding the signIn action
         signInCocoaAction = CocoaAction(viewModel.signInAction!, input:nil)
         signInButton.addTarget(signInCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
+
+        viewModel.signInAction?.errors.observeNext { error in
+            var message: String = ""
+
+            switch error {
+            case SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(let reason):
+                message = reason
+            case SDCSafecastAPI.UserError.UserIdCouldNotBeFound(let reason):
+                message = reason
+            case SDCSafecastAPI.UserError.Network(let reason):
+                message = reason
+            }
+            
+            log(message)
+            
+            let alertController = UIAlertController(title: NSLocalizedString("Could not sign in", comment: ""), message: message, preferredStyle: .Alert)
+            let okAction        = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default) { handler in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         
         // Presenting the menu if user is authenticated
         viewModel.userIsAuthenticated.producer.startWithNext { authenticated in
@@ -247,9 +272,24 @@ extension SDCSignInViewController: UITextFieldDelegate {
     internal func textFieldDidEndEditing(textField: UITextField) {
         updateTextFieldUndeline(textField, alpha: 0.2)
     }
-}
 
-// @todo: Handle UIKeyboardDelegate for the return key
+    internal func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            passwordTextField.resignFirstResponder()
+            
+            if viewModel.signInButtonEnabled.value {
+                signInButton.sendActionsForControlEvents(.TouchUpInside)
+            }
+        default:
+            break
+        }
+        
+        return true
+    }
+}
 
 // MARK - UITabBarControllerDelegate
 extension SDCSignInViewController: UITabBarControllerDelegate {
