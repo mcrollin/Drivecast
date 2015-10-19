@@ -12,10 +12,10 @@ import CoreBluetooth
 // MARK - Delegate Protocol
 protocol SDCBluetoothManagerDelegate {
     func managerStateDidChange(manager: SDCBluetoothManager, state: SDCBluetoothManager.State)
-    func managerDidDiscoverPeripheral(manager: SDCBluetoothManager, peripheral: SDCRemotePeripheral)
-    func remotePeripheralDidConnect(manager: SDCBluetoothManager, peripheral: SDCRemotePeripheral)
-    func remotePeripheralDidDisconnect(manager: SDCBluetoothManager, peripheral: SDCRemotePeripheral)
-    func remotePeripheralDidSendNewData(peripheral: SDCRemotePeripheral, data: String)
+    func managerDidDiscoverPeripheral(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral)
+    func remotePeripheralDidConnect(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral)
+    func remotePeripheralDidDisconnect(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral)
+    func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String)
 }
 
 // MARK - SDCBluetoothManager
@@ -28,7 +28,7 @@ class SDCBluetoothManager: NSObject {
     private var centralManager: CBCentralManager?
 
     // Bluetooth peripheral encapsulation
-    private(set) var remotePeripheral: SDCRemotePeripheral? {
+    private(set) var remotePeripheral: SDCBluetoothRemotePeripheral? {
         didSet {
             self.delegate?.managerStateDidChange(self, state: self.state)
         }
@@ -142,7 +142,7 @@ extension SDCBluetoothManager {
     }
     
     // Connects a discovered peripheral
-    func connect(peripheral: SDCRemotePeripheral) throws {
+    func connect(peripheral: SDCBluetoothRemotePeripheral) throws {
         guard let centralManager = self.centralManager
             where self.state == .Ready else {
             throw SDCBluetoothManager.Error.InvalidState(self.state)
@@ -154,7 +154,7 @@ extension SDCBluetoothManager {
     }
     
     // Disconnects a connecting or connected peripheral
-    func disconnect(peripheral: SDCRemotePeripheral) throws {
+    func disconnect(peripheral: SDCBluetoothRemotePeripheral) throws {
         guard let centralManager = self.centralManager
             where self.state == .Connecting || self.state == .Connected else {
             throw SDCBluetoothManager.Error.InvalidState(self.state)
@@ -165,10 +165,10 @@ extension SDCBluetoothManager {
 }
 
 // MARK - SDCRemotePeripheral
-extension SDCBluetoothManager: SDCRemotePeripheralDelegate {
+extension SDCBluetoothManager: SDCBluetoothRemotePeripheralDelegate {
 
     // Forwarding the event to the delegate
-    internal func remotePeripheralDidSendNewData(peripheral: SDCRemotePeripheral, data: String) {
+    internal func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String) {
         self.delegate?.remotePeripheralDidSendNewData(peripheral, data: data)
     }
 }
@@ -180,13 +180,13 @@ extension SDCBluetoothManager: CBCentralManagerDelegate {
     }
     
     internal func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        let remotePeripheral = SDCRemotePeripheral(peripheral: peripheral, configuration: configuration)
+        let remotePeripheral = SDCBluetoothRemotePeripheral(peripheral: peripheral, configuration: configuration)
         
         self.delegate?.managerDidDiscoverPeripheral(self, peripheral: remotePeripheral)
     }
     
     internal func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        remotePeripheral = SDCRemotePeripheral(peripheral: peripheral, configuration: configuration)
+        remotePeripheral = SDCBluetoothRemotePeripheral(peripheral: peripheral, configuration: configuration)
         
         self.delegate?.remotePeripheralDidConnect(self, peripheral: remotePeripheral!)
         

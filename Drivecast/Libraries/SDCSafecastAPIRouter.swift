@@ -13,7 +13,7 @@ import Alamofire
     Enum providing configuration to build Safecast API call requests.
 */
 enum SDCSafecastAPIRouter: URLRequestConvertible {
-    static let baseURLString = SDCConfiguration.apiBaseURL
+    static let baseURLString = SDCConfiguration.API.baseURL
     
     // Endpoints
     case Dashboard()

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B41BD42C62001D3C16 /* UIViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8B71BD44A3A001D3C16 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B61BD44A3A001D3C16 /* UITextView.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BC1BD470A3001D3C16 /* UILabel.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
@@ -36,7 +42,7 @@
 		49FC9A971BCFB852006FA40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A791BCFB852006FA40E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7C1BCFB852006FA40E /* SDCBluetoothManager.swift */; settings = {ASSET_TAGS = (); }; };
 		49FC9A991BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7D1BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9A1BCFB852006FA40E /* SDCRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7E1BCFB852006FA40E /* SDCRemotePeripheral.swift */; settings = {ASSET_TAGS = (); }; };
+		49FC9A9A1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7E1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift */; settings = {ASSET_TAGS = (); }; };
 		49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */; settings = {ASSET_TAGS = (); }; };
 		49FC9A9D1BCFB852006FA40E /* SDCImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A821BCFB852006FA40E /* SDCImport.swift */; settings = {ASSET_TAGS = (); }; };
@@ -70,6 +76,12 @@
 
 /* Begin PBXFileReference section */
 		257394F867C97FD4FC62AE03 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCConsoleViewController.swift; sourceTree = "<group>"; };
+		4920F8B41BD42C62001D3C16 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		4920F8B61BD44A3A001D3C16 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurement.swift; sourceTree = "<group>"; };
+		4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCLogParser.swift; sourceTree = "<group>"; };
+		4920F8BC1BD470A3001D3C16 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		494C768F1BD05AB600B86491 /* SDCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUser.swift; sourceTree = "<group>"; };
 		494C76911BD05F6000B86491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCCircleTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -105,7 +117,7 @@
 		49FC9A7A1BCFB852006FA40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49FC9A7C1BCFB852006FA40E /* SDCBluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCBluetoothManager.swift; sourceTree = "<group>"; };
 		49FC9A7D1BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCBluetoothManagerConfiguration.swift; sourceTree = "<group>"; };
-		49FC9A7E1BCFB852006FA40E /* SDCRemotePeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCRemotePeripheral.swift; sourceTree = "<group>"; };
+		49FC9A7E1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCBluetoothRemotePeripheral.swift; sourceTree = "<group>"; };
 		49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSafecastAPI.swift; sourceTree = "<group>"; };
 		49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSafecastAPIRouter.swift; sourceTree = "<group>"; };
 		49FC9A821BCFB852006FA40E /* SDCImport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCImport.swift; sourceTree = "<group>"; };
@@ -214,12 +226,15 @@
 			children = (
 				49FC9A6F1BCFB852006FA40E /* JSON.swift */,
 				494C76911BD05F6000B86491 /* String.swift */,
+				498274241BD1713D003445B0 /* UIButton.swift */,
 				49FC9A711BCFB852006FA40E /* UIColor.swift */,
 				49FC9A721BCFB852006FA40E /* UIImage.swift */,
 				49FC9A731BCFB852006FA40E /* UIStoryboard.swift */,
-				494C769E1BD1329F00B86491 /* UIView.swift */,
 				498274221BD16F66003445B0 /* UITextField.swift */,
-				498274241BD1713D003445B0 /* UIButton.swift */,
+				4920F8B61BD44A3A001D3C16 /* UITextView.swift */,
+				494C769E1BD1329F00B86491 /* UIView.swift */,
+				4920F8B41BD42C62001D3C16 /* UIViewController.swift */,
+				4920F8BC1BD470A3001D3C16 /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,10 +262,11 @@
 			children = (
 				49FC9A7C1BCFB852006FA40E /* SDCBluetoothManager.swift */,
 				49FC9A7D1BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift */,
-				49FC9A7E1BCFB852006FA40E /* SDCRemotePeripheral.swift */,
+				49FC9A7E1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift */,
+				49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */,
 				49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */,
 				49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */,
-				49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */,
+				4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 			children = (
 				49FC9A821BCFB852006FA40E /* SDCImport.swift */,
 				494C768F1BD05AB600B86491 /* SDCUser.swift */,
+				4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,10 +305,11 @@
 			isa = PBXGroup;
 			children = (
 				49B0FA2C1BD00FDB0078490C /* SDCAboutTableViewController.swift */,
-				49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */,
+				4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */,
 				49FC9A8C1BCFB852006FA40E /* SDCDashboardViewController.swift */,
-				49B0FA261BD007F50078490C /* SDCUploadViewController.swift */,
+				49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */,
 				49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */,
+				49B0FA261BD007F50078490C /* SDCUploadViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,10 +318,10 @@
 			isa = PBXGroup;
 			children = (
 				49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */,
-				49FC9A8E1BCFB852006FA40E /* SDCRecordViewModel.swift */,
 				49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */,
-				49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */,
+				49FC9A8E1BCFB852006FA40E /* SDCRecordViewModel.swift */,
 				494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */,
+				49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -543,9 +561,11 @@
 			files = (
 				49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */,
 				49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */,
+				4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */,
 				49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */,
 				494C76921BD05F6000B86491 /* String.swift in Sources */,
 				49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */,
+				4920F8B71BD44A3A001D3C16 /* UITextView.swift in Sources */,
 				49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */,
 				494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */,
 				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,
@@ -556,20 +576,24 @@
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
 				49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */,
 				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
+				4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */,
 				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
 				498274251BD1713D003445B0 /* UIButton.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,
 				49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */,
 				49FC9AA51BCFB852006FA40E /* SDCRecordViewModel.swift in Sources */,
+				4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */,
 				49FC9A9F1BCFB852006FA40E /* JSONDecodable.swift in Sources */,
 				498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */,
 				49FC9A921BCFB852006FA40E /* UIColor.swift in Sources */,
-				49FC9A9A1BCFB852006FA40E /* SDCRemotePeripheral.swift in Sources */,
+				49FC9A9A1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift in Sources */,
 				49FC9A901BCFB852006FA40E /* JSON.swift in Sources */,
+				4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */,
 				49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */,
 				49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */,
 				494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */,
+				4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */,
 				49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */,
 				49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */,
 				49FC9A9D1BCFB852006FA40E /* SDCImport.swift in Sources */,

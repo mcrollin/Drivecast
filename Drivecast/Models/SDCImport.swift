@@ -52,13 +52,13 @@ struct SDCImport {
             return .Uploaded
         } else if (cities != "" || credits != "") {
             return .Processed
-        } else if (self.status == "processed") {
+        } else if status == "processed" {
             return .MetadataAdded
-        } else if (status == "submitted") {
+        } else if status == "submitted" {
             return .Submitted
         } else if (approved && !statusDetails.measurementsAdded) {
             return .Approved
-        } else if (!approved) {
+        } else if !approved {
             return .Rejected
         }
         

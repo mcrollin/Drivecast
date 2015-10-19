@@ -79,6 +79,8 @@ extension SDCSignInViewController {
         passwordTextField.textColor     = textColor
         explanationTextView.textColor   = textColor
         
+        view.addSubview(activityMonitor)
+        
         resetView()
     }
     
@@ -96,8 +98,6 @@ extension SDCSignInViewController {
         signInButton.borderColor                = color
         
         activityMonitor.startAnimating()
-        
-        view.addSubview(activityMonitor)
     }
     
     func configureConstraints() {
@@ -164,8 +164,7 @@ extension SDCSignInViewController {
             animations: {
                 self.logoImageView.alpha    = 0.1
                 self.dotImageView.alpha     = 0.1
-            }, completion: { finished in
-                self.activityMonitor.removeFromSuperview()
+            }, completion: { _ in
                 self.emailTextField.text    = nil
                 self.passwordTextField.text = nil
                 
@@ -199,53 +198,56 @@ extension SDCSignInViewController {
         signInButton.rac_enabled        <~ viewModel.signInButtonEnabled
         
         // Visually enable/disable the signInButton
-        viewModel.signInButtonEnabled.producer.startWithNext { enabled in
-            self.animateSignInButton(enabled)
-            self.passwordTextField.returnKeyType = enabled ? .Go : .Done
+        viewModel.signInButtonEnabled.producer
+            .startWithNext { enabled in
+                self.animateSignInButton(enabled)
+                self.passwordTextField.returnKeyType = enabled ? .Go : .Done
         }
         
         // Binding the signIn action
         signInCocoaAction = CocoaAction(viewModel.signInAction!, input:nil)
         signInButton.addTarget(signInCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
 
-        viewModel.signInAction?.errors.observeNext { error in
-            var message: String = ""
-
-            switch error {
-            case SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(let reason):
-                message = reason
-            case SDCSafecastAPI.UserError.UserIdCouldNotBeFound(let reason):
-                message = reason
-            case SDCSafecastAPI.UserError.Network(let reason):
-                message = reason
-            }
-            
-            log(message)
-            
-            let alertController = UIAlertController(title: NSLocalizedString("Could not sign in", comment: ""), message: message, preferredStyle: .Alert)
-            let okAction        = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default) { handler in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+        viewModel.signInAction?.errors
+            .observeNext { error in
+                var message: String = ""
+                
+                switch error {
+                case SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(let reason):
+                    message = reason
+                case SDCSafecastAPI.UserError.UserIdCouldNotBeFound(let reason):
+                    message = reason
+                case SDCSafecastAPI.UserError.Network(let reason):
+                    message = reason
+                }
+                
+                let alertController = UIAlertController(title: NSLocalizedString("Could not sign in", comment: ""), message: message, preferredStyle: .Alert)
+                let okAction        = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default) { handler in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                
+                alertController.addAction(okAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
         }
         
         // Presenting the menu if user is authenticated
-        viewModel.userIsAuthenticated.producer.startWithNext { authenticated in
-            if authenticated {
-                self.presentMenu()
-            }
+        viewModel.userIsAuthenticated.producer
+            .startWithNext { authenticated in
+                if authenticated {
+                    self.presentMenu()
+                }
         }
         
         // Presenting/dismissing the signInForm
-        viewModel.signInFormIsVisible.producer.skip(1).startWithNext { visible in
-            if visible {
-                self.presentSignInForm()
-            } else {
-                self.dismissSignInForm()
-            }
+        viewModel.signInFormIsVisible.producer
+            .skip(1)
+            .startWithNext { visible in
+                if visible {
+                    self.presentSignInForm()
+                } else {
+                    self.dismissSignInForm()
+                }
         }
     }
 }

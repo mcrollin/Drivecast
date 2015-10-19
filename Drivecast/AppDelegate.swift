@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().titleTextAttributes  = [NSFontAttributeName: font]
         }
         
+        let backImage   = UIImage(asset: .Back)
+        
+        UINavigationBar.appearance().backIndicatorImage = backImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
+        
         self.window?.tintColor                      = mainColor
         UIWindow.appearance().tintColor             = mainColor
         UIAlertView.appearance().tintColor          = mainColor

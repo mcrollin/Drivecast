@@ -51,6 +51,9 @@ extension UIStoryboard {
     }
 
     struct Segue {
+        enum Main : String {
+            case OpenConsole = "OpenConsole"
+        }
     }
 }
 

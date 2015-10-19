@@ -31,10 +31,8 @@ class SDCDashboardViewController: UIViewController {
 
 // MARK - UIView
 extension SDCDashboardViewController {
-    func configureView() {
-        let smallLogo = UIImage.Asset.SafecastLettersSmall.image
-        
-        self.navigationItem.titleView   = UIImageView(image: smallLogo)
+    func configureView() {        
+        self.navigationItem.titleView   = UIImageView(image: UIImage(asset: .SafecastLettersSmall))
         self.view.backgroundColor       = UIColor(named: .Background)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(

@@ -29,10 +29,10 @@
                         <animations/>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="3pB-GY-f2s"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RFt-2N-hM0"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wAT-4h-MCH"/>
-                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yea-ZF-BMf"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9B6-i6-7kv"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="FkN-Ik-yiF"/>
+                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lMC-JV-jNc"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tPv-pe-oNo"/>
                         </constraints>
                     </view>
                 </viewController>

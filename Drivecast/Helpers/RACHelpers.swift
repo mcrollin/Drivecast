@@ -10,10 +10,12 @@ import Foundation
 import ReactiveCocoa
 
 struct AssociationKey {
-    static var hidden: UInt8    = 1
-    static var alpha: UInt8     = 2
-    static var text: UInt8      = 3
-    static var enabled: UInt8   = 4
+    static var hidden: UInt8            = 1
+    static var alpha: UInt8             = 2
+    static var text: UInt8              = 3
+    static var enabled: UInt8           = 4
+    static var title: UInt8             = 5
+    static var attributedText: UInt8    = 6
 }
 
 func lazyAssociatedProperty<T: AnyObject>(host: AnyObject,

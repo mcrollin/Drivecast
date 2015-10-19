@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.4549019608" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.4549019608" blue="0.77647058820000003" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="SAFECAST" id="kRk-oo-gIt"/>
                 </viewController>
@@ -71,14 +71,95 @@
                     <view key="view" contentMode="scaleToFill" id="JuI-0S-q7s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-6j-JGo" userLabel="RecordView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PER-ZQ-OGT">
+                                        <rect key="frame" x="282" y="258.5" width="37" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="PER-ZQ-OGT" firstAttribute="centerY" secondItem="Cot-6j-JGo" secondAttribute="centerY" id="BHi-T8-EUO"/>
+                                    <constraint firstItem="PER-ZQ-OGT" firstAttribute="centerX" secondItem="Cot-6j-JGo" secondAttribute="centerX" id="l21-bn-tlO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.70734298949999996" blue="0.44432321009999998" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.70734298949999996" blue="0.44432321009999998" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cot-6j-JGo" firstAttribute="leading" secondItem="JuI-0S-q7s" secondAttribute="leading" id="DCV-FA-6Th"/>
+                            <constraint firstItem="Ete-bn-keQ" firstAttribute="top" secondItem="Cot-6j-JGo" secondAttribute="bottom" id="eQY-8G-XUZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Cot-6j-JGo" secondAttribute="trailing" id="nff-AQ-cXs"/>
+                            <constraint firstItem="Cot-6j-JGo" firstAttribute="top" secondItem="Tzd-Py-4ej" secondAttribute="bottom" id="zg8-gf-0hq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lgf-Mv-s0n"/>
+                    <navigationItem key="navigationItem" id="Lgf-Mv-s0n">
+                        <barButtonItem key="backBarButtonItem" title=" " id="aDX-oT-1Hx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cpmLabel" destination="PER-ZQ-OGT" id="iZO-4q-b1i"/>
+                        <outlet property="recordView" destination="Cot-6j-JGo" id="Ke8-tw-YcE"/>
+                        <segue destination="5fM-FH-Mol" kind="show" identifier="OpenConsole" id="kAm-OY-HxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ri-1U-pQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="1090"/>
+            <point key="canvasLocation" x="2457" y="1090"/>
+        </scene>
+        <!--CONSOLE-->
+        <scene sceneID="qef-Rt-u8X">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTc-ks-nhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5fM-FH-Mol" customClass="SDCConsoleViewController" customModule="Drivecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cw1-pk-K84"/>
+                        <viewControllerLayoutGuide type="bottom" id="dvQ-KL-SWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8pC-YU-sRh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wv-fj-1wa">
+                                <rect key="frame" x="10" y="64" width="580" height="536"/>
+                                <animations/>
+                                <string key="text">Skate ipsum dolor sit amet, poseur ollie chicken wing blunt baseplate. Nosepicker nose-bump manual g-turn pivot. Saran Wrap method air pivot egg plant spine. Bluntslide hang-up hanger rad half-flip. Hardware rocket air pivot nollie dude. Street sick Alien Workshop launch ramp hospital flip quarter pipe. Geoff Rowley launch ramp transfer hang up Tracker ollie. Masonite Old Ghosts heel flip 900 Kevin Harris steps. Fakie out Kevin Harris alley oop mini ramp axle. Full pipe ledge grind body varial slam.
+
+Carve kickturn judo air rails nose grab concave. Full pipe rails shoveit bone air transition Gator Mark Anthony backside. Kickflip switch rock and roll casper Shawn Dutton backside nose bump. Crooked grind kickturn street Japan air bone air method air. Ollie boned out crailtap bail pop shove-it Powell Peralta helipop. Sketchy egg plant gap freestyle trucks full-cab. Primo slide no comply hip bail speed wobbles camel back. Casper kidney kickturn frontside fakie out carve. Poseur John Lucero pogo flypaper face plant yeah full-cab. Drop in 1080 mute-air masonite sponsored Caballerial hand rail. Kickflip transition transfer Santa Cruz heel flip salad grind steps. Ollie 540 helipop grind lip Spike Jonze Kevin Harris. Drop in Schmitt Stix mongo nosegrind hip indy grab air.
+
+Speed wobbles soul skate coper nose bump stoked. Masonite Rodney Mullen soul skate smith grind nose grab pogo. Skate key pressure flip backside pump risers. Jason Lee ollie tail rip grip darkslide boneless. Frontside air powerslide durometer chicken wing stoked. Kickflip indy grab masonite bluntslide street. Ollie stoked regular footed invert kickflip. Spine air mini ramp bruised heel masonite. Hard flip rocket air wax kingpin tuna-flip. Vatoland axle hang ten fakie out quarter pipe hardware. Ho-ho slide air 1080 opposite footed. Goofy footed pump Steve Olson fakie out freestyle kickturn. Baker pivot masonite pop shove-it manual quarter pipe.
+
+Ollie north chicken wing fakie out wheels frontside air coping nollie. Nosegrind bruised heel judo air lien air frontside manual transfer. Stalefish nose blunt rock and roll slam trucks S.K.A.T.E. tuna-flip drop in. Yeah tailslide lip half-cab pogo Primo slide concave. Air ledge no comply flail freestyle crail grab rocket air. Drop in rad bluntslide Saran Wrap pressure flip wheels masonite. 360 method air axle skate or die Vision Streetwear coping concave hanger. Blunt freestyle transition stoked aerial pop shove-it flail. Hardware launch ramp baseplate Jason Dill frigid air Primo slide chicken wing flail. Skate or die Claus Grabke helipop pop shove-it Kevin Harris alley oop coper tuna-flip.
+
+Axle set crail grab roll-in downhill snake speed wobbles. Wheels Thunder coffin transfer invert full-cab impossible. Stoked hang up deck pump fast plant shoveit. Rick Howard 1080 hanger pop shove-it regular footed Christ air heel flip. Baseplate ollie north Hard Corps 270 boneless kickflip hip. Bruised heel judo air downhill Lester Kasai rail skate key coping. Indy grab backside hang up Christ air stoked flail Wade Speyer. Goofy footed kickturn full-cab carve bearings layback. Tailslide Tracker bruised heel front foot impossible frigid air rip grip China Banks. Pressure flip hang ten boneless boned out slob air heel flip.
+
+Death box hang-up 270 wall ride Skateboard Shuffle invert crail grab. Pump nose grab kickturn crail grab pressure flip Japan air. Powerslide method air carve bone air nose grab nosepicker. Gap carve nose melancholy frontside air Colby Carter hanger. Lance Mountain nose blunt frontside trucks g-turn melancholy 1080. Rail finger flip blunt mini ramp noseblunt slide 900 Brooklyn Banks. Backside death box nose slide frigid air roll-in crailtap. Berm rails pop shove-it soul skate coper pressure flip. Shoveit carve tuna-flip Ray Underhill salad grind boneless heel flip. Darkslide chicken wing Streets on Fire rip grip slob air invert melancholy. Crail slide nosebone rail slide sketchy Kris Markovich hospital flip street. Trucks kingpin noseblunt slide Grind King frontside air skate key 180.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.58039215690000001" green="0.22964679469999999" blue="0.4050470042" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3wv-fj-1wa" firstAttribute="leading" secondItem="8pC-YU-sRh" secondAttribute="leading" priority="900" constant="10" id="CEc-zV-Kid"/>
+                            <constraint firstAttribute="trailing" secondItem="3wv-fj-1wa" secondAttribute="trailing" priority="900" constant="10" id="X2g-e3-FCY"/>
+                            <constraint firstItem="3wv-fj-1wa" firstAttribute="top" secondItem="Cw1-pk-K84" secondAttribute="bottom" id="pic-wf-ytR"/>
+                            <constraint firstItem="dvQ-KL-SWp" firstAttribute="top" secondItem="3wv-fj-1wa" secondAttribute="bottom" id="ucT-rd-XGX"/>
+                            <constraint firstItem="3wv-fj-1wa" firstAttribute="centerX" secondItem="8pC-YU-sRh" secondAttribute="centerX" id="yCK-kr-Fl8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CONSOLE" id="diz-vb-K32"/>
+                    <connections>
+                        <outlet property="consoleTextView" destination="3wv-fj-1wa" id="L2g-7E-JFr"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3395" y="1090"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gN8-Ur-w57">
@@ -398,7 +479,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.69803921570000005" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="UPLOAD" id="M3a-UH-UuC"/>
                 </viewController>

@@ -36,6 +36,8 @@ struct SDCSignInViewModel {
             SDCSafecastAPI.retrieveUser(user.id, email: user.email) { result in
                 switch result {
                 case .Success(let user):
+                    log(user)
+                    
                     SDCUser.authenticatedUser = user
                 case .Failure(let error):
                     log(error)

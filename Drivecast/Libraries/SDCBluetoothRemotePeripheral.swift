@@ -1,5 +1,5 @@
 //
-//  SDCRemotePeripheral.swift
+//  SDCBluetoothRemotePeripheral.swift
 //  Drivecast
 //
 //  Created by Marc Rollin on 10/13/15.
@@ -10,14 +10,14 @@ import Foundation
 import CoreBluetooth
 
 // MARK - Delegate Protocol
-protocol SDCRemotePeripheralDelegate {
-    func remotePeripheralDidSendNewData(peripheral: SDCRemotePeripheral, data: String)
+protocol SDCBluetoothRemotePeripheralDelegate {
+    func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String)
 }
 
 /**
     Class that encapsulates a bluetooth peripheral.
 */
-class SDCRemotePeripheral: NSObject {
+class SDCBluetoothRemotePeripheral: NSObject {
     // Bluetooth peripheral
     let peripheral: CBPeripheral
 
@@ -29,7 +29,7 @@ class SDCRemotePeripheral: NSObject {
     let configuration: SDCBluetoothManagerConfiguration?
     
     // Delegate instance
-    var delegate: SDCRemotePeripheralDelegate?
+    var delegate: SDCBluetoothRemotePeripheralDelegate?
     
     // Data buffer string
     private var buffer: String = ""
@@ -50,16 +50,16 @@ class SDCRemotePeripheral: NSObject {
 
 // MARK - Equatable
 // Comparision method betweee two SDCRemotePeripheral
-func ==(lhs: SDCRemotePeripheral, rhs: SDCRemotePeripheral) -> Bool {
+func ==(lhs: SDCBluetoothRemotePeripheral, rhs: SDCBluetoothRemotePeripheral) -> Bool {
     return lhs.identifier.UUIDString == rhs.identifier.UUIDString
 }
 
 // MARK - Public methods
-extension SDCRemotePeripheral {
+extension SDCBluetoothRemotePeripheral {
     func discover() throws {
         // Device needs to be connected in order to discovering its services
         guard peripheral.state == .Connected else {
-            throw SDCRemotePeripheral.Error.PeripheralNeedToBeConnected
+            throw SDCBluetoothRemotePeripheral.Error.PeripheralNeedToBeConnected
         }
         
         // Starts the service discovery process
@@ -68,7 +68,7 @@ extension SDCRemotePeripheral {
 }
 
 // MARK - Private methods
-extension SDCRemotePeripheral {
+extension SDCBluetoothRemotePeripheral {
     private func handleReceivedData(data: NSData) {
         let dataString = String(data: data, encoding: NSUTF8StringEncoding)!
         
@@ -97,18 +97,20 @@ extension SDCRemotePeripheral {
 }
 
 // MARK - CBPeripheralDelegate
-extension SDCRemotePeripheral: CBPeripheralDelegate {
+extension SDCBluetoothRemotePeripheral: CBPeripheralDelegate {
     internal func peripheralDidUpdateName(peripheral: CBPeripheral) {}
     internal func peripheralDidUpdateRSSI(peripheral: CBPeripheral, error: NSError?) {}
 
     internal func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
-        // Iterate to find the RX characteristic in the services discovered
+        
+        // Iterate to find the data characteristic in the services discovered
         for service in peripheral.services! {
             peripheral.discoverCharacteristics(configuration?.dataServiceCharacteristicIdentifiers, forService: service)
         }
     }
     
     internal func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+
         // Subscribe to updates on the data service's characteristic
         if let characteristic = service.characteristics?.last {
             peripheral.setNotifyValue(true, forCharacteristic: characteristic)
@@ -116,6 +118,7 @@ extension SDCRemotePeripheral: CBPeripheralDelegate {
     }
     
     internal func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+        
         // Let the handler take care of the data received
         if let data = characteristic.value {
             self.handleReceivedData(data)

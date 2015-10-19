@@ -16,6 +16,9 @@ class SDCRecordViewController: UIViewController {
     
     let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StyleArcAlt, color: UIColor(named: .Main))
     
+    @IBOutlet var recordView: UIView!
+    @IBOutlet var cpmLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +32,13 @@ class SDCRecordViewController: UIViewController {
 // MARK - UIView
 extension SDCRecordViewController {
     func configureView() {
-        self.view.backgroundColor = UIColor(named: .Background)
+        self.view.backgroundColor   = UIColor(named: .Background)
+        self.recordView.alpha       = 0.0
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .Cancel,
-            target: self,
-            action: Selector("cancelConnection")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage.Asset.Console.image,
+            style: UIBarButtonItemStyle.Plain,
+            target: self, action: Selector("openConsole")
         )
 
         view.addSubview(activityMonitor)
@@ -50,20 +54,54 @@ extension SDCRecordViewController {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func openConsole() {
+        let console = UIStoryboard.Segue.Main.OpenConsole.rawValue
+    
+        performSegueWithIdentifier(console, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch UIStoryboard.Segue.Main(rawValue: segue.identifier!)! {
+            case .OpenConsole:
+            let controller = segue.destinationViewController as! SDCConsoleViewController
+            
+            controller.viewModel = viewModel
+        }
+    }
 }
 
 // MARK - Signal Bindings
 extension SDCRecordViewController {
     func bindViewModel() {
-        DynamicProperty(object: self, keyPath: "title") <~ viewModel.title.producer.map {$0}
+        rac_title           <~ viewModel.title
+        cpmLabel.rac_text   <~ viewModel.cpmString
         
-        viewModel.title.producer
-            .start { event in
-                switch event {
-                case let .Next(value):
-                    print(value)
-                default:
-                    break
+        viewModel.readyToRecord.producer
+            .skipRepeats()
+            .startWithNext { ready in
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                    barButtonSystemItem: ready ? .Done : .Cancel,
+                    target: self,
+                    action: Selector("cancelConnection")
+                )
+                
+                if ready {
+                    self.activityMonitor.stopAnimating()
+                    UIView.animateWithDuration(0.5, delay: 0.0,
+                        options: [.CurveEaseInOut],
+                        animations: {
+                            self.recordView.alpha = 1.0
+                        }, completion: nil)
+                } else {
+                    UIView.animateWithDuration(0.5, delay: 0.0,
+                        options: [.CurveEaseInOut],
+                        animations: {
+                            self.recordView.alpha = 0.0
+                        }, completion: { _ in
+                            self.activityMonitor.startAnimating()
+                    })
+                                        
                 }
         }
     }
