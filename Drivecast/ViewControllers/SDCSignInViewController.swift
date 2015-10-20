@@ -14,6 +14,7 @@ import SnapKit
 
 class SDCSignInViewController: UIViewController {
 
+    // ViewModel handling all logic
     let viewModel = SDCSignInViewModel()
     
     // Main screen to be shown after authentication
@@ -26,6 +27,7 @@ class SDCSignInViewController: UIViewController {
     // Sign in action
     var signInCocoaAction: CocoaAction!
     
+    // IB variables
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var dotImageView: UIImageView!
     @IBOutlet var signInFormView: UIView!
@@ -51,6 +53,7 @@ class SDCSignInViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        // Check authentication everytime the screen appears
         viewModel.checkAuthentication()
     }
 }
@@ -72,12 +75,13 @@ extension SDCSignInViewController {
     }
     
     func configureView() {
-        let textColor = UIColor(named: .TextColor)
+        let textColor = UIColor(named: .Text)
         
         view.backgroundColor            = UIColor(named: .Background)
         emailTextField.textColor        = textColor
         passwordTextField.textColor     = textColor
         explanationTextView.textColor   = textColor
+        signInButton.isRounded          = true
         
         view.addSubview(activityMonitor)
         
@@ -95,7 +99,6 @@ extension SDCSignInViewController {
         emailUnderlineView.backgroundColor      = color
         passwordTextField.delegate              = self
         passwordUnderlineView.backgroundColor   = color
-        signInButton.borderColor                = color
         
         activityMonitor.startAnimating()
     }
@@ -208,6 +211,7 @@ extension SDCSignInViewController {
         signInCocoaAction = CocoaAction(viewModel.signInAction!, input:nil)
         signInButton.addTarget(signInCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
 
+        // Display an error message if sign in fails
         viewModel.signInAction?.errors
             .observeNext { error in
                 var message: String = ""

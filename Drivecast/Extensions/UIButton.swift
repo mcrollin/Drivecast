@@ -2,16 +2,15 @@
 //  UIButton.swift
 //  Drivecast
 //
-//  Created by Marc Rollin on 10/16/15.
+//  Created by Marc Rollin on 10/20/15.
 //  Copyright © 2015 Safecast. All rights reserved.
 //
 
 import UIKit
 import ReactiveCocoa
 
-extension UIControl {
-
-    public var rac_enabled: MutableProperty<Bool> {
-        return lazyMutableProperty(self, key: &AssociationKey.hidden, setter: { self.enabled = $0 }, getter: { self.enabled })
+extension UIButton {
+    public var rac_title: MutableProperty<String> {
+        return lazyMutableProperty(self, key: &AssociationKey.title, setter: { self.setTitle($0, forState: .Normal) }, getter: { self.titleForState(.Normal) ?? "" })
     }
 }

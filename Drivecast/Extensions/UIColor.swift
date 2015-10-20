@@ -15,9 +15,11 @@ extension UIColor {
 
 extension UIColor {
     enum Name : UInt32 {
-        case TextColor = 0x333333ff
-        case Main = 0x2ecc71ff
         case Background = 0xf4f8f8ff
+        case Main = 0x2ecc71ff
+        case Alert = 0xe74c3cff
+        case Text = 0x333333ff
+        case LightText = 0xccccccff
     }
 
     convenience init(named name: Name) {

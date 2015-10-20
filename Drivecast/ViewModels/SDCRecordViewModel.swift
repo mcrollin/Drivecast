@@ -12,14 +12,32 @@ import ReactiveCocoa
 
 class SDCRecordViewModel: NSObject {
     private let manager = SDCBluetoothManager()
+    private var timer: NSTimer?
     
-    let title           = MutableProperty<String>("")
-    let consoleText     = MutableProperty<NSAttributedString>(NSAttributedString())
-    let readyToRecord   = MutableProperty<Bool>(false)
-    let lastMeasurement = MutableProperty<SDCMeasurement?>(nil)
-    let cpmString       = MutableProperty<String>("0")
+    private var duration: NSTimeInterval        = 0 { didSet { durationString.value = duration.clockString() } }
+    private var distance: CLLocationDistance    = 0 { didSet { distanceString.value = distance.stringWithUnit() } }
+    private var count: Int                      = 0 { didSet { countString.value    = "\(count)" } }
+    
+    let title                   = MutableProperty<String>("")
+    let activityDetailsString   = MutableProperty<String>("")
+    let alertString             = MutableProperty<String>("")
+    let actionButtonString      = MutableProperty<String>("start recording".uppercaseString)
+    let cpmString               = MutableProperty<String>("0")
+    let usvhString              = MutableProperty<String>("0")
+    let countString             = MutableProperty<String>("0")
+    let distanceString          = MutableProperty<String>(0.0.stringWithUnit())
+    let durationString          = MutableProperty<String>("00:00:00")
+    let consoleText             = MutableProperty<NSAttributedString>(NSAttributedString())
+    let lastMeasurement         = MutableProperty<SDCMeasurement?>(nil)
+    let isReadyToRecord         = MutableProperty<Bool>(false)
+    let isRecording             = MutableProperty<Bool>(false)
+    let alertIsVisible          = MutableProperty<Bool>(false)
+    
+    // Action
+    private(set) var toggleRecordingAction: Action<AnyObject?, Bool, NoError>? = nil
     
     let emphasysAttributes: Dictionary<String, AnyObject>!
+    let alertAttributes: Dictionary<String, AnyObject>!
     let normalAttributes: Dictionary<String, AnyObject>!
     
     override init() {
@@ -29,18 +47,60 @@ class SDCRecordViewModel: NSObject {
         paragraphStyle.paragraphSpacing = 9
         
         emphasysAttributes = [
-            NSForegroundColorAttributeName  : UIColor(named: UIColor.Name.Main),
+            NSForegroundColorAttributeName  : UIColor(named: .Main),
+            NSParagraphStyleAttributeName   : paragraphStyle
+        ]
+        
+        alertAttributes = [
+            NSForegroundColorAttributeName  : UIColor(named: .Alert),
             NSParagraphStyleAttributeName   : paragraphStyle
         ]
         
         normalAttributes = [
-            NSForegroundColorAttributeName  : UIColor(named: UIColor.Name.TextColor),
+            NSForegroundColorAttributeName  : UIColor(named: .Text),
             NSParagraphStyleAttributeName   : paragraphStyle
         ]
         
         super.init()
+        
+        initializeToggleRecordingAction()
     }
     
+    // Initializes the toogle recording button action
+    private func initializeToggleRecordingAction() {
+        toggleRecordingAction = Action(enabledIf:isReadyToRecord) { _ in
+            return SignalProducer { sink, _ in
+                self.isRecording.value = !self.isRecording.value
+                
+                if self.isRecording.value {
+                    self.actionButtonString.value = "pause recording".uppercaseString
+                    self.timer = self.resumeTimer()
+                } else {
+                    self.actionButtonString.value = "resume recording".uppercaseString
+                }
+                
+                sendNext(sink, true)
+                sendCompleted(sink)
+            }
+        }
+    }
+    
+    // Resumes the timer
+    private func resumeTimer() -> NSTimer {
+        // Avoids multiple timers to be started at the same time
+        self.timer?.invalidate()
+        
+        return NSTimer.schedule(repeatInterval: 1.0) { timer in
+            if (self.isReadyToRecord.value
+                && self.isRecording.value) {
+                self.duration++
+            } else if !self.isRecording.value {
+                self.timer?.invalidate()
+            }
+        }
+    }
+    
+    // Stats connection with the device
     func connect() {
         do {
             let services        = SDCConfiguration.BLE.Drivecast.dataServiceIdentifiers
@@ -61,6 +121,7 @@ class SDCRecordViewModel: NSObject {
         }
     }
     
+    // Disconnects from the device
     func disconnect() {
         do {
             try manager.stop()
@@ -69,20 +130,39 @@ class SDCRecordViewModel: NSObject {
         }
     }
     
-    private func printOnConsole(line: String, emphasys: Bool = false) {
+    private func updateActivity(line: String) {
+        activityDetailsString.value = line.uppercaseString
+    }
+    
+    enum ConsoleTextType {
+        case Normal
+        case Emphasys
+        case Alert
+    }
+    
+    private func printOnConsole(line: String, type: ConsoleTextType = .Normal) {
         let updatedText = NSMutableAttributedString()
         let line        = "\(line)\n"
         
-        if emphasys {
-            updatedText.appendAttributedString(
-                NSAttributedString(
-                    string: "> \(line)".uppercaseString,
-                    attributes: emphasysAttributes))
-        } else {
+        switch type {
+        case .Normal:
             updatedText.appendAttributedString(
                 NSAttributedString(
                     string: line,
                     attributes: normalAttributes))
+            
+        case .Emphasys:
+            updatedText.appendAttributedString(
+                NSAttributedString(
+                    string: "> \(line)".uppercaseString,
+                    attributes: emphasysAttributes))
+            
+        case .Alert:
+            updatedText.appendAttributedString(
+                NSAttributedString(
+                    string: "! \(line)".uppercaseString,
+                    attributes: alertAttributes))
+            
         }
         
         updatedText.appendAttributedString(consoleText.value)
@@ -97,13 +177,21 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     func managerStateDidChange(manager: SDCBluetoothManager, state: SDCBluetoothManager.State) {
         switch state {
         case .Unavailable, .Stopped:
-            printOnConsole("Bluetooth is off", emphasys: true)
-            title.value = "Unable to connect".uppercaseString
+            let activity = "your Bluetooth is turned OFF or disabled\nplease turn it back ON to continue"
+             
+            printOnConsole(activity, type: .Emphasys)
+            updateActivity(activity)
+            title.value = "unable to connect".uppercaseString
             
         case .Ready:
             do {
-                printOnConsole("Scanning for compatible devices", emphasys: true)
+                let activity = "scanning for compatible devices"
+                
+                printOnConsole(activity, type: .Emphasys)
+                updateActivity(activity)
+                
                 title.value = "scanning".uppercaseString
+                
                 try manager.startScanning()
             } catch {
                 log(error)
@@ -114,13 +202,19 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     }
     
     func managerDidDiscoverPeripheral(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral) {
-        title.value = "connecting".uppercaseString
+
+        var activity: String
         
         if let peripheralName = peripheral.peripheral.name {
-            printOnConsole("Connecting to \(peripheralName)", emphasys: true)
+            title.value = peripheralName.uppercaseString
+            activity    = "connecting to \(peripheralName)."
         } else {
-            printOnConsole("Connecting to the device", emphasys: true)
+            title.value = "connecting".uppercaseString
+            activity    = "connecting to the device."
         }
+        
+        printOnConsole(activity, type: .Emphasys)
+        updateActivity(activity)
         
         do {
             try manager.stopScanning()
@@ -131,37 +225,77 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     }
     
     func remotePeripheralDidConnect(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral) {
-        title.value = peripheral.peripheral.name!
 
+        var activity: String
+        
         if let peripheralName = peripheral.peripheral.name {
-            printOnConsole("Connected to \(peripheralName)", emphasys: true)
+            title.value = peripheralName.uppercaseString
+            printOnConsole("connected to \(peripheralName).", type: .Emphasys)
+            activity    = "awaiting a first measurement from \(peripheralName)."
         } else {
-            printOnConsole("Connected to the device", emphasys: true)
+            title.value = "connected".uppercaseString
+            printOnConsole("connected to the device.", type: .Emphasys)
+            activity    = "awaiting a first measurement."
         }
+        
+        printOnConsole(activity, type: .Emphasys)
+        updateActivity(activity)
     }
     
     func remotePeripheralDidDisconnect(manager: SDCBluetoothManager, peripheral: SDCBluetoothRemotePeripheral) {
-        readyToRecord.value = false
+        isReadyToRecord.value = false
         
         if let peripheralName = peripheral.peripheral.name {
-            printOnConsole("Disconnected from \(peripheralName)", emphasys: true)
+            printOnConsole("disconnected from \(peripheralName).", type: .Emphasys)
         } else {
-            printOnConsole("Disconnected from the device", emphasys: true)
+            printOnConsole("disconnected from the device", type: .Emphasys)
         }
     }
     
     func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String) {
-        printOnConsole(data)
-        
-        if let measurementDictionary = data.parseMeasurementData() {
-            readyToRecord.value = true
-
-            let measurement = SDCMeasurement(dictionary: measurementDictionary)
-            
-            log(measurement)
-            
-            lastMeasurement.value   = measurement
-            cpmString.value         = "\(measurement.cpm) CPM"
+        guard let measurementDictionary = data.parseMeasurementData() else {
+            return
         }
+
+        isReadyToRecord.value = true
+        
+        let measurement = SDCMeasurement(dictionary: measurementDictionary)
+        
+        log(measurement)
+        
+        if !measurement.dataValidity {
+            let alert = "device is still starting up".uppercaseString
+            
+            if alert != alertString.value {
+                printOnConsole(alert, type: .Alert)
+                
+                alertString.value       = alert
+                alertIsVisible.value    = true
+            }
+        } else if !measurement.gpsValidity {
+            let alert = "gps information is currently unavailable".uppercaseString
+        
+            if alert != alertString.value {
+                printOnConsole(alert, type: .Alert)
+                
+                alertString.value       = alert
+                alertIsVisible.value    = true
+            }
+        } else {
+            alertIsVisible.value    = false
+        }
+        
+        if isRecording.value {
+            count++
+            
+            if let lastMeasurement = self.lastMeasurement.value
+                where lastMeasurement.gpsValidity && measurement.gpsValidity {
+                    distance    += lastMeasurement.location.distanceFromLocation(measurement.location)
+            }
+        }
+        
+        lastMeasurement.value   = measurement
+        cpmString.value         = "\(measurement.cpm)"
+        usvhString.value        = String(format: "%.3f", measurement.usvh)
     }
 }

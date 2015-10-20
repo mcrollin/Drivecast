@@ -9,9 +9,7 @@
 import UIKit
 import ReactiveCocoa
 
-@IBDesignable
 extension UIView {
-    
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -21,7 +19,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable var isRounded: Bool {
+    var isRounded: Bool {
         get {
             let radius = min(CGRectGetHeight(self.bounds), CGRectGetWidth(self.bounds)) / 2.0
             
@@ -33,29 +31,7 @@ extension UIView {
                 cornerRadius = radius
             }
         }
-    }
-    
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        } set {
-            layer.borderWidth = newValue
-        }
-    }
-    
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            guard let color = layer.borderColor else {
-                return nil
-            }
-            
-            return UIColor(CGColor: color)
-        } set {
-            if let color = newValue {
-                layer.borderColor = color.CGColor
-            }
-        }
-    }
+    }    
 }
 
 extension UIView {
