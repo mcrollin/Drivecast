@@ -22,6 +22,8 @@
 		49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */; settings = {ASSET_TAGS = (); }; };
 		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; settings = {ASSET_TAGS = (); }; };
 		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; settings = {ASSET_TAGS = (); }; };
+		4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A0571BD66FF200854DC7 /* Persistable.swift */; settings = {ASSET_TAGS = (); }; };
+		4995A05C1BD67B0D00854DC7 /* RealmPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -96,6 +98,8 @@
 		49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementCircleView.swift; sourceTree = "<group>"; };
 		498274201BD16D3B003445B0 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
 		498274221BD16F66003445B0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		4995A0571BD66FF200854DC7 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPersistable.swift; sourceTree = "<group>"; };
 		49B0FA261BD007F50078490C /* SDCUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewController.swift; sourceTree = "<group>"; };
 		49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUploadViewModel.swift; sourceTree = "<group>"; };
 		49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardViewModel.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 				49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */,
 				49FC9A851BCFB852006FA40E /* JSONDecodable.swift */,
 				494C769C1BD0EBC100B86491 /* JSONEncodable.swift */,
+				4995A0571BD66FF200854DC7 /* Persistable.swift */,
+				4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */,
 				49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */,
 				49DAC9D21BD5B58E00CD300F /* NSTimeInterval.swift in Sources */,
+				4995A05C1BD67B0D00854DC7 /* RealmPersistable.swift in Sources */,
 				494C76921BD05F6000B86491 /* String.swift in Sources */,
 				49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */,
 				49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */,
@@ -597,6 +604,7 @@
 				49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */,
 				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
 				4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */,
+				4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */,
 				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,

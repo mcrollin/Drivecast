@@ -46,13 +46,13 @@ extension String {
         dataDictionary["data"]              = self
         dataDictionary["date"]              = dataArray[2].dateInUTC()
         dataDictionary["deviceId"]          = dataArray[1]
-        dataDictionary["CPM"]               = Int(dataArray[3])!
+        dataDictionary["cpm"]               = Int(dataArray[3])!
         dataDictionary["dataValidity"]      = dataArray[6] == "A"
         dataDictionary["latitude"]          = dataArray[7].decimalLatitude(dataArray[8])
         dataDictionary["longitude"]         = dataArray[9].decimalLongitude(dataArray[10])
         dataDictionary["altitude"]          = Double(dataArray[11])!
-        dataDictionary["GPSValidity"]       = dataArray[12] == "A"
-        dataDictionary["HDOP"]              = Int(dataArray[13])!
+        dataDictionary["gpsValidity"]       = dataArray[12] == "A"
+        dataDictionary["hdop"]              = Int(dataArray[13])!
         
         return dataDictionary
     }

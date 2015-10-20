@@ -13,6 +13,11 @@ PODS:
   - ReactiveCocoa/UI (3.0.0-swift2):
     - ReactiveCocoa/Core
     - Result (~> 0.6-beta.1)
+  - Realm (0.96.0):
+    - Realm/Headers (= 0.96.0)
+  - Realm/Headers (0.96.0)
+  - RealmSwift (0.96.0):
+    - Realm (= 0.96.0)
   - Result (0.6.0-beta.4)
   - SnapKit (0.15.0)
   - SpinKit (1.2.0)
@@ -23,6 +28,7 @@ DEPENDENCIES:
   - AngleGradientLayer (= 1.2.3)
   - IQKeyboardManagerSwift (= 3.3.2)
   - ReactiveCocoa (= 3.0.0-swift2)
+  - RealmSwift
   - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
   - SwiftyJSON (= 2.3.0)
@@ -32,6 +38,8 @@ SPEC CHECKSUMS:
   AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
   IQKeyboardManagerSwift: 40a9f6a3a5f60bc311aad5ab3265b9de5ecb9367
   ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
+  Realm: d1b1eff5264cd6a3158b7a9b6c499d7f6ad3a860
+  RealmSwift: 40246e6f57a4e863bfdfc1ca1d7b967f0df607e2
   Result: f7927152cbaec0c043abb06ba0bc432678818418
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a

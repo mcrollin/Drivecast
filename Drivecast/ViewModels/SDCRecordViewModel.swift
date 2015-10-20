@@ -15,7 +15,7 @@ class SDCRecordViewModel: NSObject {
     private var timer: NSTimer?
     private var lastRecordedMeasurement: SDCMeasurement? {
         didSet {
-            
+            lastRecordedMeasurement?.add()
         }
     }
     
@@ -154,8 +154,6 @@ class SDCRecordViewModel: NSObject {
         
         // If recording update information about the recording
         if isRecording.value {
-            
-            log(measurement)
             
             // Update the count
             count++
@@ -320,7 +318,7 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
         }
 
         // Construct the measurement
-        let measurement = SDCMeasurement(dictionary: measurementDictionary)
+        let measurement = SDCMeasurement(value: measurementDictionary)
         
         // Record measurement
         record(measurement)

@@ -8,35 +8,34 @@
 
 import Foundation
 import CoreLocation
+import RealmSwift
 
-struct SDCMeasurement {
-    let data: String
-    let dataValidity: Bool
-    let deviceId: String
-    let cpm: Int
-    let date: NSDate
-    let location: CLLocation
-    let altitude: CLLocationDistance
-    let hdop: Int
-    let gpsValidity: Bool
-    
-    var usvh:Double { return Double(cpm) / 334 }
+class SDCMeasurement: Object {
+    dynamic var data: String = ""
+    dynamic var dataValidity: Bool = false
+    dynamic var deviceId: String = ""
+    dynamic var cpm: Int = 0
+    dynamic var date: NSDate = NSDate()
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
+    dynamic var altitude: CLLocationDistance = 0.0
+    dynamic var hdop: Int = 0
+    dynamic var gpsValidity: Bool = false
+
+    var location: CLLocation { return CLLocation(latitude: latitude, longitude: longitude) }
+    var usvh: Double { return Double(cpm) / 334 }
 }
 
+// MARK - Realm
 extension SDCMeasurement {
-    init (dictionary: Dictionary<String, AnyObject>) {
-        data            = dictionary["data"] as! String
-        dataValidity    = dictionary["dataValidity"] as! Bool
-        deviceId        = dictionary["deviceId"] as! String
-        cpm             = dictionary["CPM"] as! Int
-        date            = dictionary["date"] as! NSDate
-        location        = CLLocation(
-            latitude:   dictionary["latitude"] as! Double,
-            longitude:  dictionary["longitude"] as! Double)
-        altitude        = dictionary["altitude"] as! CLLocationDistance
-        hdop            = dictionary["HDOP"] as! Int
-        gpsValidity     = dictionary["GPSValidity"] as! Bool
+
+    override static func indexedProperties() -> [String] {
+        return ["date"]
     }
+}
+
+// MARK - RealmPersists
+extension SDCMeasurement: RealmPersistable {
 }
 
 // MARK - Equatable
