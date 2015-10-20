@@ -25,8 +25,8 @@ class SDCRecordViewController: UIViewController {
     // IB variables
     @IBOutlet var activityDetailsLabel: UILabel!
     @IBOutlet var recordView: UIView!
-    @IBOutlet var alertView: UIView!
-    @IBOutlet var alertLabel: UILabel!
+    @IBOutlet var noticeView: UIView!
+    @IBOutlet var noticeLabel: UILabel!
     @IBOutlet var cpmLabel: UILabel!
     @IBOutlet var cpmUnitLabel: UILabel!
     @IBOutlet var usvhLabel: UILabel!
@@ -57,7 +57,6 @@ extension SDCRecordViewController {
         
         view.backgroundColor                = UIColor(named: .Background)
         activityDetailsLabel.textColor      = textColor
-        durationLabel.textColor             = textColor
         cpmLabel.textColor                  = textColor
         cpmUnitLabel.textColor              = lightTextColor
         usvhLabel.textColor                 = textColor
@@ -67,9 +66,9 @@ extension SDCRecordViewController {
         distanceLabel.textColor             = textColor
         distanceDescriptionLabel.textColor  = lightTextColor
         recordView.alpha                    = 0.0
-        alertView.alpha                     = 0.0
-        alertView.isRounded                 = true
-        alertView.backgroundColor           = UIColor(named: .Alert)
+        noticeView.alpha                    = 0.0
+        noticeView.isRounded                = true
+        noticeView.backgroundColor          = UIColor(named: .Notice).colorWithAlphaComponent(0.7)
         actionButton.isRounded              = true
         actionButton.backgroundColor        = UIColor(named: .Main)
         
@@ -126,7 +125,7 @@ extension SDCRecordViewController {
         distanceLabel.rac_text          <~ viewModel.distanceString
         durationLabel.rac_text          <~ viewModel.durationString
         actionButton.rac_title          <~ viewModel.actionButtonString
-        alertLabel.rac_text             <~ viewModel.alertString
+        noticeLabel.rac_text            <~ viewModel.noticeString
         
         // Binding the signIn action
         toggleRecordingCocoaAction = CocoaAction(viewModel.toggleRecordingAction!, input:nil)
@@ -142,8 +141,8 @@ extension SDCRecordViewController {
                 self.measurementCircleView.cpm  = measurement.cpm
         }
         
-        // Display/Hide the alert when needed
-        viewModel.alertIsVisible.producer
+        // Display/Hide a notice message when needed
+        viewModel.noticeIsVisible.producer
             .skip(1)
             .skipRepeats()
             .startWithNext { visible in
@@ -151,17 +150,18 @@ extension SDCRecordViewController {
                     UIView.animateWithDuration(0.3, delay: 0.0,
                         options: [.CurveEaseInOut],
                         animations: {
-                            self.alertView.alpha    = 1.0
+                            self.noticeView.alpha    = 1.0
                         }, completion: nil)
                 } else {
                     UIView.animateWithDuration(0.3, delay: 0.0,
                         options: [.CurveEaseInOut],
                         animations: {
-                            self.alertView.alpha    = 0.0
+                            self.noticeView.alpha    = 0.0
                         }, completion: nil)
                 }
         }
         
+        // Switches between the connection and record screens
         viewModel.isReadyToRecord.producer
             .skipRepeats()
             .startWithNext { ready in
@@ -192,6 +192,12 @@ extension SDCRecordViewController {
                     })
                                         
                 }
+        }
+        
+        viewModel.isRecording.producer
+            .skipRepeats()
+            .startWithNext { recording in
+                self.durationLabel.textColor = UIColor(named: recording ? .Text : .LightText)
         }
     }
 }

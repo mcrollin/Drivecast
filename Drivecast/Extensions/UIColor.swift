@@ -17,6 +17,7 @@ extension UIColor {
     enum Name : UInt32 {
         case Background = 0xf4f8f8ff
         case Main = 0x2ecc71ff
+        case Notice = 0x95a5a6ff
         case Alert = 0xe74c3cff
         case Text = 0x333333ff
         case LightText = 0xccccccff

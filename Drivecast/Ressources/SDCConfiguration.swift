@@ -28,8 +28,10 @@ struct SDCConfiguration {
         #endif
     }
 
-    struct BLE {
-        struct Drivecast {
+    // A list of supported BLE Devices with their configuration
+    struct BLEDevice {
+        
+        struct BGeigie {
             // End mark used to parse received data from the device
             static let endOfDataMark    = "\r\n"
             
@@ -60,10 +62,8 @@ struct SDCConfiguration {
             ]
         }
         
+        // Not supported yet
         struct OnyxBlue {
-            // End mark used to parse received data from the device
-            static let endOfDataMark    = ""
-            
             // UUID of compatible services for BLE devices
             static let dataServiceIdentifiers = [
                 // Blue Onyx (REVA-009)

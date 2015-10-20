@@ -38,3 +38,9 @@ extension SDCMeasurement {
         gpsValidity     = dictionary["GPSValidity"] as! Bool
     }
 }
+
+// MARK - Equatable
+// Comparision method betweee two SDCMeasurement
+func ==(lhs: SDCMeasurement, rhs: SDCMeasurement) -> Bool {
+    return lhs.data == rhs.data
+}

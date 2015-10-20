@@ -11,7 +11,6 @@ import ReactiveCocoa
 import SpinKit
 import SnapKit
 
-
 class SDCSignInViewController: UIViewController {
 
     // ViewModel handling all logic
