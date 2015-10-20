@@ -9,7 +9,7 @@
 import UIKit
 import AngleGradientLayer
 
-class SDCMeasurementGradientView: UIView {
+class SDCMeasurementCircleGradientView: UIView {
     let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
     
     override class func layerClass() -> AnyClass {
@@ -34,12 +34,12 @@ class SDCMeasurementGradientView: UIView {
 class SDCMeasurementCircleBackgroundView: UIView {
     
     override func drawRect(rect: CGRect) {
-        let shapeLayer = CAShapeLayer(layer: layer)
-        shapeLayer.frame = bounds
-        shapeLayer.path = UIBezierPath(ovalInRect: CGRectMake(12, 12, CGRectGetWidth(frame) - 24, CGRectGetHeight(frame) - 24)).CGPath
-        shapeLayer.lineWidth = 12
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        shapeLayer.strokeColor = UIColor.redColor().CGColor
+        let shapeLayer          = CAShapeLayer(layer: layer)
+        shapeLayer.frame        = bounds
+        shapeLayer.path         = UIBezierPath(ovalInRect: CGRectMake(12, 12, CGRectGetWidth(frame) - 24, CGRectGetHeight(frame) - 24)).CGPath
+        shapeLayer.lineWidth    = 12
+        shapeLayer.fillColor    = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor  = UIColor.redColor().CGColor
         
         layer.mask = shapeLayer
     }
@@ -67,28 +67,28 @@ class SDCMeasurementCircleView: UIView {
             let animation = CABasicAnimation(keyPath: "strokeEnd")
             
             if let mask = layer.mask as? CAShapeLayer {
-                animation.duration          = 0.2
-                animation.repeatCount       = 1
+                animation.duration          = 0.3
                 animation.timingFunction    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
                 animation.fromValue         = NSNumber(float: Float(mask.strokeEnd))
                 animation.toValue           = NSNumber(float: Float(newValue))
+
                 mask.strokeEnd              = newValue
                 
-                layer.mask!.addAnimation(animation, forKey: "drawCircleAnimation")
+                mask.addAnimation(animation, forKey: "drawCircleAnimation")
             }
         }
     }
     
     override func drawRect(rect: CGRect) {
-        let shapeLayer = CAShapeLayer(layer: layer)
-        shapeLayer.frame = bounds
-        shapeLayer.lineCap = kCALineCapRound
-        shapeLayer.path = UIBezierPath(ovalInRect: CGRectMake(12, 12, CGRectGetWidth(frame) - 24, CGRectGetHeight(frame) - 24)).CGPath
-        shapeLayer.lineWidth = 12
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        shapeLayer.strokeColor = UIColor.redColor().CGColor
-        shapeLayer.strokeStart = 0.01
-        shapeLayer.strokeEnd = progress
+        let shapeLayer          = CAShapeLayer(layer: layer)
+        shapeLayer.frame        = bounds
+        shapeLayer.lineCap      = kCALineCapRound
+        shapeLayer.path         = UIBezierPath(ovalInRect: CGRectMake(12, 12, CGRectGetWidth(frame) - 24, CGRectGetHeight(frame) - 24)).CGPath
+        shapeLayer.lineWidth    = 12
+        shapeLayer.fillColor    = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor  = UIColor.redColor().CGColor
+        shapeLayer.strokeStart  = 0.01
+        shapeLayer.strokeEnd    = progress
         
         layer.mask = shapeLayer
     }

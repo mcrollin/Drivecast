@@ -52,7 +52,7 @@ struct SDCMeasurementColorLUT {
         return Int(value * nsb1)
     }
     
-    mutating func colorForValue(cpm: Int) -> UIColor {
+    func colorForValue(cpm: Int) -> UIColor {
         return colorForIndex(indexForValue(cpm))
     }
 }

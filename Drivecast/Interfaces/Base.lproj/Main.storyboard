@@ -98,7 +98,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fV9-u6-AAG" customClass="SDCMeasurementCircleView" customModule="Drivecast" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="346" height="346"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xR8-7l-Xpf" customClass="SDCMeasurementGradientView" customModule="Drivecast" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xR8-7l-Xpf" customClass="SDCMeasurementCircleGradientView" customModule="Drivecast" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="346" height="346"/>
                                                                 <animations/>
                                                             </view>
@@ -450,7 +450,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wv-fj-1wa">
                                 <rect key="frame" x="10" y="64" width="580" height="536"/>
                                 <animations/>
-                                <string key="text">Skate ipsum dolor sit amet, poseur ollie chicken wing blunt baseplate. Nosepicker nose-bump manual g-turn pivot. Saran Wrap method air pivot egg plant spine. Bluntslide hang-up hanger rad half-flip. Hardware rocket air pivot nollie dude. Street sick Alien Workshop launch ramp hospital flip quarter pipe. Geoff Rowley launch ramp transfer hang up Tracker ollie. Masonite Old Ghosts heel flip 900 Kevin Harris steps. Fakie out Kevin Harris alley oop mini ramp axle. Full pipe ledge grind body varial slam.
+                                <mutableString key="text">Skate ipsum dolor sit amet, poseur ollie chicken wing blunt baseplate. Nosepicker nose-bump manual g-turn pivot. Saran Wrap method air pivot egg plant spine. Bluntslide hang-up hanger rad half-flip. Hardware rocket air pivot nollie dude. Street sick Alien Workshop launch ramp hospital flip quarter pipe. Geoff Rowley launch ramp transfer hang up Tracker ollie. Masonite Old Ghosts heel flip 900 Kevin Harris steps. Fakie out Kevin Harris alley oop mini ramp axle. Full pipe ledge grind body varial slam.
 
 Carve kickturn judo air rails nose grab concave. Full pipe rails shoveit bone air transition Gator Mark Anthony backside. Kickflip switch rock and roll casper Shawn Dutton backside nose bump. Crooked grind kickturn street Japan air bone air method air. Ollie boned out crailtap bail pop shove-it Powell Peralta helipop. Sketchy egg plant gap freestyle trucks full-cab. Primo slide no comply hip bail speed wobbles camel back. Casper kidney kickturn frontside fakie out carve. Poseur John Lucero pogo flypaper face plant yeah full-cab. Drop in 1080 mute-air masonite sponsored Caballerial hand rail. Kickflip transition transfer Santa Cruz heel flip salad grind steps. Ollie 540 helipop grind lip Spike Jonze Kevin Harris. Drop in Schmitt Stix mongo nosegrind hip indy grab air.
 
@@ -460,7 +460,7 @@ Ollie north chicken wing fakie out wheels frontside air coping nollie. Nosegrind
 
 Axle set crail grab roll-in downhill snake speed wobbles. Wheels Thunder coffin transfer invert full-cab impossible. Stoked hang up deck pump fast plant shoveit. Rick Howard 1080 hanger pop shove-it regular footed Christ air heel flip. Baseplate ollie north Hard Corps 270 boneless kickflip hip. Bruised heel judo air downhill Lester Kasai rail skate key coping. Indy grab backside hang up Christ air stoked flail Wade Speyer. Goofy footed kickturn full-cab carve bearings layback. Tailslide Tracker bruised heel front foot impossible frigid air rip grip China Banks. Pressure flip hang ten boneless boned out slob air heel flip.
 
-Death box hang-up 270 wall ride Skateboard Shuffle invert crail grab. Pump nose grab kickturn crail grab pressure flip Japan air. Powerslide method air carve bone air nose grab nosepicker. Gap carve nose melancholy frontside air Colby Carter hanger. Lance Mountain nose blunt frontside trucks g-turn melancholy 1080. Rail finger flip blunt mini ramp noseblunt slide 900 Brooklyn Banks. Backside death box nose slide frigid air roll-in crailtap. Berm rails pop shove-it soul skate coper pressure flip. Shoveit carve tuna-flip Ray Underhill salad grind boneless heel flip. Darkslide chicken wing Streets on Fire rip grip slob air invert melancholy. Crail slide nosebone rail slide sketchy Kris Markovich hospital flip street. Trucks kingpin noseblunt slide Grind King frontside air skate key 180.</string>
+Death box hang-up 270 wall ride Skateboard Shuffle invert crail grab. Pump nose grab kickturn crail grab pressure flip Japan air. Powerslide method air carve bone air nose grab nosepicker. Gap carve nose melancholy frontside air Colby Carter hanger. Lance Mountain nose blunt frontside trucks g-turn melancholy 1080. Rail finger flip blunt mini ramp noseblunt slide 900 Brooklyn Banks. Backside death box nose slide frigid air roll-in crailtap. Berm rails pop shove-it soul skate coper pressure flip. Shoveit carve tuna-flip Ray Underhill salad grind boneless heel flip. Darkslide chicken wing Streets on Fire rip grip slob air invert melancholy. Crail slide nosebone rail slide sketchy Kris Markovich hospital flip street. Trucks kingpin noseblunt slide Grind King frontside air skate key 180.</mutableString>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -782,10 +782,158 @@ Death box hang-up 270 wall ride Skateboard Shuffle invert crail grab. Pump nose 
                     <view key="view" contentMode="scaleToFill" id="51r-mZ-XhO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-6X-PPe">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlY-8E-qlT" userLabel="Action View">
+                                        <rect key="frame" x="0.0" y="345" width="600" height="142"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-d1-IRp" userLabel="Separator View">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="2ZK-tt-INf"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PV-je-vVW">
+                                                <rect key="frame" x="183" y="30" width="234" height="36"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                                <state key="normal" title="DISCARD ALL MEASUREMENTS">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygF-Cj-IYS">
+                                                <rect key="frame" x="171" y="86" width="259" height="36"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.7725490196" green="0.15040109360000001" blue="0.372382398" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                                <state key="normal" title="UPLOAD ALL XXX MEASUREMENTS">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="hFh-d1-IRp" firstAttribute="top" secondItem="zlY-8E-qlT" secondAttribute="top" id="3Vt-8p-0ah"/>
+                                            <constraint firstItem="ygF-Cj-IYS" firstAttribute="centerX" secondItem="zlY-8E-qlT" secondAttribute="centerX" id="7nX-f1-xiW"/>
+                                            <constraint firstItem="1PV-je-vVW" firstAttribute="top" secondItem="zlY-8E-qlT" secondAttribute="top" constant="30" id="Ezr-ax-EiF"/>
+                                            <constraint firstItem="1PV-je-vVW" firstAttribute="centerX" secondItem="zlY-8E-qlT" secondAttribute="centerX" id="F5p-BQ-fJP"/>
+                                            <constraint firstItem="hFh-d1-IRp" firstAttribute="leading" secondItem="zlY-8E-qlT" secondAttribute="leading" id="NlJ-a0-jth"/>
+                                            <constraint firstItem="ygF-Cj-IYS" firstAttribute="top" secondItem="1PV-je-vVW" secondAttribute="bottom" constant="20" id="Xmr-MP-MJo"/>
+                                            <constraint firstAttribute="bottom" secondItem="ygF-Cj-IYS" secondAttribute="bottom" constant="20" id="iUu-mo-Nek"/>
+                                            <constraint firstAttribute="trailing" secondItem="hFh-d1-IRp" secondAttribute="trailing" id="sAI-se-Pag"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-rr-Cda">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="345"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPl-t2-rzu">
+                                                <rect key="frame" x="552" y="20" width="28" height="28"/>
+                                                <animations/>
+                                                <state key="normal" image="Resize"/>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-HG-IIv" userLabel="Scale View">
+                                                <rect key="frame" x="20" y="20" width="12" height="295"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-Zc-rRP" customClass="SDCMeasurementScaleBackgroundView" customModule="Drivecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="12" height="295"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-Rt-r01" customClass="SDCMeasurementScaleView" customModule="Drivecast" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="12" height="295"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7k-p2-dDG" customClass="SDCMeasurementScaleGradientView" customModule="Drivecast" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="12" height="295"/>
+                                                                <animations/>
+                                                            </view>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstItem="t7k-p2-dDG" firstAttribute="leading" secondItem="dBB-Rt-r01" secondAttribute="leading" id="GY7-3l-xff"/>
+                                                            <constraint firstAttribute="bottom" secondItem="t7k-p2-dDG" secondAttribute="bottom" id="Lwm-W3-mcN"/>
+                                                            <constraint firstAttribute="trailing" secondItem="t7k-p2-dDG" secondAttribute="trailing" id="TpB-6e-jIW"/>
+                                                            <constraint firstItem="t7k-p2-dDG" firstAttribute="top" secondItem="dBB-Rt-r01" secondAttribute="top" id="bfO-5K-tab"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ffY-Zc-rRP" secondAttribute="trailing" id="72V-sl-TCp"/>
+                                                    <constraint firstItem="ffY-Zc-rRP" firstAttribute="leading" secondItem="sLm-HG-IIv" secondAttribute="leading" id="9BQ-wn-TXu"/>
+                                                    <constraint firstItem="dBB-Rt-r01" firstAttribute="leading" secondItem="sLm-HG-IIv" secondAttribute="leading" id="A7v-Bg-aVW"/>
+                                                    <constraint firstAttribute="width" constant="12" id="JTa-Lc-RSE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dBB-Rt-r01" secondAttribute="bottom" id="Jvx-W4-siP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ffY-Zc-rRP" secondAttribute="bottom" id="OsD-Jn-hsF"/>
+                                                    <constraint firstItem="dBB-Rt-r01" firstAttribute="top" secondItem="sLm-HG-IIv" secondAttribute="top" id="rVt-T2-JcX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dBB-Rt-r01" secondAttribute="trailing" id="s0G-cD-YtU"/>
+                                                    <constraint firstItem="ffY-Zc-rRP" firstAttribute="top" secondItem="sLm-HG-IIv" secondAttribute="top" id="tqa-T8-lNh"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-Oe-pcD">
+                                                <rect key="frame" x="551" y="286" width="29" height="29"/>
+                                                <animations/>
+                                                <state key="normal" image="Minus"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv5-Kz-5xg">
+                                                <rect key="frame" x="551" y="237" width="29" height="29"/>
+                                                <animations/>
+                                                <state key="normal" image="Plus"/>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="sLm-HG-IIv" firstAttribute="leading" secondItem="ecY-rr-Cda" secondAttribute="leading" constant="20" id="2ZI-Ws-D3D"/>
+                                            <constraint firstAttribute="bottom" secondItem="XBN-Oe-pcD" secondAttribute="bottom" constant="30" id="4qz-D6-OLm"/>
+                                            <constraint firstAttribute="trailing" secondItem="XBN-Oe-pcD" secondAttribute="trailing" constant="20" id="87O-JR-eYZ"/>
+                                            <constraint firstItem="XBN-Oe-pcD" firstAttribute="top" secondItem="Zv5-Kz-5xg" secondAttribute="bottom" constant="20" id="9Hy-eL-RJ9"/>
+                                            <constraint firstItem="XBN-Oe-pcD" firstAttribute="trailing" secondItem="Zv5-Kz-5xg" secondAttribute="trailing" id="DLn-3A-Pyy"/>
+                                            <constraint firstItem="sLm-HG-IIv" firstAttribute="top" secondItem="ecY-rr-Cda" secondAttribute="top" constant="20" id="GD4-bh-Nwv"/>
+                                            <constraint firstAttribute="bottom" secondItem="sLm-HG-IIv" secondAttribute="bottom" constant="30" id="VkQ-ew-Xrr"/>
+                                            <constraint firstItem="HPl-t2-rzu" firstAttribute="top" secondItem="ecY-rr-Cda" secondAttribute="top" constant="20" id="xeG-E1-bGB"/>
+                                            <constraint firstItem="Zv5-Kz-5xg" firstAttribute="trailing" secondItem="HPl-t2-rzu" secondAttribute="trailing" id="xjP-dC-8Te"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="ecY-rr-Cda" firstAttribute="leading" secondItem="ucI-6X-PPe" secondAttribute="leading" id="Abb-im-yRN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ecY-rr-Cda" secondAttribute="trailing" id="Ewg-MC-VMD"/>
+                                    <constraint firstItem="zlY-8E-qlT" firstAttribute="leading" secondItem="ucI-6X-PPe" secondAttribute="leading" id="FMs-xz-zFz"/>
+                                    <constraint firstItem="ecY-rr-Cda" firstAttribute="leading" secondItem="ucI-6X-PPe" secondAttribute="leading" id="HOQ-x3-YQy"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlY-8E-qlT" secondAttribute="bottom" id="IDL-xI-WZR"/>
+                                    <constraint firstItem="ecY-rr-Cda" firstAttribute="top" secondItem="ucI-6X-PPe" secondAttribute="top" id="bIK-6H-3TQ"/>
+                                    <constraint firstItem="ecY-rr-Cda" firstAttribute="top" secondItem="ucI-6X-PPe" secondAttribute="top" id="dvp-9q-pav"/>
+                                    <constraint firstItem="zlY-8E-qlT" firstAttribute="top" secondItem="ecY-rr-Cda" secondAttribute="bottom" id="h8Y-y5-vIk"/>
+                                    <constraint firstAttribute="trailing" secondItem="ecY-rr-Cda" secondAttribute="trailing" id="qE4-my-YW0"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlY-8E-qlT" secondAttribute="trailing" id="w17-Xl-0as"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.69803921570000005" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="B0l-bf-Emx" firstAttribute="top" secondItem="ucI-6X-PPe" secondAttribute="bottom" id="5Zn-1C-itt"/>
+                            <constraint firstItem="ucI-6X-PPe" firstAttribute="leading" secondItem="51r-mZ-XhO" secondAttribute="leading" id="SgQ-5c-gMg"/>
+                            <constraint firstItem="ucI-6X-PPe" firstAttribute="top" secondItem="Xky-bT-gU3" secondAttribute="bottom" id="mKH-6Z-CDG"/>
+                            <constraint firstAttribute="trailing" secondItem="ucI-6X-PPe" secondAttribute="trailing" id="yfp-bh-JqK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="UPLOAD" id="M3a-UH-UuC"/>
+                    <connections>
+                        <outlet property="centerMapButton" destination="HPl-t2-rzu" id="DAG-Cc-WSg"/>
+                        <outlet property="discardButton" destination="1PV-je-vVW" id="w30-Sh-t2m"/>
+                        <outlet property="mapContainerView" destination="ecY-rr-Cda" id="PWY-WF-ZQ1"/>
+                        <outlet property="measurementScaleView" destination="dBB-Rt-r01" id="Qak-KR-gCN"/>
+                        <outlet property="uploadButton" destination="ygF-Cj-IYS" id="VJz-4b-QPy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdA-Lh-aic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -795,7 +943,10 @@ Death box hang-up 270 wall ride Skateboard Shuffle invert crail grab. Pump nose 
     <resources>
         <image name="Dot" width="4" height="4"/>
         <image name="Home" width="25" height="25"/>
+        <image name="Minus" width="29" height="29"/>
+        <image name="Plus" width="29" height="29"/>
         <image name="Record" width="20" height="25"/>
+        <image name="Resize" width="28" height="28"/>
         <image name="SafecastLettersBig" width="154" height="19"/>
         <image name="Separator" width="12" height="1"/>
         <image name="Upload" width="25" height="20"/>

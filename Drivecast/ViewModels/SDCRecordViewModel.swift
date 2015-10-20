@@ -78,9 +78,11 @@ class SDCRecordViewModel: NSObject {
                 self.isRecording.value = !self.isRecording.value
                 
                 if self.isRecording.value {
+                    self.printOnConsole("started recording", type: .Emphasys)
                     self.actionButtonString.value = "pause recording".uppercaseString
                     self.timer = self.resumeTimer()
                 } else {
+                    self.printOnConsole("stopped recording", type: .Emphasys)
                     self.actionButtonString.value = "resume recording".uppercaseString
                 }
                 

@@ -104,12 +104,12 @@ extension SDCSignInViewController {
     
     func configureConstraints() {
         activityMonitor.snp_makeConstraints { make in
-            make.center.equalTo(self.dotImageView)
+            make.center.equalTo(dotImageView)
         }
         
         logoImageView.snp_removeConstraints()
         logoImageView.snp_makeConstraints { make in
-            make.bottom.equalTo(self.signInFormView.snp_top).offset(-40)
+            make.bottom.equalTo(signInFormView.snp_top).offset(-40)
         }
         
         resetConstraints()
@@ -118,7 +118,7 @@ extension SDCSignInViewController {
     func resetConstraints() {
         signInFormView.snp_removeConstraints()
         signInFormView.snp_makeConstraints { make in
-            make.top.equalTo(self.dotImageView.snp_top)
+            make.top.equalTo(dotImageView.snp_top)
         }
     }
     

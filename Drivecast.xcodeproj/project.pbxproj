@@ -13,6 +13,10 @@
 		4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BC1BD470A3001D3C16 /* UILabel.swift */; settings = {ASSET_TAGS = (); }; };
+		4925AF671BD687310078922D /* SCRMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF641BD687310078922D /* SCRMeasurementOverlay.swift */; settings = {ASSET_TAGS = (); }; };
+		4925AF681BD687310078922D /* SCRMultiMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */; settings = {ASSET_TAGS = (); }; };
+		4925AF691BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */; settings = {ASSET_TAGS = (); }; };
+		4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
@@ -89,6 +93,10 @@
 		4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurement.swift; sourceTree = "<group>"; };
 		4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCLogParser.swift; sourceTree = "<group>"; };
 		4920F8BC1BD470A3001D3C16 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		4925AF641BD687310078922D /* SCRMeasurementOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCRMeasurementOverlay.swift; sourceTree = "<group>"; };
+		4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCRMultiMeasurementOverlay.swift; sourceTree = "<group>"; };
+		4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCRMultiMeasurementOverlayRenderer.swift; sourceTree = "<group>"; };
+		4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementScaleView.swift; sourceTree = "<group>"; };
 		494C768F1BD05AB600B86491 /* SDCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCUser.swift; sourceTree = "<group>"; };
 		494C76911BD05F6000B86491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCCircleTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -349,8 +357,12 @@
 		49FC9A8F1BCFB852006FA40E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */,
+				4925AF641BD687310078922D /* SCRMeasurementOverlay.swift */,
+				4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */,
+				4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */,
 				494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */,
+				49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */,
+				4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -603,8 +615,10 @@
 				49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */,
 				49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */,
 				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
+				4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */,
 				4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */,
 				4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */,
+				4925AF691BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift in Sources */,
 				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,
@@ -618,6 +632,8 @@
 				49FC9A901BCFB852006FA40E /* JSON.swift in Sources */,
 				4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */,
 				49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */,
+				4925AF671BD687310078922D /* SCRMeasurementOverlay.swift in Sources */,
+				4925AF681BD687310078922D /* SCRMultiMeasurementOverlay.swift in Sources */,
 				49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */,
 				494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */,
 				49DAC9CC1BD4E66D00CD300F /* UIControl.swift in Sources */,
