@@ -80,11 +80,12 @@ class SDCMeasurementCircleView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
+        let circleWidth         = SDCConfiguration.UI.circleWidth
         let shapeLayer          = CAShapeLayer(layer: layer)
         shapeLayer.frame        = bounds
         shapeLayer.lineCap      = kCALineCapRound
-        shapeLayer.path         = UIBezierPath(ovalInRect: CGRectMake(12, 12, CGRectGetWidth(frame) - 24, CGRectGetHeight(frame) - 24)).CGPath
-        shapeLayer.lineWidth    = 12
+        shapeLayer.path         = UIBezierPath(ovalInRect: CGRectMake(circleWidth, circleWidth, CGRectGetWidth(frame) - 2 * circleWidth, CGRectGetHeight(frame) - 2 * circleWidth)).CGPath
+        shapeLayer.lineWidth    = circleWidth
         shapeLayer.fillColor    = UIColor.clearColor().CGColor
         shapeLayer.strokeColor  = UIColor.redColor().CGColor
         shapeLayer.strokeStart  = 0.01

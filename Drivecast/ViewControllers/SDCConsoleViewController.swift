@@ -10,8 +10,11 @@ import UIKit
 import ReactiveCocoa
 
 class SDCConsoleViewController: UIViewController {
+    
+    // ViewModel from the parent screen handling all logic
     var viewModel: SDCRecordViewModel?
     
+    // IB variable
     @IBOutlet var consoleTextView: UITextView!
     
     override func viewDidLoad() {

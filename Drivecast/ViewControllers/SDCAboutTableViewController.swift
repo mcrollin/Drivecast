@@ -10,8 +10,11 @@ import UIKit
 import ReactiveCocoa
 
 class SDCAboutTableViewController: UITableViewController {
+    
+    // ViewModel handling all logic
     let viewModel   = SDCAboutViewModel()
     
+    // IB variables
     @IBOutlet var buildLabel: UILabel!
     @IBOutlet var donateButton: UIButton!
     @IBOutlet var volunteerButton: UIButton!

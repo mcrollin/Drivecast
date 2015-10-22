@@ -38,6 +38,7 @@ class SDCRecordViewController: UIViewController {
     @IBOutlet var countDescriptionLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     @IBOutlet var distanceDescriptionLabel: UILabel!
+    @IBOutlet var separatorView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ extension SDCRecordViewController {
         noticeView.backgroundColor          = UIColor(named: .Notice).colorWithAlphaComponent(0.7)
         actionButton.isRounded              = true
         actionButton.backgroundColor        = UIColor(named: .Main)
+        separatorView.backgroundColor       = UIColor(named: .Separator)
         
         // Left button opens a console listing all occuring events
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(

@@ -23,7 +23,7 @@ class SDCMeasurement: Object {
     dynamic var gpsValidity: Bool = false
 
     var location: CLLocation { return CLLocation(latitude: latitude, longitude: longitude) }
-    var location2D: CLLocationCoordinate2D { return CLLocationCoordinate2DMake(latitude, longitude) }
+    var coordinate: CLLocationCoordinate2D { return CLLocationCoordinate2DMake(latitude, longitude) }
     
     var usvh: Double { return Double(cpm) / 334 }
 }

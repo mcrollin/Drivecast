@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,19 +21,27 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Dot" translatesAutoresizingMaskIntoConstraints="NO" id="BYx-dq-UkS">
                                 <rect key="frame" x="298" y="298" width="4" height="4"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BYx-dq-UkS" secondAttribute="height" multiplier="1:1" id="QJO-OV-hDu"/>
+                                    <constraint firstAttribute="width" constant="4" id="v2w-m4-REB"/>
+                                </constraints>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SafecastLettersBig" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-xb-REn">
                                 <rect key="frame" x="223" y="239" width="154" height="19"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="Q1g-hC-rb7"/>
+                                    <constraint firstAttribute="height" constant="19" id="jcw-1q-Dp1"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9B6-i6-7kv"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="FkN-Ik-yiF"/>
-                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lMC-JV-jNc"/>
-                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tPv-pe-oNo"/>
+                            <constraint firstItem="IOQ-xb-REn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="84z-wR-3p3"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IZR-9R-aAD"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UTu-2l-3ZK"/>
+                            <constraint firstItem="BYx-dq-UkS" firstAttribute="top" secondItem="IOQ-xb-REn" secondAttribute="bottom" constant="40" id="mVQ-ei-Vw9"/>
                         </constraints>
                     </view>
                 </viewController>

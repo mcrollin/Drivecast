@@ -6,11 +6,16 @@
 //  Copyright © 2015 Safecast. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreBluetooth
 
 // Application configuration
 struct SDCConfiguration {
+    
+    struct UI {
+        static let circleWidth: CGFloat = 12.0
+        static let lineGraphMaxPoints   = 40
+    }
     
     struct API {
         static let locale   = "en-US"

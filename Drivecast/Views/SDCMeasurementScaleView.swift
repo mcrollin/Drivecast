@@ -38,15 +38,7 @@ class SDCMeasurementScaleView: UIView {
     
     var cpm: Int = 0 {
         didSet {
-            let progress = CGFloat(lut.indexForValue(cpm)) / CGFloat(lut.n)
-            
-            if progress < 0.01 {
-                self.progress = 0.01
-            } else if progress > 0.99 {
-                self.progress = 0.99
-            } else {
-                self.progress = progress
-            }
+            self.progress = CGFloat(lut.indexForValue(cpm)) / CGFloat(lut.n)
         }
     }
     

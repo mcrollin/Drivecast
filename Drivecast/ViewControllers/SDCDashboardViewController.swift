@@ -10,6 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 class SDCDashboardViewController: UIViewController {
+    
+    // ViewModel handling all logic
     let viewModel   = SDCDashboardViewModel()
 
     override func viewDidLoad() {

@@ -8,6 +8,7 @@ extension UIImage {
         case Dot = "Dot"
         case Header = "Header"
         case Back = "Back"
+        case Center = "Center"
         case Console = "Console"
         case Github = "Github"
         case Home = "Home"

@@ -2,5 +2,6 @@ Main        : #2ecc71
 Text        : #333333
 Background  : #f4f8f8
 LightText   : #cccccc
+Separator   : #dddddd
 Notice      : #95a5a6
 Alert       : #e74c3c
