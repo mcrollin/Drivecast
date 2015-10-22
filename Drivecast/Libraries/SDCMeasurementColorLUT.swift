@@ -8,7 +8,10 @@
 
 import UIKit
 
+// Contains color lookup table and returns RGB colors for a numeric value.
+// Reference: https://github.com/Safecast/Tilemap/blob/1d318adb4a96d782e8dff86106fe1cf01d5b3862/bgeigie_viewer.js
 struct SDCMeasurementColorLUT {
+
     let min: Double = 0.03 * 350.0
     let max: Double = 65.535 * 350.0
     let rdiff: Double!

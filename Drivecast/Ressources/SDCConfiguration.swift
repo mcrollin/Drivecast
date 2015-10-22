@@ -9,9 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-/**
-    Struct providing simple configuration.
-*/
+// Application configuration
 struct SDCConfiguration {
     
     struct API {

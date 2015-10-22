@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (3.0.0)
   - AngleGradientLayer (1.2.3)
+  - BEMSimpleLineGraph (4.1)
   - IQKeyboardManagerSwift (3.3.2)
   - ReactiveCocoa (3.0.0-swift2):
     - ReactiveCocoa/UI (= 3.0.0-swift2)
@@ -26,9 +27,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 3.0.0)
   - AngleGradientLayer (= 1.2.3)
+  - BEMSimpleLineGraph (= 4.1)
   - IQKeyboardManagerSwift (= 3.3.2)
   - ReactiveCocoa (= 3.0.0-swift2)
-  - RealmSwift
+  - RealmSwift (= 0.96.0)
   - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
   - SwiftyJSON (= 2.3.0)
@@ -36,6 +38,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
   AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
+  BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
   IQKeyboardManagerSwift: 40a9f6a3a5f60bc311aad5ab3265b9de5ecb9367
   ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
   Realm: d1b1eff5264cd6a3158b7a9b6c499d7f6ad3a860

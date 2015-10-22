@@ -32,17 +32,17 @@ class SDCDashboardViewController: UIViewController {
 // MARK - UIView
 extension SDCDashboardViewController {
     func configureView() {        
-        self.navigationItem.titleView   = UIImageView(image: UIImage(asset: .SafecastLettersSmall))
-        self.view.backgroundColor       = UIColor(named: .Background)
+        navigationItem.titleView   = UIImageView(image: UIImage(asset: .SafecastLettersSmall))
+        view.backgroundColor       = UIColor(named: .Background)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.More.image,
             style: UIBarButtonItemStyle.Plain,
             target: self, action: Selector("openAboutModal")
         )
         
         #if DEBUG
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.Dot.image,
             style: UIBarButtonItemStyle.Plain,
             target: self, action: Selector("deauthenticate")

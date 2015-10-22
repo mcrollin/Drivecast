@@ -6,8 +6,10 @@ import UIKit
 extension UIImage {
     enum Asset : String {
         case Dot = "Dot"
+        case Header = "Header"
         case Back = "Back"
         case Console = "Console"
+        case Github = "Github"
         case Home = "Home"
         case Minus = "Minus"
         case More = "More"
@@ -15,6 +17,7 @@ extension UIImage {
         case Record = "Record"
         case Resize = "Resize"
         case Upload = "Upload"
+        case SafecastBoxed = "SafecastBoxed"
         case SafecastLettersBig = "SafecastLettersBig"
         case SafecastLettersSmall = "SafecastLettersSmall"
         case Separator = "Separator"

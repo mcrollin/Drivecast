@@ -46,7 +46,7 @@ class SDCMeasurementCircleBackgroundView: UIView {
 }
 
 class SDCMeasurementCircleView: UIView {
-    let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
+    private let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
     
     var cpm: Int = 0 {
         didSet {

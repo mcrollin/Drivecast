@@ -14,10 +14,9 @@ protocol SDCBluetoothRemotePeripheralDelegate {
     func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String)
 }
 
-/**
-    Class that encapsulates a bluetooth peripheral.
-*/
+// Encapsulates a bluetooth peripheral.
 class SDCBluetoothRemotePeripheral: NSObject {
+    
     // Bluetooth peripheral
     let peripheral: CBPeripheral
 

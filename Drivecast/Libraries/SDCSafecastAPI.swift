@@ -15,14 +15,13 @@ enum SDCSafecastAPIResult<T> {
     case Failure(ErrorType)
 }
 
-/**
-    Struct handling all Safecast API calls.
-*/
+// Handle all Safecast API calls
 struct SDCSafecastAPI {
 }
 
 // MARK - Import
 extension SDCSafecastAPI {
+    
     // Error enum
     enum ImportError: ErrorType {
         case Network(String)

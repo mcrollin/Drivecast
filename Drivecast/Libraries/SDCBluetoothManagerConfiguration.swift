@@ -9,10 +9,9 @@
 import Foundation
 import CoreBluetooth
 
-/**
-    Struct that represents a configuration used by the SDCBluetoothManager.
-*/
+// Configuration used by the SDCBluetoothManager
 struct SDCBluetoothManagerConfiguration {
+    
     // UUIDs for the service used to send data
     let dataServiceIdentifiers: [CBUUID]
     

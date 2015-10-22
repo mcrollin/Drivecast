@@ -9,9 +9,12 @@
 import UIKit
 import ReactiveCocoa
 
-// http://blog.safecast.org/bgeigie-nano/
 class SDCAboutTableViewController: UITableViewController {
     let viewModel   = SDCAboutViewModel()
+    
+    @IBOutlet var buildLabel: UILabel!
+    @IBOutlet var donateButton: UIButton!
+    @IBOutlet var volunteerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +26,20 @@ class SDCAboutTableViewController: UITableViewController {
 
 // MARK - UIView
 extension SDCAboutTableViewController {
+    
     func configureView() {
-        self.view.backgroundColor = UIColor(named: .Background)
+        view.backgroundColor = UIColor(named: .Background)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .Done,
             target: self,
             action: Selector("closeAbout")
         )
+        
+        donateButton.isRounded          = true
+        volunteerButton.isRounded       = true
+        donateButton.backgroundColor    = UIColor(named: .Main)
+        volunteerButton.backgroundColor = UIColor(named: .Main)
     }
     
     func closeAbout() {
@@ -40,6 +49,18 @@ extension SDCAboutTableViewController {
 
 // MARK - Signal Bindings
 extension SDCAboutTableViewController {
+    
     func bindViewModel() {
+        buildLabel.rac_text <~ viewModel.buildString
+    }
+}
+
+// MARK - UITableViewDelegate
+extension SDCAboutTableViewController {
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        viewModel.showDetails(indexPath)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

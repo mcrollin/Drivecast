@@ -19,11 +19,9 @@ protocol SDCBluetoothManagerDelegate {
 }
 
 // MARK - SDCBluetoothManager
-
-/**
-    Class simplifying the use of CoreBluetooth.
-*/
+// Ease of use of the CoreBluetooth API
 class SDCBluetoothManager: NSObject {
+    
     // CoreBluetooth Central Manager instance
     private var centralManager: CBCentralManager?
 

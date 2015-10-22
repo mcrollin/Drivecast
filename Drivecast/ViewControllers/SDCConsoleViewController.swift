@@ -25,7 +25,7 @@ class SDCConsoleViewController: UIViewController {
 // MARK - UIView
 extension SDCConsoleViewController {
     func configureView() {
-        self.view.backgroundColor = UIColor(named: .Background)
+        view.backgroundColor = UIColor(named: .Background)
     }
 }
 
