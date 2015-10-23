@@ -17,7 +17,7 @@ class SDCRecordViewController: UIViewController {
     let viewModel   = SDCRecordViewModel()
     
     // Activity monitor spinner
-    let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StyleArcAlt, color: UIColor(named: .Main))
+    let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StyleBounce, color: UIColor(named: .Main).colorWithAlphaComponent(0.1))
     
     // Toggle recording action
     var toggleRecordingCocoaAction: CocoaAction!

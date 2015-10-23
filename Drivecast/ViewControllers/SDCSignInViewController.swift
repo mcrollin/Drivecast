@@ -20,8 +20,8 @@ class SDCSignInViewController: UIViewController {
     var menuViewController: UITabBarController?
     
     // Activity monitor spinner
-    let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StylePulse,
-        color: UIColor(named: .Main).colorWithAlphaComponent(0.2))
+    let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StyleBounce,
+        color: UIColor(named: .Main).colorWithAlphaComponent(0.1))
     
     // Sign in action
     var signInCocoaAction: CocoaAction!

@@ -15,10 +15,11 @@ class SDCUploadViewController: UIViewController {
     
     // ViewModel handling all logic
     let viewModel   = SDCUploadViewModel()
-
+    
     // Map only loaded when screen is visible
     var mapView: MKMapView?
     
+    // Dimmed overlay
     var dimOverlay: MKPolygon? {
         willSet(overlay) {
             if let overlay = overlay {
@@ -29,6 +30,7 @@ class SDCUploadViewController: UIViewController {
         }
     }
     
+    // Measurements overlay
     var multiMeasurementOverlay: SDCMultiMeasurementOverlay? {
         willSet(overlay) {
             if let overlay = overlay {
@@ -63,6 +65,7 @@ class SDCUploadViewController: UIViewController {
     @IBOutlet var usvhUnitLabel: UILabel!
     @IBOutlet var actionLabel: UILabel!
     @IBOutlet var recordButton: UIButton!
+    @IBOutlet var noMeasurementLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,29 +95,30 @@ extension SDCUploadViewController {
         let separatorLineColor              = UIColor(named: .Separator)
         let mainColor                       = UIColor(named: .Main)
         let backgroundColor                 = UIColor(named: .Background)
+        view.backgroundColor                = backgroundColor
         
-        // About button
+        // About Button
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.More.image,
             style: UIBarButtonItemStyle.Plain,
             target: self, action: Selector("openAboutModal")
         )
         
-        view.backgroundColor                = backgroundColor
-        
-        // Action buttons
+        // Action Buttons
         discardButton.backgroundColor       = UIColor(named: .Alert)
         uploadButton.backgroundColor        = mainColor
         recordButton.backgroundColor        = mainColor
         discardButton.isRounded             = true
         uploadButton.isRounded              = true
         recordButton.isRounded              = true
-
+        noMeasurementLabel.textColor        = UIColor(named: .Text)
+        
         // Map related button
         centerMapButton.isRounded           = true
         centerMapButton.layer.borderColor   = separatorLineColor.CGColor
         centerMapButton.layer.borderWidth   = 1
         
+        // Line Graph
         measurementLineGraphView.animationGraphStyle    = BEMLineAnimation.None
         measurementLineGraphView.enableBezierCurve      = true
         measurementLineGraphView.enableXAxisLabel       = false
@@ -126,10 +130,8 @@ extension SDCUploadViewController {
         measurementLineGraphView.colorTop               = UIColor.clearColor()
         measurementLineGraphView.colorBottom            = UIColor.clearColor()
         measurementLineGraphView.backgroundColor        = backgroundColor
-        measurementLineGraphView.delegate               = self.viewModel
-        measurementLineGraphView.dataSource             = self.viewModel
-        measurementLineGraphView.layer.borderColor = separatorLineColor.CGColor
-        measurementLineGraphView.layer.borderWidth = 1
+        measurementLineGraphView.layer.borderColor      = separatorLineColor.CGColor
+        measurementLineGraphView.layer.borderWidth      = 1
         
         // Selection
         selectionView.isRounded             = true
@@ -143,7 +145,7 @@ extension SDCUploadViewController {
         valuesContainerView.layer.borderColor   = separatorLineColor.CGColor
         valuesContainerView.clipsToBounds       = true
         valuesContainerView.backgroundColor     = UIColor.whiteColor().colorWithAlphaComponent(0.8)
-
+        
         // Values
         cpmValueLabel.textColor     = UIColor(named: .Text)
         cpmUnitLabel.textColor      = UIColor(named: .LightText)
@@ -153,7 +155,7 @@ extension SDCUploadViewController {
     
     func openAboutModal() {
         let about = UIStoryboard.Scene.Main.aboutViewController()
-    
+        
         self.presentViewController(about, animated: true, completion: nil)
     }
 }
@@ -166,26 +168,35 @@ extension SDCUploadViewController {
         cpmValueLabel.rac_text  <~ viewModel.cpmValueString
         actionLabel.rac_text    <~ viewModel.actionString
         
-        viewModel.allMeasurements.producer.startWithNext { measurements in
-            guard let measurements = measurements else {
-                return
-            }
-            
-            self.uploadView.hidden = measurements.count > 0 ? false : true
+        recordButtonEvent()
+        mapCenterButtonEvent()
+        mapCenterUpdate()
+        scaleCPMUpdate()
+        validMeasurementUpdate()
+        allMeasurementUpdate()
+    }
+    
+    // Record button
+    private func recordButtonEvent() {
+        recordButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
+            .subscribeNext { _ in
+                // Presents the recording screen
+                let recordController = UIStoryboard.Scene.Main.recordViewController()
+                
+                self.tabBarController?.presentViewController(recordController, animated: true, completion: nil)
         }
-        
-        // Update the scale and display the value container
-        viewModel.measurementScaleCPM.producer.startWithNext { cpm in
-            self.measurementScaleView.cpm = cpm
-
-            UIView.animateWithDuration(0.2, delay: 0, options: [.TransitionCrossDissolve, .BeginFromCurrentState],
-                animations: {
-                    self.valuesContainerView.alpha = 1.0
-                    self.selectionView.alpha = 1.0
-                }, completion: nil)
+    }
+    
+    // Center the map to display all measurements when button touched
+    private func mapCenterButtonEvent() {
+        centerMapButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
+            .subscribeNext { _ in
+                self.centerMap(true)
         }
-        
-        // Center the map
+    }
+    
+    // Center the map
+    private func mapCenterUpdate() {
         viewModel.mapCenterCoordinate.producer.startWithNext { coordinate in
             guard let coordinate = coordinate else {
                 return
@@ -193,14 +204,23 @@ extension SDCUploadViewController {
             
             self.mapView?.setCenterCoordinate(coordinate, animated: false)
         }
-        
-        // Center the map to display all measurements when button touched
-        centerMapButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
-            .subscribeNext { _ in
-                self.centerMap(true)
+    }
+    
+    // Update the scale and display the value container
+    private func scaleCPMUpdate() {
+        viewModel.measurementScaleCPM.producer.startWithNext { cpm in
+            self.measurementScaleView.cpm = cpm
+            
+            UIView.animateWithDuration(0.2, delay: 0, options: [.TransitionCrossDissolve, .BeginFromCurrentState],
+                animations: {
+                    self.valuesContainerView.alpha = 1.0
+                    self.selectionView.alpha = 1.0
+                }, completion: nil)
         }
-        
-        // Update the graph and map overlay using provided valid measurements
+    }
+    
+    // Update the graph and map overlay using provided valid measurements
+    private func validMeasurementUpdate() {
         viewModel.validMeasurements.producer.startWithNext { measurements in
             guard let measurements = measurements else {
                 return
@@ -217,7 +237,22 @@ extension SDCUploadViewController {
             }
             
             self.multiMeasurementOverlay = SDCMultiMeasurementOverlay(measurements: overlays)
+            
+            self.measurementLineGraphView.delegate      = self.viewModel
+            self.measurementLineGraphView.dataSource    = self.viewModel
+            
             self.measurementLineGraphView.reloadGraph()
+        }
+    }
+    
+    // Updates text with number of measurements
+    private func allMeasurementUpdate() {
+        viewModel.allMeasurements.producer.startWithNext { measurements in
+            guard let measurements = measurements else {
+                return
+            }
+            
+            self.uploadView.hidden = measurements.count > 0 ? false : true
         }
     }
 }
@@ -233,11 +268,11 @@ extension SDCUploadViewController {
         mapView!.delegate       = self
         
         mapContainerView.insertSubview(mapView!, atIndex: 0)
-
+        
         mapView!.snp_makeConstraints { make in
             make.edges.equalTo(mapContainerView)
         }
-
+        
         // We need to listen to all gestures
         let gestures = [UITapGestureRecognizer(),
             UIPinchGestureRecognizer(),
@@ -286,6 +321,7 @@ extension SDCUploadViewController {
     
     // Center the map making every measurement visible
     private func centerMap(animated: Bool) {
+        
         if let multiMeasurementOverlay = multiMeasurementOverlay {
             let boundingMapRect = multiMeasurementOverlay.boundingMapRect
             let visibleRect = MKMapRectMake(boundingMapRect.origin.x - boundingMapRect.size.width * 0.2,
@@ -311,6 +347,7 @@ extension SDCUploadViewController: MKMapViewDelegate {
     
     // Render the mesurements and dim overlays
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        
         if overlay.isKindOfClass(MKPolygon) {
             let color = UIColor(named: .Background)
             let overlayRenderer: MKPolygonRenderer = MKPolygonRenderer(overlay: overlay)
