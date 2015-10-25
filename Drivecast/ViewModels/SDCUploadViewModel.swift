@@ -10,6 +10,7 @@ import Foundation
 import ReactiveCocoa
 import RealmSwift
 import BEMSimpleLineGraph
+import KVNProgress
 
 class SDCUploadViewModel: NSObject {
     
@@ -20,12 +21,21 @@ class SDCUploadViewModel: NSObject {
     let usvhValueString     = MutableProperty<String>("")
     let mapCenterCoordinate = MutableProperty<CLLocationCoordinate2D?>(nil)
     let actionString        = MutableProperty<String>("?".uppercaseString)
+    
+    // Action
+    private(set) var uploadAction: Action<AnyObject?, SDCImport, SDCSafecastAPI.ImportError>? = nil
+    
+    override init() {
+        super.init()
+        
+        initializeUploadAction()
+    }
 }
 
 // MARK - Measurements
 extension SDCUploadViewModel {
     
-    // Retrieves all and valid measurements
+    // Retrieve all and valid measurements
     func updateMeasurementData() {
         let realm           = try! Realm()
         
@@ -38,15 +48,54 @@ extension SDCUploadViewModel {
             actionString.value = "You have \(count) measurements".uppercaseString
         }
     }
+    
+    // Discard all measurements
+    func discardAllMeasurements() {
+        let realm   = try! Realm()
+        let objects = realm.objects(SDCMeasurement)
+        
+        // Delete all measurements
+        try! realm.write {
+            realm.delete(objects)
+        }
+        
+        // Update measurements to dismiss the upload screen and display the record button
+        updateMeasurementData()
+    }
+
+}
+
+// MARK - Import
+extension SDCUploadViewModel {
+    
+    // Initializes the sign in button action
+    private func initializeUploadAction() {
+        uploadAction = Action() { _ in
+            
+            return SignalProducer { sink, _ in
+                KVNProgress.show()
+//                self.signIn(email, password: password) { result in
+//                    switch result {
+//                    case .Success(_):
+//                        sendNext(sink, true)
+//                        sendCompleted(sink)
+//                    case .Failure(let error):
+//                        sendNext(sink, false)
+//                        sendError(sink, error as! SDCSafecastAPI.UserError)
+//                    }
+//                }
+            }
+        }
+    }
 }
 
 // MARK - BEMSimpleLineGraphDelegate
 extension SDCUploadViewModel: BEMSimpleLineGraphDelegate {
-    func minValueForLineGraph(graph: BEMSimpleLineGraphView) -> CGFloat {
+    internal func minValueForLineGraph(graph: BEMSimpleLineGraphView) -> CGFloat {
         return 0
     }
     
-    func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: Int) {
+    internal func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: Int) {
         guard let measurement = measurementForIndex(index) else {
             return
         }

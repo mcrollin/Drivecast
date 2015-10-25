@@ -39,6 +39,7 @@ class SDCRecordViewController: UIViewController {
     @IBOutlet var distanceLabel: UILabel!
     @IBOutlet var distanceDescriptionLabel: UILabel!
     @IBOutlet var separatorView: UIView!
+    @IBOutlet var dotView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,6 +183,7 @@ extension SDCRecordViewController {
                         animations: {
                             self.recordView.alpha           = 1.0
                             self.activityDetailsLabel.alpha = 0.0
+                            self.dotView.alpha              = 0.0
                         }, completion: nil)
                 } else {
                     UIView.animateWithDuration(0.5, delay: 0.0,
@@ -189,6 +191,7 @@ extension SDCRecordViewController {
                         animations: {
                             self.recordView.alpha           = 0.0
                             self.activityDetailsLabel.alpha = 1.0
+                            self.dotView.alpha              = 1.0
                         }, completion: { _ in
                             self.activityMonitor.startAnimating()
                     })

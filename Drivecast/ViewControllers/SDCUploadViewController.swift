@@ -96,6 +96,7 @@ extension SDCUploadViewController {
         let mainColor                       = UIColor(named: .Main)
         let backgroundColor                 = UIColor(named: .Background)
         view.backgroundColor                = backgroundColor
+        mapContainerView.backgroundColor    = backgroundColor
         
         // About Button
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -168,12 +169,36 @@ extension SDCUploadViewController {
         cpmValueLabel.rac_text  <~ viewModel.cpmValueString
         actionLabel.rac_text    <~ viewModel.actionString
         
+        uploadButtonEvent()
+        discardButtonEvent()
         recordButtonEvent()
         mapCenterButtonEvent()
         mapCenterUpdate()
         scaleCPMUpdate()
         validMeasurementUpdate()
         allMeasurementUpdate()
+    }
+    
+    // Upload button
+    private func uploadButtonEvent() {
+        uploadCocoaAction = CocoaAction(viewModel.uploadAction!, input:nil)
+        uploadButton.addTarget(uploadCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    // Discard button
+    private func discardButtonEvent() {
+        discardButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
+            .subscribeNext { _ in
+                let alertController = UIAlertController(title: nil, message: "Are you sure you want discard these measurements?", preferredStyle: .ActionSheet)
+                let destroyAction   = UIAlertAction(title: "Discard", style: .Destructive) { (action) in
+                    self.viewModel.discardAllMeasurements()
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                alertController.addAction(destroyAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     // Record button

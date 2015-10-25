@@ -428,6 +428,7 @@
                         <outlet property="cpmUnitLabel" destination="A21-II-q9d" id="ehy-Cl-u8S"/>
                         <outlet property="distanceDescriptionLabel" destination="7op-CJ-7ma" id="yhg-TA-bQT"/>
                         <outlet property="distanceLabel" destination="F1o-ov-hLV" id="jn1-QL-OJ8"/>
+                        <outlet property="dotView" destination="tFt-ke-CHd" id="EaR-Hs-PLF"/>
                         <outlet property="durationLabel" destination="zYf-KK-f4V" id="dng-RE-ywS"/>
                         <outlet property="measurementCircleView" destination="fV9-u6-AAG" id="JGC-bx-Dwm"/>
                         <outlet property="noticeLabel" destination="Nss-kG-0zh" id="Zxg-we-hX6"/>
@@ -2061,6 +2062,23 @@ AND DESIGN</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdv-w8-RAR">
+                                <rect key="frame" x="220" y="308" width="160" height="36"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.15040109360000001" blue="0.372382398" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="START RECORDING">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO MEASUREMENT TO UPLOAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPZ-iA-Ll8">
+                                <rect key="frame" x="199" y="262" width="201.5" height="16"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-6X-PPe" userLabel="Upload View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
@@ -2300,23 +2318,6 @@ AND DESIGN</string>
                                     <constraint firstItem="Hwa-Cf-MIH" firstAttribute="leading" secondItem="ucI-6X-PPe" secondAttribute="leading" constant="-1" id="xSs-Vw-dAN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdv-w8-RAR">
-                                <rect key="frame" x="220" y="308" width="160" height="36"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.7725490196" green="0.15040109360000001" blue="0.372382398" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
-                                <state key="normal" title="START RECORDING">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO MEASUREMENT TO UPLOAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPZ-iA-Ll8">
-                                <rect key="frame" x="199.5" y="262" width="201.5" height="16"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.69803921570000005" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>

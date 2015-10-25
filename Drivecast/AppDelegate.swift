@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Alamofire
+import KVNProgress
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         appearanceSetup()
+        progressSetup()
         
         return true
     }
@@ -50,6 +52,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Handles all keyboard events
         IQKeyboardManager.sharedManager().enable = true
+    }
+    
+    private func progressSetup() {
+        let configuration:KVNProgressConfiguration = KVNProgressConfiguration()
+        let backgroundColor = UIColor(named: .Background)
+        let mainColor       = UIColor(named: .Main)
+        
+        configuration.backgroundType = .Blurred
+        configuration.backgroundFillColor = backgroundColor.colorWithAlphaComponent(0.7)
+        configuration.backgroundTintColor = backgroundColor.colorWithAlphaComponent(0.8)
+        configuration.circleStrokeForegroundColor   = mainColor
+        configuration.statusColor                   = mainColor
+        configuration.successColor                  = mainColor
+        configuration.errorColor                    = mainColor
+        configuration.fullScreen                    = true;
+        
+        KVNProgress.setConfiguration(configuration)
     }
 }
 
