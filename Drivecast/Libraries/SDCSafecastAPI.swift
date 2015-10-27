@@ -35,6 +35,7 @@ extension SDCSafecastAPI {
         let request = SDCSafecastAPIRouter.Imports(userId, page)
         
         Alamofire.request(request)
+            .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
@@ -58,10 +59,10 @@ extension SDCSafecastAPI {
         }
         
         Alamofire.request(request)
+            .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    log("RESULT \(json)")
                     let json    = JSON(json)
                     let result: SDCImport = SDCImport(json: json)
                     
@@ -85,6 +86,28 @@ extension SDCSafecastAPI {
         
         sendImportRequest(importId, request: request, completion: completion)
     }
+    
+    // Create a new import 
+    static func createImport(data: NSData, boundaryConstant: String, completion: SDCSafecastAPIResultImport) {
+        let request = SDCSafecastAPIRouter.CreateImport(boundaryConstant)
+        
+        Alamofire.upload(request, data: data)
+            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                log("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
+            }
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success(let json):
+                    let json    = JSON(json)
+                    let result: SDCImport = SDCImport(json: json)
+                    
+                    completion(.Success(result))
+                case .Failure(let error):
+                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                }
+        }
+    }
 }
 
 // MARK - User
@@ -99,7 +122,7 @@ extension SDCSafecastAPI {
     typealias ResultUser = SDCSafecastAPIResult<SDCUser> -> Void
     
     // Retrieving the user
-    static func retrieveUser(id: Int, email: String, completion: ResultUser) {
+    static func retrieveUser(id: Int, email: String, key: String?, completion: ResultUser) {
         let request = SDCSafecastAPIRouter.User(id)
         
         Alamofire.request(request)
@@ -108,6 +131,11 @@ extension SDCSafecastAPI {
                 switch response.result {
                 case .Success(let json):
                     var json    = JSON(json)
+
+                    // Preserve key persistence
+                    if let key = key {
+                        json["authentication_token"] = JSON(key)
+                    }
                     
                     // Adding the email to the json data
                     json["email"] = JSON(email)
@@ -134,7 +162,7 @@ extension SDCSafecastAPI {
                         return completion(.Failure(SDCSafecastAPI.UserError.UserIdCouldNotBeFound(string)))
                     }
                     
-                    retrieveUser(id, email: email, completion: completion)
+                    retrieveUser(id, email: email, key: nil, completion: completion)
                     
                 case .Failure(let error):
                     completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))

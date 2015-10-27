@@ -238,7 +238,7 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     internal func managerStateDidChange(manager: SDCBluetoothManager, state: SDCBluetoothManager.State) {
         switch state {
         case .Unavailable, .Stopped:
-            let activity = "your Bluetooth is turned OFF or disabled\nplease turn it back ON to continue"
+            let activity = "your Bluetooth is turned OFF or disabled\n\nplease turn it back ON to continue"
              
             printOnConsole(activity, type: .Emphasys)
             updateActivity(activity)

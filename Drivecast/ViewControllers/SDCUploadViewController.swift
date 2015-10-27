@@ -128,7 +128,7 @@ extension SDCUploadViewController {
         measurementLineGraphView.colorTouchInputLine    = mainColor
         measurementLineGraphView.colorLine              = mainColor
         measurementLineGraphView.colorPoint             = mainColor.colorWithAlphaComponent(0.8)
-        measurementLineGraphView.colorTop               = UIColor.clearColor()
+        measurementLineGraphView.colorTop               = UIColor.whiteColor().colorWithAlphaComponent(0.7)
         measurementLineGraphView.colorBottom            = UIColor.clearColor()
         measurementLineGraphView.backgroundColor        = backgroundColor
         measurementLineGraphView.layer.borderColor      = separatorLineColor.CGColor
@@ -138,7 +138,7 @@ extension SDCUploadViewController {
         selectionView.isRounded             = true
         selectionView.backgroundColor       = UIColor.clearColor()
         selectionView.layer.borderColor     = separatorLineColor.CGColor
-        selectionView.layer.borderWidth     = 2
+        selectionView.layer.borderWidth     = 1
         
         // Value Container
         valuesContainerView.layer.cornerRadius  = 5

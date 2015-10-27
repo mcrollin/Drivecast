@@ -21,7 +21,7 @@ struct SDCUser {
 extension SDCUser: JSONDecodable {
     
     // Initializing a SDCImport object based on a json object
-    init(json: JSON) {
+    init(json: JSON) {        
         id                          = json["id"].intValue
         name                        = json["name"].stringValue
         email                       = json["email"].stringValue

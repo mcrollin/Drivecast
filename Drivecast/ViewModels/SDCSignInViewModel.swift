@@ -33,7 +33,7 @@ struct SDCSignInViewModel {
     // otherwise prompts the sign in form
     func checkAuthentication() {
         if let user = SDCUser.authenticatedUser {
-            SDCSafecastAPI.retrieveUser(user.id, email: user.email) { result in
+            SDCSafecastAPI.retrieveUser(user.id, email: user.email, key: user.key) { result in
                 switch result {
                 case .Success(let user):
                     log(user)

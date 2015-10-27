@@ -52,11 +52,11 @@ extension SDCUploadViewModel {
     // Discard all measurements
     func discardAllMeasurements() {
         let realm   = try! Realm()
-        let objects = realm.objects(SDCMeasurement)
+        let measurements = realm.objects(SDCMeasurement)
         
         // Delete all measurements
         try! realm.write {
-            realm.delete(objects)
+            realm.delete(measurements)
         }
         
         // Update measurements to dismiss the upload screen and display the record button
@@ -68,22 +68,54 @@ extension SDCUploadViewModel {
 // MARK - Import
 extension SDCUploadViewModel {
     
+    private func generateUploadData(data:NSData, parameters:Dictionary<String, String>, boundaryConstant:String) -> NSData {
+        let filename    = NSUUID().UUIDString + ".LOG"
+        let uploadData  = NSMutableData()
+        
+        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData("Content-Disposition: form-data; name=\"bgeigie_import[source]\"; filename=\"\(filename)\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData("Content-Type: application/octet-stream\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData(data)
+        
+        for (key, value) in parameters {
+            uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
+        }
+        
+        uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        
+        return uploadData
+    }
+    
     // Initializes the sign in button action
     private func initializeUploadAction() {
         uploadAction = Action() { _ in
             
             return SignalProducer { sink, _ in
                 KVNProgress.show()
-//                self.signIn(email, password: password) { result in
-//                    switch result {
-//                    case .Success(_):
-//                        sendNext(sink, true)
-//                        sendCompleted(sink)
-//                    case .Failure(let error):
-//                        sendNext(sink, false)
-//                        sendError(sink, error as! SDCSafecastAPI.UserError)
-//                    }
-//                }
+                
+                let realm                       = try! Realm()
+                let measurements                = realm.objects(SDCMeasurement)
+                let measurementsData: [String]  = measurements.map { return $0.data }
+                let logs                        = measurementsData.reduce("", combine: { $0 + "\r\n" + $1 })
+                let key                         = SDCUser.authenticatedUser!.key
+                let fileData                    = logs.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+                let boundaryConstant            = "Boundary-" + NSUUID().UUIDString
+                let uploadData                  = self.generateUploadData(fileData!, parameters: ["api_key": key], boundaryConstant: boundaryConstant)
+                
+                SDCSafecastAPI.createImport(uploadData, boundaryConstant: boundaryConstant) { result in
+                    switch result {
+                    case .Success(let logImport):
+                        log(logImport)
+                        
+                        self.discardAllMeasurements()
+                        
+                        KVNProgress.showSuccess()
+                    case .Failure(let error):
+                        log(error)
+                        KVNProgress.showError()
+                    }
+                }
             }
         }
     }
