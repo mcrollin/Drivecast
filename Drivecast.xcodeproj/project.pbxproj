@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B41BD42C62001D3C16 /* UIViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4920F8B71BD44A3A001D3C16 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B61BD44A3A001D3C16 /* UITextView.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */; settings = {ASSET_TAGS = (); }; };
 		4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BC1BD470A3001D3C16 /* UILabel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -89,7 +88,6 @@
 		257394F867C97FD4FC62AE03 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCConsoleViewController.swift; sourceTree = "<group>"; };
 		4920F8B41BD42C62001D3C16 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		4920F8B61BD44A3A001D3C16 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurement.swift; sourceTree = "<group>"; };
 		4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCLogParser.swift; sourceTree = "<group>"; };
 		4920F8BC1BD470A3001D3C16 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 				4920F8BC1BD470A3001D3C16 /* UILabel.swift */,
 				49FC9A731BCFB852006FA40E /* UIStoryboard.swift */,
 				498274221BD16F66003445B0 /* UITextField.swift */,
-				4920F8B61BD44A3A001D3C16 /* UITextView.swift */,
 				494C769E1BD1329F00B86491 /* UIView.swift */,
 				4920F8B41BD42C62001D3C16 /* UIViewController.swift */,
 			);
@@ -601,7 +598,6 @@
 				494C76921BD05F6000B86491 /* String.swift in Sources */,
 				49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */,
 				49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */,
-				4920F8B71BD44A3A001D3C16 /* UITextView.swift in Sources */,
 				49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */,
 				494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */,
 				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,

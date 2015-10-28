@@ -28,15 +28,11 @@ final class SDCImport: Object {
     dynamic var measurementCount: Int           = 0
     dynamic var approved: Bool                  = false
     dynamic var status: String                  = ""
-    dynamic var statusDetails: StatusDetails    = StatusDetails()
-    
-    class StatusDetails: NSObject {
-        dynamic var importLogs: Bool            = false
-        dynamic var processFile: Bool           = false
-        dynamic var computeLocation: Bool       = false
-        dynamic var createMap: Bool             = false
-        dynamic var measurementsAdded: Bool     = false
-    }
+    dynamic var logsImported: Bool              = false
+    dynamic var fileProcessed: Bool             = false
+    dynamic var locationsComputed: Bool         = false
+    dynamic var mapCreated: Bool                = false
+    dynamic var measurementsAdded: Bool         = false
     
     enum ProgressStatus {
         case Uploaded
@@ -49,7 +45,7 @@ final class SDCImport: Object {
     }
     
     var progress:ProgressStatus {
-        if (!statusDetails.processFile || !statusDetails.importLogs) {
+        if (!fileProcessed || !logsImported) {
             return .Uploaded
         } else if (cities != "" || credits != "") {
             return .Processed
@@ -57,7 +53,7 @@ final class SDCImport: Object {
             return .MetadataAdded
         } else if status == "submitted" {
             return .Submitted
-        } else if (approved && !statusDetails.measurementsAdded) {
+        } else if (approved && !measurementsAdded) {
             return .Approved
         } else if !approved {
             return .Rejected
@@ -74,13 +70,6 @@ extension SDCImport: JSONDecodable {
         let utcFormatter        = NSDateFormatter()
         utcFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         utcFormatter.timeZone   = NSTimeZone(name: "UTC")
-        
-        let statusDetails               = StatusDetails()
-        statusDetails.importLogs        = statusJson["import_bgeigie_logs"].boolValue
-        statusDetails.processFile       = statusJson["process_file"].boolValue
-        statusDetails.computeLocation   = statusJson["compute_latlng"].boolValue
-        statusDetails.createMap         = statusJson["create_map"].boolValue
-        statusDetails.measurementsAdded = statusJson["measurements_added"].boolValue
         
         var value: Dictionary<String, AnyObject> = [:]
         
@@ -100,7 +89,11 @@ extension SDCImport: JSONDecodable {
         value["lineCount"]          = json["line_count"].intValue
         value["measurementCount"]   = json["measurements_count"].intValue
         value["approved"]           = json["approved"].boolValue
-        value["statusDetails"]          = statusDetails
+        value["logsImported"]       = statusJson["import_bgeigie_logs"].boolValue
+        value["fileProcessed"]      = statusJson["process_file"].boolValue
+        value["locationsComputed"]  = statusJson["compute_latlng"].boolValue
+        value["mapCreated"]         = statusJson["create_map"].boolValue
+        value["measurementsAdded"]  = statusJson["measurements_added"].boolValue
         
         return SDCImport(value: value)
     }

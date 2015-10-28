@@ -9,13 +9,18 @@
 import UIKit
 import ReactiveCocoa
 
+class SDCConsoleLogEntryCell: UITableViewCell {
+    
+    @IBOutlet var lineLabel: UILabel!
+}
+
 class SDCConsoleViewController: UIViewController {
     
     // ViewModel from the parent screen handling all logic
     var viewModel: SDCRecordViewModel?
     
     // IB variable
-    @IBOutlet var consoleTextView: UITextView!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +33,11 @@ class SDCConsoleViewController: UIViewController {
 // MARK - UIView
 extension SDCConsoleViewController {
     func configureView() {
-        view.backgroundColor = UIColor(named: .Background)
+        view.backgroundColor            = UIColor(named: .Background)
+        tableView.backgroundColor       = view.backgroundColor
+        tableView.rowHeight             = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight    = 44.0
+        tableView.dataSource            = self
     }
 }
 
@@ -36,7 +45,30 @@ extension SDCConsoleViewController {
 extension SDCConsoleViewController {
     func bindViewModel() {
         if let viewModel = viewModel {
-            consoleTextView.rac_attributed_text <~ viewModel.consoleText
+            viewModel.consoleArray.producer.startWithNext { array in
+                let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                
+                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
         }
+    }
+}
+
+// MARK - UITableViewDataSource
+extension SDCConsoleViewController: UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.consoleArray.value.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell    = tableView.dequeueReusableCellWithIdentifier("ConsoleEntry", forIndexPath: indexPath) as! SDCConsoleLogEntryCell
+        let array   = viewModel?.consoleArray.value ?? []
+        let entry   = array[array.count - indexPath.row - 1]
+        
+        cell.lineLabel?.text       = entry.text
+        cell.lineLabel?.textColor  = entry.color
+        
+        return cell
     }
 }

@@ -15,7 +15,6 @@ struct AssociationKey {
     static var text: UInt8              = 3
     static var enabled: UInt8           = 4
     static var title: UInt8             = 5
-    static var attributedText: UInt8    = 6
 }
 
 func lazyAssociatedProperty<T: AnyObject>(host: AnyObject,
