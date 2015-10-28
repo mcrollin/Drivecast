@@ -63,8 +63,8 @@ extension SDCSafecastAPI {
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    let json    = JSON(json)
-                    let result: SDCImport = SDCImport(json: json)
+                    let json                = JSON(json)
+                    let result: SDCImport   = SDCImport.json(json)
                     
                     completion(.Success(result))
                 case .Failure(let error):
@@ -99,8 +99,8 @@ extension SDCSafecastAPI {
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    let json    = JSON(json)
-                    let result: SDCImport = SDCImport(json: json)
+                    let json                = JSON(json)
+                    let result: SDCImport   = SDCImport.json(json)
                     
                     completion(.Success(result))
                 case .Failure(let error):

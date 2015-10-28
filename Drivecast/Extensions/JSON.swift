@@ -14,7 +14,7 @@ extension JSON: JSONCollectionDecodable {
         var collection = [T]()
         
         for element in json {
-            collection.append(T(json: element))
+            collection.append(T.json(element))
         }
         
         return collection

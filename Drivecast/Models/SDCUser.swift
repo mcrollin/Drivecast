@@ -18,7 +18,7 @@ struct SDCUser {
 }
 
 // MARK - JSONDecodable
-extension SDCUser: JSONDecodable {
+extension SDCUser {
     
     // Initializing a SDCImport object based on a json object
     init(json: JSON) {        
