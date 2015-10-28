@@ -154,8 +154,6 @@ class SDCRecordViewModel: NSObject {
                 where lastRecordedMeasurement == lastMeasurement
                     && lastMeasurement.gpsValidity
                     && measurement.gpsValidity {
-                        log("\(distance)")
-                        
                         distance    += lastMeasurement.location.distanceFromLocation(measurement.location)
             }
             
