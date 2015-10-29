@@ -4,4 +4,5 @@ Background  : #f4f8f8
 LightText   : #cccccc
 Separator   : #dddddd
 Notice      : #95a5a6
+Awaiting    : #e98b39
 Alert       : #e74c3c

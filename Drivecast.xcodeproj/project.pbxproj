@@ -34,6 +34,14 @@
 		49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */; settings = {ASSET_TAGS = (); }; };
+		49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */; settings = {ASSET_TAGS = (); }; };
+		49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
+		49C04EBD1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */; settings = {ASSET_TAGS = (); }; };
+		49D619E71BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */; settings = {ASSET_TAGS = (); }; };
+		49D619E91BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */; settings = {ASSET_TAGS = (); }; };
+		49D619EB1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		49D619ED1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */; settings = {ASSET_TAGS = (); }; };
+		49D619EF1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */; settings = {ASSET_TAGS = (); }; };
 		49DAC9CC1BD4E66D00CD300F /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CB1BD4E66D00CD300F /* UIControl.swift */; settings = {ASSET_TAGS = (); }; };
 		49DAC9CE1BD5A90600CD300F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CD1BD5A90600CD300F /* UIButton.swift */; settings = {ASSET_TAGS = (); }; };
 		49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CF1BD5B48400CD300F /* CLLocationDistance.swift */; settings = {ASSET_TAGS = (); }; };
@@ -113,6 +121,14 @@
 		49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCAboutViewModel.swift; sourceTree = "<group>"; };
 		49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewController.swift; sourceTree = "<group>"; };
 		49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementColorLUT.swift; sourceTree = "<group>"; };
+		49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogDetailsCell.swift; sourceTree = "<group>"; };
+		49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogHeaderCell.swift; sourceTree = "<group>"; };
+		49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCConsoleLogEntryCell.swift; sourceTree = "<group>"; };
+		49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogOpenMapCell.swift; sourceTree = "<group>"; };
+		49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogOpenAPICell.swift; sourceTree = "<group>"; };
+		49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogActionCellDelegate.swift; sourceTree = "<group>"; };
+		49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogCell.swift; sourceTree = "<group>"; };
+		49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogMetadataActionCell.swift; sourceTree = "<group>"; };
 		49DAC9CB1BD4E66D00CD300F /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
 		49DAC9CD1BD5A90600CD300F /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		49DAC9CF1BD5B48400CD300F /* CLLocationDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationDistance.swift; sourceTree = "<group>"; };
@@ -312,6 +328,7 @@
 				494C769C1BD0EBC100B86491 /* JSONEncodable.swift */,
 				4995A0571BD66FF200854DC7 /* Persistable.swift */,
 				4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */,
+				49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -358,6 +375,13 @@
 				4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */,
 				4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */,
 				494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */,
+				49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */,
+				49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */,
+				49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */,
+				49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */,
+				49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */,
+				49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */,
+				49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */,
 				49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */,
 				4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */,
 			);
@@ -589,22 +613,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */,
 				49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */,
 				49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */,
 				4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */,
 				49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */,
 				49DAC9D21BD5B58E00CD300F /* NSTimeInterval.swift in Sources */,
+				49D619ED1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift in Sources */,
 				4995A05C1BD67B0D00854DC7 /* RealmPersistable.swift in Sources */,
 				494C76921BD05F6000B86491 /* String.swift in Sources */,
 				49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */,
 				49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */,
 				49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */,
 				494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */,
+				49D619E71BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift in Sources */,
 				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,
 				49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */,
 				49DAC9CE1BD5A90600CD300F /* UIButton.swift in Sources */,
 				49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */,
 				494C769F1BD1329F00B86491 /* UIView.swift in Sources */,
+				49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */,
 				49DAC9D41BD5B75E00CD300F /* NSTimer.swift in Sources */,
 				49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */,
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
@@ -613,10 +641,12 @@
 				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
 				4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */,
 				4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */,
+				49D619EF1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift in Sources */,
 				4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */,
 				4925AF691BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift in Sources */,
 				494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */,
 				49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */,
+				49D619EB1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift in Sources */,
 				49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */,
 				49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */,
 				49FC9AA51BCFB852006FA40E /* SDCRecordViewModel.swift in Sources */,
@@ -633,6 +663,8 @@
 				49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */,
 				494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */,
 				49DAC9CC1BD4E66D00CD300F /* UIControl.swift in Sources */,
+				49D619E91BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift in Sources */,
+				49C04EBD1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift in Sources */,
 				4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */,
 				49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */,
 				49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */,

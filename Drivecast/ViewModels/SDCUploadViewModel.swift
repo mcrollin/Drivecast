@@ -68,23 +68,23 @@ extension SDCUploadViewModel {
 // MARK - Import
 extension SDCUploadViewModel {
     
-    private func generateUploadData(data:NSData, parameters:Dictionary<String, String>, boundaryConstant:String) -> NSData {
-        let filename    = NSUUID().UUIDString + ".LOG"
-        let uploadData  = NSMutableData()
-        
-        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Disposition: form-data; name=\"bgeigie_import[source]\"; filename=\"\(filename)\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Type: application/octet-stream\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData(data)
-        
-        for (key, value) in parameters {
+    private func generateUploadData(data: NSData, filename: String,
+        parameters: Dictionary<String, String>, boundaryConstant: String) -> NSData {
+            let uploadData  = NSMutableData()
+            
             uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-            uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
-        }
-        
-        uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        
-        return uploadData
+            uploadData.appendData("Content-Disposition: form-data; name=\"bgeigie_import[source]\"; filename=\"\(filename)\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData("Content-Type: application/octet-stream\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData(data)
+            
+            for (key, value) in parameters {
+                uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+                uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
+            }
+            
+            uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            
+            return uploadData
     }
     
     // Initializes the sign in button action
@@ -101,7 +101,13 @@ extension SDCUploadViewModel {
                 let key                         = SDCUser.authenticatedUser!.key
                 let fileData                    = logs.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
                 let boundaryConstant            = "Boundary-" + NSUUID().UUIDString
-                let uploadData                  = self.generateUploadData(fileData!, parameters: ["api_key": key], boundaryConstant: boundaryConstant)
+                let firstMeasurement            = measurements.first!
+                let date                        = NSDate()
+                let formatter                   = NSDateFormatter()
+                formatter.dateFormat            = "MMdd"
+                let filename                    = "\(firstMeasurement.deviceId)-\(formatter.stringFromDate(date)).LOG"
+                let uploadData                  = self.generateUploadData(fileData!, filename: filename,
+                    parameters: ["api_key": key], boundaryConstant: boundaryConstant)
                 
                 SDCSafecastAPI.createImport(uploadData, boundaryConstant: boundaryConstant) { result in
                     switch result {

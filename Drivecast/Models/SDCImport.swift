@@ -44,10 +44,10 @@ final class SDCImport: Object {
         case Live
     }
     
-    var progress:ProgressStatus {
+    var progress: ProgressStatus {
         if (!fileProcessed || !logsImported) {
             return .Uploaded
-        } else if (cities != "" || credits != "") {
+        } else if (cities == "" || credits == "") {
             return .Processed
         } else if status == "processed" {
             return .MetadataAdded
@@ -61,6 +61,33 @@ final class SDCImport: Object {
         
         return .Live
     }
+    
+    var hasAction: Bool {
+        switch progress {
+        case .Uploaded:
+            return true
+        case .Processed:
+            return true
+        case .MetadataAdded:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var actionTitle: String {
+        switch progress {
+        case .Uploaded:
+            return "Update status"
+        case .Processed:
+            return "Fill in metadata"
+        case .MetadataAdded:
+            return "Submit for approval"
+        default:
+            return "No action"
+        }
+    }
+
 }
 
 extension SDCImport: JSONDecodable {
@@ -89,6 +116,7 @@ extension SDCImport: JSONDecodable {
         value["lineCount"]          = json["line_count"].intValue
         value["measurementCount"]   = json["measurements_count"].intValue
         value["approved"]           = json["approved"].boolValue
+        value["status"]             = json["status"].stringValue
         value["logsImported"]       = statusJson["import_bgeigie_logs"].boolValue
         value["fileProcessed"]      = statusJson["process_file"].boolValue
         value["locationsComputed"]  = statusJson["compute_latlng"].boolValue
@@ -109,6 +137,11 @@ extension SDCImport {
     override static func indexedProperties() -> [String] {
         return ["createdAt", "updatedAt"]
     }
+}
+
+
+// MARK - RealmPersists
+extension SDCImport: RealmPersistable {
 }
 
 // MARK - Equatable

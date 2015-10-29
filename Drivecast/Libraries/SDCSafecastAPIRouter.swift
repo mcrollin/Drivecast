@@ -22,7 +22,7 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
     case Imports(Int, Int)
     case Import(Int)
     case CreateImport(String)
-    case EditImportMetadata(Int, String, String, String)
+    case EditImportMetadata(Int, String, String, String, String)
     case SubmitImport(Int, String)
     
     // HTTP method
@@ -66,7 +66,7 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
             return "/bgeigie_imports/\(id).json"
         case .CreateImport:
             return "/bgeigie_imports.json"
-        case .EditImportMetadata(let id, _, _, _):
+        case .EditImportMetadata(let id, _, _, _, _):
             return "/bgeigie_imports/\(id)"
         case .SubmitImport(let id, _):
             return "/bgeigie_imports/\(id)/submit"
@@ -90,8 +90,8 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
             return [:]
         case .CreateImport:
             return [:]
-        case .EditImportMetadata(_, let key, let credits, let cities):
-            return ["api_key": key, "bgeigie_import[credits]": credits, "bgeigie_import[cities]": cities]
+        case .EditImportMetadata(_, let key, let cities, let credits, let description):
+            return ["api_key": key, "bgeigie_import[credits]": credits, "bgeigie_import[cities]": cities, "bgeigie_import[description]": description]
         case .SubmitImport(_, let key):
             return ["api_key": key]
         }

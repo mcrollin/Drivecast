@@ -21,6 +21,7 @@ extension UIColor {
         case Text = 0x333333ff
         case Separator = 0xddddddff
         case Main = 0x2ecc71ff
+        case Awaiting = 0xe98b39ff
         case LightText = 0xccccccff
     }
 

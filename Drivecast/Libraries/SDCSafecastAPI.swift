@@ -50,6 +50,25 @@ extension SDCSafecastAPI {
         }
     }
     
+    // Retrieves an Import
+    static func retrieveImport(importId: Int, completion: SDCSafecastAPIResultImport) {
+        let request = SDCSafecastAPIRouter.Import(importId)
+        
+        Alamofire.request(request)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success(let json):
+                    let json                = JSON(json)
+                    let result: SDCImport   = SDCImport.json(json)
+                    
+                    completion(.Success(result))
+                case .Failure(let error):
+                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                }
+        }
+    }
+    
     private static func sendImportRequest(importId: Int, request: URLRequestConvertible, completion: SDCSafecastAPIResultImport) {
         let delegate    = Alamofire.Manager.sharedInstance.delegate
         
@@ -74,8 +93,8 @@ extension SDCSafecastAPI {
     }
     
     // Edit an import's metadata (cities and credits)
-    static func editImportMetadata(importId: Int, key: String, cities: String, credits: String, completion: SDCSafecastAPIResultImport) {
-        let request = SDCSafecastAPIRouter.EditImportMetadata(importId, key, cities, credits)
+    static func editImportMetadata(importId: Int, key: String, cities: String, credits: String, description: String, completion: SDCSafecastAPIResultImport) {
+        let request = SDCSafecastAPIRouter.EditImportMetadata(importId, key, cities, credits, description)
         
         sendImportRequest(importId, request: request, completion: completion)
     }

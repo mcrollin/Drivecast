@@ -9,11 +9,6 @@
 import UIKit
 import ReactiveCocoa
 
-class SDCConsoleLogEntryCell: UITableViewCell {
-    
-    @IBOutlet var lineLabel: UILabel!
-}
-
 class SDCConsoleViewController: UIViewController {
     
     // ViewModel from the parent screen handling all logic
@@ -62,7 +57,10 @@ extension SDCConsoleViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell    = tableView.dequeueReusableCellWithIdentifier("ConsoleEntry", forIndexPath: indexPath) as! SDCConsoleLogEntryCell
+        let cell    = tableView.dequeueReusableCellWithIdentifier(
+            SDCConsoleLogEntryCell.identifier,
+            forIndexPath: indexPath) as! SDCConsoleLogEntryCell
+        
         let array   = viewModel?.consoleArray.value ?? []
         let entry   = array[array.count - indexPath.row - 1]
         
