@@ -14,7 +14,7 @@ class SDCDashboardImportLogOpenAPICell: UITableViewCell, SDCDashboardImportLogCe
     // IB variable
     @IBOutlet var apiLabel: UILabel!
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
             apiLabel.textColor  = UIColor(named: .Text)
         }

@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-final class SDCImport: Object {
+final class SDCImportLog: Object {
     dynamic var id: Int                         = 0
     dynamic var userId: Int                     = 0
     dynamic var createdAt: NSDate               = NSDate()
@@ -90,9 +90,9 @@ final class SDCImport: Object {
 
 }
 
-extension SDCImport: JSONDecodable {
+extension SDCImportLog: JSONDecodable {
     
-    static func json(json: JSON) -> SDCImport {
+    static func json(json: JSON) -> SDCImportLog {
         let statusJson          = json["status_details"]
         let utcFormatter        = NSDateFormatter()
         utcFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
@@ -123,29 +123,29 @@ extension SDCImport: JSONDecodable {
         value["mapCreated"]         = statusJson["create_map"].boolValue
         value["measurementsAdded"]  = statusJson["measurements_added"].boolValue
         
-        return SDCImport(value: value)
+        return SDCImportLog(value: value)
     }
 }
 
 // MARK - Realm
-extension SDCImport {
+extension SDCImportLog {
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
     override static func indexedProperties() -> [String] {
-        return ["createdAt", "updatedAt"]
+        return ["createdAt", "updatedAt", "id"]
     }
 }
 
 
 // MARK - RealmPersists
-extension SDCImport: RealmPersistable {
+extension SDCImportLog: RealmPersistable {
 }
 
 // MARK - Equatable
 // Comparision method betweee two SDCImport
-func ==(lhs: SDCImport, rhs: SDCImport) -> Bool {
+func ==(lhs: SDCImportLog, rhs: SDCImportLog) -> Bool {
     return lhs.id == rhs.id
 }

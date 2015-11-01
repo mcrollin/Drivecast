@@ -23,16 +23,16 @@ struct SDCSafecastAPI {
 extension SDCSafecastAPI {
     
     // Error enum
-    enum ImportError: ErrorType {
+    enum ImportLogError: ErrorType {
         case Network(String)
     }
     
-    typealias SDCSafecastAPIResultImports   = SDCSafecastAPIResult<[SDCImport]> -> Void
-    typealias SDCSafecastAPIResultImport    = SDCSafecastAPIResult<SDCImport> -> Void
+    typealias ResultImportLogs  = SDCSafecastAPIResult<[SDCImportLog]> -> Void
+    typealias ResultImportLog   = SDCSafecastAPIResult<SDCImportLog> -> Void
     
-    // Retrieves paged list of Imports for a User ordered by most recent creation date
-    static func retrieveImports(userId: Int, page: Int, completion: SDCSafecastAPIResultImports) {
-        let request = SDCSafecastAPIRouter.Imports(userId, page)
+    // Retrieves paged list of Import Logs for a User ordered by most recent creation date
+    static func retrieveImports(userId: Int, page: Int, completion: ResultImportLogs) {
+        let request = SDCSafecastAPIRouter.ImportLogs(userId, page)
         
         Alamofire.request(request)
             .validate()
@@ -41,40 +41,40 @@ extension SDCSafecastAPI {
                 case .Success(let json):
                     let json    = JSON(json)
                     let array   = json.array!
-                    let result: [SDCImport] = JSON.collection(array)
+                    let result: [SDCImportLog] = JSON.collection(array)
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                    completion(.Failure(SDCSafecastAPI.ImportLogError.Network(error.localizedDescription)))
                 }
         }
     }
     
     // Retrieves an Import
-    static func retrieveImport(importId: Int, completion: SDCSafecastAPIResultImport) {
-        let request = SDCSafecastAPIRouter.Import(importId)
+    static func retrieveImport(importId: Int, completion: ResultImportLog) {
+        let request = SDCSafecastAPIRouter.ImportLog(importId)
         
         Alamofire.request(request)
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    let json                = JSON(json)
-                    let result: SDCImport   = SDCImport.json(json)
+                    let json                    = JSON(json)
+                    let result: SDCImportLog    = SDCImportLog.json(json)
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                    completion(.Failure(SDCSafecastAPI.ImportLogError.Network(error.localizedDescription)))
                 }
         }
     }
     
-    private static func sendImportRequest(importId: Int, request: URLRequestConvertible, completion: SDCSafecastAPIResultImport) {
+    private static func sendImportLogRequest(importId: Int, request: URLRequestConvertible, completion: ResultImportLog) {
         let delegate    = Alamofire.Manager.sharedInstance.delegate
         
         // Disable HTTP Redirection
         delegate.taskWillPerformHTTPRedirection = { session, task, response, request in
-            return SDCSafecastAPIRouter.Import(importId).URLRequest
+            return SDCSafecastAPIRouter.ImportLog(importId).URLRequest
         }
         
         Alamofire.request(request)
@@ -82,48 +82,45 @@ extension SDCSafecastAPI {
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    let json                = JSON(json)
-                    let result: SDCImport   = SDCImport.json(json)
+                    let json                    = JSON(json)
+                    let result: SDCImportLog    = SDCImportLog.json(json)
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                    completion(.Failure(SDCSafecastAPI.ImportLogError.Network(error.localizedDescription)))
                 }
         }
     }
     
-    // Edit an import's metadata (cities and credits)
-    static func editImportMetadata(importId: Int, key: String, cities: String, credits: String, description: String, completion: SDCSafecastAPIResultImport) {
-        let request = SDCSafecastAPIRouter.EditImportMetadata(importId, key, cities, credits, description)
+    // Edit an import log's metadata (cities and credits)
+    static func editImportLogMetadata(importId: Int, key: String, cities: String, credits: String, name: String, description: String, completion: SDCSafecastAPI.ResultImportLog) {
+        let request = SDCSafecastAPIRouter.EditImportLogMetadata(importId, key, cities, credits, name, description)
         
-        sendImportRequest(importId, request: request, completion: completion)
+        sendImportLogRequest(importId, request: request, completion: completion)
     }
     
-    // Submits an import for approval
-    static func submitImport(importId: Int, key: String, completion: SDCSafecastAPIResultImport) {
-        let request = SDCSafecastAPIRouter.SubmitImport(importId, key)
+    // Submits an import log for approval
+    static func submitImportLog(importId: Int, key: String, completion: ResultImportLog) {
+        let request = SDCSafecastAPIRouter.SubmitImportLog(importId, key)
         
-        sendImportRequest(importId, request: request, completion: completion)
+        sendImportLogRequest(importId, request: request, completion: completion)
     }
     
-    // Create a new import 
-    static func createImport(data: NSData, boundaryConstant: String, completion: SDCSafecastAPIResultImport) {
-        let request = SDCSafecastAPIRouter.CreateImport(boundaryConstant)
+    // Create a new import log
+    static func createImportLog(data: NSData, boundaryConstant: String, completion: ResultImportLog) {
+        let request = SDCSafecastAPIRouter.CreateImportLog(boundaryConstant)
         
         Alamofire.upload(request, data: data)
-            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                log("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
-            }
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let json):
-                    let json                = JSON(json)
-                    let result: SDCImport   = SDCImport.json(json)
+                    let json                    = JSON(json)
+                    let result: SDCImportLog    = SDCImportLog.json(json)
                     
                     completion(.Success(result))
                 case .Failure(let error):
-                    completion(.Failure(SDCSafecastAPI.ImportError.Network(error.localizedDescription)))
+                    completion(.Failure(SDCSafecastAPI.ImportLogError.Network(error.localizedDescription)))
                 }
         }
     }
@@ -192,8 +189,7 @@ extension SDCSafecastAPI {
     // Signin in
     static func signInUser(email: String, password: String, completion: ResultUser) {
         // Trim the email from any whitespace character
-        let email = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-    
+        let email   = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let request = SDCSafecastAPIRouter.SignIn(email, password)
         
         Alamofire.request(request)

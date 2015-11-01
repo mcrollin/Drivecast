@@ -95,6 +95,9 @@ extension SDCRecordViewController {
     func cancelConnection() {
         viewModel.disconnect()
         
+        // Shows the upload screen
+        UIApplication.showTab(SDCConfiguration.UI.TabBarMenu.Upload)
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     

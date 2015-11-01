@@ -23,7 +23,7 @@ class SDCUploadViewModel: NSObject {
     let actionString        = MutableProperty<String>("?".uppercaseString)
     
     // Action
-    private(set) var uploadAction: Action<AnyObject?, SDCImport, SDCSafecastAPI.ImportError>? = nil
+    private(set) var uploadAction: Action<AnyObject?, SDCImportLog, NoError>? = nil
     
     override init() {
         super.init()
@@ -109,18 +109,25 @@ extension SDCUploadViewModel {
                 let uploadData                  = self.generateUploadData(fileData!, filename: filename,
                     parameters: ["api_key": key], boundaryConstant: boundaryConstant)
                 
-                SDCSafecastAPI.createImport(uploadData, boundaryConstant: boundaryConstant) { result in
+                SDCSafecastAPI.createImportLog(uploadData, boundaryConstant: boundaryConstant) { result in
                     switch result {
-                    case .Success(let logImport):
-                        log(logImport)
+                    case .Success(let importLog):
+                        importLog.add()
                         
                         self.discardAllMeasurements()
                         
+                        UIApplication.showTab(SDCConfiguration.UI.TabBarMenu.Dashboard)
+                        
                         KVNProgress.showSuccess()
+                        
+                        sendNext(sink, importLog)
                     case .Failure(let error):
-                        log(error)
                         KVNProgress.showError()
+                        
+                        log(error)
                     }
+
+                    sendCompleted(sink)
                 }
             }
         }
@@ -165,7 +172,7 @@ extension SDCUploadViewModel: BEMSimpleLineGraphDataSource {
     
     internal func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
         guard let validMeasurements = validMeasurements.value else {
-            return 0
+            return 1
         }
         
         let maxPoints   = SDCConfiguration.UI.lineGraphMaxPoints
@@ -174,7 +181,10 @@ extension SDCUploadViewModel: BEMSimpleLineGraphDataSource {
             maxPoints : validMeasurements.count
     }
     
-    internal func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
+    internal func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {        guard validMeasurements.value != nil else {
+            return 0
+        }
+        
         return CGFloat(measurementForIndex(index)?.cpm ?? 0)
     }
 }

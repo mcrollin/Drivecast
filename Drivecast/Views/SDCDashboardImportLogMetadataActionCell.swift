@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 
 protocol SDCDashboardImportLogMetadataActionCellDelegate {
-    func executeMetadataImportLogAction(importLog: SDCImport, cities: String, credits: String, description: String)
+    func executeMetadataImportLogAction(importLog: SDCImportLog, cities: String, credits: String, name: String, description: String)
 }
 
 class SDCDashboardImportLogMetadataActionCell: UITableViewCell, SDCDashboardImportLogCell {
@@ -20,6 +20,7 @@ class SDCDashboardImportLogMetadataActionCell: UITableViewCell, SDCDashboardImpo
     // IB variable
     @IBOutlet var citiesTextField: UITextField!
     @IBOutlet var creditsTextField: UITextField!
+    @IBOutlet var nameTextField: UITextField!
     @IBOutlet var descriptionTextField: UITextField!
     @IBOutlet var actionButton: UIButton! {
         didSet {
@@ -27,13 +28,18 @@ class SDCDashboardImportLogMetadataActionCell: UITableViewCell, SDCDashboardImpo
         }
     }
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
             actionButton.backgroundColor    = UIColor(named: .Main)
             actionButton.isRounded          = true
             
             actionButton.setTitle(importLog.actionTitle.uppercaseString, forState: .Normal)
             actionButton.setTitleColor(UIColor.whiteColor().colorWithAlphaComponent(0.3), forState: .Disabled)
+            
+            citiesTextField.delegate        = self
+            creditsTextField.delegate       = self
+            nameTextField.delegate          = self
+            descriptionTextField.delegate   = self
             
             enableActionButton()
         }
@@ -48,15 +54,17 @@ extension SDCDashboardImportLogMetadataActionCell {
                     self.importLog,
                     cities: citiesTextField.text!,
                     credits: creditsTextField.text!,
+                    name: nameTextField.text!,
                     description: descriptionTextField.text ?? ""
                 )
         }
     }
     
     // Validates that the email and passwords are valid
-    private func validateMetadata(cities: String, credits: String, description: String) -> Bool {
+    private func validateMetadata(cities: String, credits: String, name: String, description: String) -> Bool {
         if cities.characters.count < 1
             || credits.characters.count < 1
+            || name.characters.count < 1
             || description.characters.count < 1 {
                 return false
         }
@@ -68,11 +76,30 @@ extension SDCDashboardImportLogMetadataActionCell {
     private func enableActionButton() {
         let citiesSignalProducer        = citiesTextField.rac_text.producer
         let creditsSignalProducer       = creditsTextField.rac_text.producer
+        let nameSignalProducer          = nameTextField.rac_text.producer
         let descriptionSignalProducer   = descriptionTextField.rac_text.producer
         
-        actionButton.rac_enabled <~ combineLatest(citiesSignalProducer, creditsSignalProducer, descriptionSignalProducer)
-            .map { cities, credits, description in
-                return self.validateMetadata(cities, credits: credits, description: description)
+        actionButton.rac_enabled <~ combineLatest(citiesSignalProducer, creditsSignalProducer, nameSignalProducer, descriptionSignalProducer)
+            .map { cities, credits, name, description in
+                return self.validateMetadata(cities, credits: credits, name: name, description: description)
         }
+    }
+}
+
+// Handle return key on keyboard
+extension SDCDashboardImportLogMetadataActionCell: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case citiesTextField:
+            creditsTextField.becomeFirstResponder()
+        case creditsTextField:
+            nameTextField.becomeFirstResponder()
+        case nameTextField:
+            descriptionTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
 }

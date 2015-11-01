@@ -15,6 +15,12 @@ struct SDCConfiguration {
     struct UI {
         static let circleWidth: CGFloat = 12.0
         static let lineGraphMaxPoints   = 40
+        
+        struct TabBarMenu {
+            static let Dashboard        = 0
+            static let Record           = 1
+            static let Upload           = 2
+        }
     }
     
     struct API {
@@ -22,13 +28,17 @@ struct SDCConfiguration {
         
         #if STAGING
         // Safecast's staging API's base URL
-        static let baseURL   = "http://dev.safecast.org/" + locale
+        static let baseURL  = "http://api.staging.safecast.org/" + locale
         
         #else
         // Safecast's production API's base URL
-        static let baseURL   = "https://api.safecast.org/" + locale
+        static let baseURL  = "https://api.safecast.org/" + locale
         
         #endif
+    }
+    
+    struct Map {
+        static let baseURL  = "http://safecast.org/tilemap/"
     }
 
     // A list of supported BLE Devices with their configuration

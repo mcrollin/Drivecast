@@ -46,7 +46,6 @@ class SDCUploadViewController: UIViewController {
     }
     
     // Actions
-    var discardCocoaAction: CocoaAction!
     var uploadCocoaAction: CocoaAction!
     
     // IB variables
@@ -133,6 +132,8 @@ extension SDCUploadViewController {
         measurementLineGraphView.backgroundColor        = backgroundColor
         measurementLineGraphView.layer.borderColor      = separatorLineColor.CGColor
         measurementLineGraphView.layer.borderWidth      = 1
+        measurementLineGraphView.delegate               = viewModel
+        measurementLineGraphView.dataSource             = viewModel
         
         // Selection
         selectionView.isRounded             = true
@@ -189,7 +190,7 @@ extension SDCUploadViewController {
     private func discardButtonEvent() {
         discardButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
             .subscribeNext { _ in
-                let alertController = UIAlertController(title: nil, message: "Are you sure you want discard these measurements?", preferredStyle: .ActionSheet)
+                let alertController = UIAlertController(title: nil, message: "Are you sure you want to discard these measurements?", preferredStyle: .ActionSheet)
                 let destroyAction   = UIAlertAction(title: "Discard", style: .Destructive) { (action) in
                     self.viewModel.discardAllMeasurements()
                 }
@@ -262,9 +263,6 @@ extension SDCUploadViewController {
             }
             
             self.multiMeasurementOverlay = SDCMultiMeasurementOverlay(measurements: overlays)
-            
-            self.measurementLineGraphView.delegate      = self.viewModel
-            self.measurementLineGraphView.dataSource    = self.viewModel
             
             self.measurementLineGraphView.reloadGraph()
         }

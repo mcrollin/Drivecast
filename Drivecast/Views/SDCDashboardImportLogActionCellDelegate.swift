@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SDCDashboardImportLogActionCellDelegate {
-    func executeImportLogAction(importLog: SDCImport)
+    func executeImportLogAction(importLog: SDCImportLog)
 }
 
 class SDCDashboardImportLogActionCell: UITableViewCell, SDCDashboardImportLogCell {
@@ -26,7 +26,7 @@ class SDCDashboardImportLogActionCell: UITableViewCell, SDCDashboardImportLogCel
         }
     }
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
             actionButton.backgroundColor    = UIColor(named: .Main)
             actionButton.isRounded          = true

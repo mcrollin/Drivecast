@@ -32,21 +32,9 @@ struct SDCSignInViewModel {
     // If so, retrieves the user's latest information
     // otherwise prompts the sign in form
     func checkAuthentication() {
-        if let user = SDCUser.authenticatedUser {
-            SDCSafecastAPI.retrieveUser(user.id, email: user.email, key: user.key) { result in
-                switch result {
-                case .Success(let user):
-                    log(user)
-                    
-                    SDCUser.authenticatedUser = user
-                case .Failure(let error):
-                    log(error)
-                }
-                
-                self.userIsAuthenticated.value = true
-            }
+        if let _ = SDCUser.authenticatedUser {
+            self.userIsAuthenticated.value = true
         } else {
-            self.signInButtonEnabled.value  = true
             self.emailTextEnabled.value     = true
             self.passwordTextEnabled.value  = true
             self.signInFormIsVisible.value  = true

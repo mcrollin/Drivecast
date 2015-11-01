@@ -2,7 +2,7 @@
 //  SDCDashboardImportLogOpenMapCell.swift
 //  Drivecast
 //
-//  Created by Marc Rollin on 10/29/15.
+//  Created by Marc Rollin on 10/31/15.
 //  Copyright © 2015 Safecast. All rights reserved.
 //
 
@@ -12,11 +12,11 @@ class SDCDashboardImportLogOpenMapCell: UITableViewCell, SDCDashboardImportLogCe
     static let identifier   = "ImportLogOpenMap"
     
     // IB variable
-    @IBOutlet var mapLabel: UILabel!
+    @IBOutlet var apiLabel: UILabel!
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
-            mapLabel.textColor  = UIColor(named: .Text)
+            apiLabel.textColor  = UIColor(named: .Text)
         }
     }
 }

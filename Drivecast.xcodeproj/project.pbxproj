@@ -23,6 +23,7 @@
 		494C769F1BD1329F00B86491 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769E1BD1329F00B86491 /* UIView.swift */; settings = {ASSET_TAGS = (); }; };
 		494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */; settings = {ASSET_TAGS = (); }; };
+		4975CECB1BE61A6800FF6943 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975CECA1BE61A6800FF6943 /* UIApplication.swift */; settings = {ASSET_TAGS = (); }; };
 		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; settings = {ASSET_TAGS = (); }; };
 		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; settings = {ASSET_TAGS = (); }; };
 		4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A0571BD66FF200854DC7 /* Persistable.swift */; settings = {ASSET_TAGS = (); }; };
@@ -34,10 +35,10 @@
 		49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */; settings = {ASSET_TAGS = (); }; };
+		49B948051BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B948041BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift */; settings = {ASSET_TAGS = (); }; };
 		49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */; settings = {ASSET_TAGS = (); }; };
 		49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
 		49C04EBD1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49D619E71BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */; settings = {ASSET_TAGS = (); }; };
 		49D619E91BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */; settings = {ASSET_TAGS = (); }; };
 		49D619EB1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		49D619ED1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -110,6 +111,7 @@
 		494C769E1BD1329F00B86491 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewModel.swift; sourceTree = "<group>"; };
 		49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementCircleView.swift; sourceTree = "<group>"; };
+		4975CECA1BE61A6800FF6943 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		498274201BD16D3B003445B0 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
 		498274221BD16F66003445B0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4995A0571BD66FF200854DC7 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -121,10 +123,10 @@
 		49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCAboutViewModel.swift; sourceTree = "<group>"; };
 		49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewController.swift; sourceTree = "<group>"; };
 		49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementColorLUT.swift; sourceTree = "<group>"; };
+		49B948041BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogOpenMapCell.swift; sourceTree = "<group>"; };
 		49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogDetailsCell.swift; sourceTree = "<group>"; };
 		49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogHeaderCell.swift; sourceTree = "<group>"; };
 		49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCConsoleLogEntryCell.swift; sourceTree = "<group>"; };
-		49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogOpenMapCell.swift; sourceTree = "<group>"; };
 		49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogOpenAPICell.swift; sourceTree = "<group>"; };
 		49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogActionCellDelegate.swift; sourceTree = "<group>"; };
 		49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardImportLogCell.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				498274221BD16F66003445B0 /* UITextField.swift */,
 				494C769E1BD1329F00B86491 /* UIView.swift */,
 				4920F8B41BD42C62001D3C16 /* UIViewController.swift */,
+				4975CECA1BE61A6800FF6943 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,7 +384,7 @@
 				49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */,
 				49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */,
 				49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */,
-				49D619E61BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift */,
+				49B948041BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift */,
 				49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */,
 				4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */,
 			);
@@ -479,6 +482,7 @@
 				TargetAttributes = {
 					49FC9A1D1BCFB5D4006FA40E = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7S5AAN8833;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -616,6 +620,7 @@
 				49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */,
 				49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */,
 				49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */,
+				4975CECB1BE61A6800FF6943 /* UIApplication.swift in Sources */,
 				4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */,
 				49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */,
 				49DAC9D21BD5B58E00CD300F /* NSTimeInterval.swift in Sources */,
@@ -626,7 +631,6 @@
 				49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */,
 				49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */,
 				494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */,
-				49D619E71BE22B38005F8B11 /* SDCDashboardImportLogOpenMapCell.swift in Sources */,
 				494C76901BD05AB600B86491 /* SDCUser.swift in Sources */,
 				49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */,
 				49DAC9CE1BD5A90600CD300F /* UIButton.swift in Sources */,
@@ -638,6 +642,7 @@
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
 				49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */,
 				49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */,
+				49B948051BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift in Sources */,
 				498274231BD16F66003445B0 /* UITextField.swift in Sources */,
 				4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */,
 				4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */,
@@ -813,10 +818,13 @@
 			baseConfigurationReference = 56B8D662FA9703DECFEE8609 /* Pods.production debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = "Production Debug";
 		};
@@ -825,10 +833,13 @@
 			baseConfigurationReference = E5331C90BAAD6850DDEB09A6 /* Pods.production release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = "Production Release";
 		};
@@ -930,10 +941,13 @@
 			baseConfigurationReference = 8D72FD4BB90C87934F44102E /* Pods.staging debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = "Staging Debug";
 		};
@@ -1005,10 +1019,13 @@
 			baseConfigurationReference = BBFF8E9ECA56CCE4BEFC6195 /* Pods.staging release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = "Staging Release";
 		};

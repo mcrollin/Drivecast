@@ -15,11 +15,11 @@ PODS:
   - ReactiveCocoa/UI (3.0.0-swift2):
     - ReactiveCocoa/Core
     - Result (~> 0.6-beta.1)
-  - Realm (0.96.1):
-    - Realm/Headers (= 0.96.1)
-  - Realm/Headers (0.96.1)
-  - RealmSwift (0.96.1):
-    - Realm (= 0.96.1)
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
+  - RealmSwift (0.96.2):
+    - Realm (= 0.96.2)
   - Result (0.6.0-beta.4)
   - SnapKit (0.15.0)
   - SpinKit (1.2.0)
@@ -30,9 +30,9 @@ DEPENDENCIES:
   - AngleGradientLayer (= 1.2.3)
   - BEMSimpleLineGraph (= 4.1)
   - IQKeyboardManagerSwift (= 3.3.2)
-  - KVNProgress
+  - KVNProgress (= 2.2.1)
   - ReactiveCocoa (= 3.0.0-swift2)
-  - RealmSwift (= 0.96.1)
+  - RealmSwift (= 0.96.2)
   - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
   - SwiftyJSON (= 2.3.0)
@@ -44,8 +44,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 40a9f6a3a5f60bc311aad5ab3265b9de5ecb9367
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
   ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
-  Realm: d05e4621f67fb1c36acd4e573ac5b52a407fc2cc
-  RealmSwift: 6c96a72b385027d9593b69f6821c697fe843eb68
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
+  RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
   Result: f7927152cbaec0c043abb06ba0bc432678818418
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a

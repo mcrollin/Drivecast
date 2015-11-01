@@ -62,7 +62,7 @@ extension SDCAboutTableViewController {
 extension SDCAboutTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        viewModel.showDetails(indexPath)
+        viewModel.showDetails(indexPath, viewController: self)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

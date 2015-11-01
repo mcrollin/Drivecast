@@ -8,6 +8,7 @@
 
 import Foundation
 import ReactiveCocoa
+import SafariServices
 
 struct SDCAboutViewModel {
     let buildString         = MutableProperty<String>("")
@@ -23,75 +24,87 @@ struct SDCAboutViewModel {
 }
 
 extension SDCAboutViewModel {
-    
-    // Helper function to open schemes
-    private func openScheme(URL: String) {
-        let URL = NSURL(string: URL)!
+
+    // Helper function to send emails
+    private func sendEmailTo(address: String) {
+        let URL = NSURL(string: "mailto:\(address)")!
         
         UIApplication.sharedApplication().openURL(URL)
     }
     
+    // Helper function to open URLs
+    private func openURL(urlString: String, viewController: UIViewController) {
+        if let url = NSURL(string: urlString) {
+            if #available(iOS 9.0, *) {
+                let safari = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+                
+                viewController.presentViewController(safari, animated: true, completion: nil)
+            } else {
+                 UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
 
-    func showDetails(indexPath: NSIndexPath) {
+    func showDetails(indexPath: NSIndexPath, viewController: UIViewController) {
         switch indexPath.section {
         case 0: // ABOUT
             switch indexPath.row {
             case 0: // WHAT IS SAFECAST
-                openScheme("http://blog.safecast.org")
+                openURL("http://blog.safecast.org", viewController: viewController)
             case 1: // ABOUT THE BGEIGIE NANO
-                openScheme("http://blog.safecast.org/bgeigie-nano")
+                openURL("http://blog.safecast.org/bgeigie-nano", viewController: viewController)
             case 2: // READ OUR BLOG
-                openScheme("http://blog.safecast.org/news")
+                openURL("http://blog.safecast.org/news", viewController: viewController)
             case 3: // ACCESS THE MAP
-                openScheme("http://safecast.org/tilemap")
+                openURL("http://safecast.org/tilemap", viewController: viewController)
             case 4: // FAQ
-                openScheme("http://blog.safecast.org/faq")
+                openURL("http://blog.safecast.org/faq", viewController: viewController)
             default:
                 break
             }
         case 1: // WANT TO HELP
             switch indexPath.row {
             case 1: // DONATE
-                openScheme("http://blog.safecast.org/donate")
+                openURL("http://blog.safecast.org/donate", viewController: viewController)
             case 2: // VOLUNTEER
-                openScheme("http://blog.safecast.org/volunteer")
+                openURL("http://blog.safecast.org/volunteer", viewController: viewController)
             default:
                 break
             }
         case 2: // ACKNOWLEDGMENTS
             switch indexPath.row {
             case 1: // MARC
-                openScheme("mailto:rollin.marc@gmail.com")
+                sendEmailTo("rollin.marc@gmail.com")
             case 2: // NICK
-                openScheme("mailto:ndolezal@gmail.com")
+                sendEmailTo("ndolezal@gmail.com")
             case 4: // LICENCES
-                openScheme("http://blog.safecast.org/faq/licenses")
+                openURL("http://blog.safecast.org/faq/licenses", viewController: viewController)
             case 5: // GITHUB
-                openScheme("https://github.com/mcrollin/Drivecast")
+                openURL("https://github.com/mcrollin/Drivecast", viewController: viewController)
             case 7: // ALAMOFIRE
-                openScheme("https://github.com/Alamofire/Alamofire")
+                openURL("https://github.com/Alamofire/Alamofire", viewController: viewController)
             case 8: // ANGLE GRADIENT LAYER
-                openScheme("https://github.com/paiv/AngleGradientLayer")
+                openURL("https://github.com/paiv/AngleGradientLayer", viewController: viewController)
             case 9: // BEM SIMPLE LINE GRAPH
-                openScheme("https://github.com/Boris-Em/BEMSimpleLineGraph")
+                openURL("https://github.com/Boris-Em/BEMSimpleLineGraph", viewController: viewController)
             case 10: // COCOAPODS
-                openScheme("https://cocoapods.org")
+                openURL("https://cocoapods.org", viewController: viewController)
             case 11: // IQ KEYBOARDMANAGER
-                openScheme("https://github.com/hackiftekhar/IQKeyboardManager")
+                openURL("https://github.com/hackiftekhar/IQKeyboardManager", viewController: viewController)
             case 12: // REALM SWIFT
-                openScheme("https://realm.io")
+                openURL("https://realm.io", viewController: viewController)
             case 13: // SPINKIT
-                openScheme("https://github.com/raymondjavaxx/SpinKit-ObjC")
+                openURL("https://github.com/raymondjavaxx/SpinKit-ObjC", viewController: viewController)
             case 14: // SNAPKIT
-                openScheme("https://github.com/SnapKit/SnapKit")
+                openURL("https://github.com/SnapKit/SnapKit", viewController: viewController)
             case 15: // SWIFTY JSON
-                openScheme("https://github.com/SwiftyJSON/SwiftyJSON")
+                openURL("https://github.com/SwiftyJSON/SwiftyJSON", viewController: viewController)
             case 16: // SWIFT GEN
-                openScheme("https://github.com/AliSoftware/SwiftGen")
+                openURL("https://github.com/AliSoftware/SwiftGen", viewController: viewController)
             case 17: // REACTIVE COCOA
-                openScheme("https://github.com/ReactiveCocoa/ReactiveCocoa")
+                openURL("https://github.com/ReactiveCocoa/ReactiveCocoa", viewController: viewController)
             case 19: // ICONS8
-                openScheme("https://icons8.com/#/web")
+                openURL("https://icons8.com/", viewController: viewController)
             default:
                 break
             }

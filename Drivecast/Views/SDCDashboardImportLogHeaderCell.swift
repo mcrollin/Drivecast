@@ -17,7 +17,7 @@ class SDCDashboardImportLogHeaderCell: UITableViewCell, SDCDashboardImportLogCel
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var statusContainerView: UIView!
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
             let timeZone    = NSTimeZone.localTimeZone()
             let formatter   = NSDateFormatter()

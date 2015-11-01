@@ -19,11 +19,11 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
     case SignIn(String, String)
     case SignOut()
     case User(Int)
-    case Imports(Int, Int)
-    case Import(Int)
-    case CreateImport(String)
-    case EditImportMetadata(Int, String, String, String, String)
-    case SubmitImport(Int, String)
+    case ImportLogs(Int, Int)
+    case ImportLog(Int)
+    case CreateImportLog(String)
+    case EditImportLogMetadata(Int, String, String, String, String, String)
+    case SubmitImportLog(Int, String)
     
     // HTTP method
     var method: Alamofire.Method {
@@ -36,15 +36,15 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
             return .GET
         case .User:
             return .GET
-        case .Imports:
+        case .ImportLogs:
             return .GET
-        case .Import:
+        case .ImportLog:
             return .GET
-        case .CreateImport:
+        case .CreateImportLog:
             return .POST
-        case .EditImportMetadata:
+        case .EditImportLogMetadata:
             return .PUT
-        case .SubmitImport:
+        case .SubmitImportLog:
             return .PUT
         }
     }
@@ -60,15 +60,15 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
             return "/logout"
         case .User(let id):
             return "/users/\(id).json"
-        case .Imports:
+        case .ImportLogs:
             return "/bgeigie_imports.json"
-        case .Import(let id):
+        case .ImportLog(let id):
             return "/bgeigie_imports/\(id).json"
-        case .CreateImport:
+        case .CreateImportLog:
             return "/bgeigie_imports.json"
-        case .EditImportMetadata(let id, _, _, _, _):
+        case .EditImportLogMetadata(let id, _, _, _, _, _):
             return "/bgeigie_imports/\(id)"
-        case .SubmitImport(let id, _):
+        case .SubmitImportLog(let id, _):
             return "/bgeigie_imports/\(id)/submit"
         }
     }
@@ -84,15 +84,15 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
             return [:]
         case .User:
             return [:]
-        case .Imports(let userId, let page):
+        case .ImportLogs(let userId, let page):
             return ["by_user_id": userId, "page": page, "order": "created_at desc"] // OR updated_at
-        case .Import:
+        case .ImportLog:
             return [:]
-        case .CreateImport:
+        case .CreateImportLog:
             return [:]
-        case .EditImportMetadata(_, let key, let cities, let credits, let description):
-            return ["api_key": key, "bgeigie_import[credits]": credits, "bgeigie_import[cities]": cities, "bgeigie_import[description]": description]
-        case .SubmitImport(_, let key):
+        case .EditImportLogMetadata(_, let key, let cities, let credits, let name, let description):
+            return ["api_key": key, "bgeigie_import[credits]": credits, "bgeigie_import[cities]": cities, "bgeigie_import[name]": name, "bgeigie_import[description]": description]
+        case .SubmitImportLog(_, let key):
             return ["api_key": key]
         }
     }
@@ -106,7 +106,7 @@ enum SDCSafecastAPIRouter: URLRequestConvertible {
         mutableURLRequest.HTTPMethod = method.rawValue
         
         switch self {
-        case .CreateImport(let boundaryConstant):
+        case .CreateImportLog(let boundaryConstant):
             let contentType = "multipart/form-data; boundary=" + boundaryConstant
             mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
             

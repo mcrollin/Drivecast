@@ -4,7 +4,7 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod 'RealmSwift',               '0.96.1'
+pod 'RealmSwift',               '0.96.2'
 pod 'SwiftyJSON',               '2.3.0'
 pod 'Alamofire',                '3.0.0'
 pod 'ReactiveCocoa',            '3.0.0-swift2'

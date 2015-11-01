@@ -167,8 +167,8 @@ extension SDCSignInViewController {
                 self.logoImageView.alpha    = 0.1
                 self.dotImageView.alpha     = 0.1
             }, completion: { _ in
-                self.emailTextField.text    = nil
-                self.passwordTextField.text = nil
+                self.emailTextField.text    = ""
+                self.passwordTextField.text = ""
                 
                 if let menuViewController = self.menuViewController {
                     self.navigationController?.pushViewController(menuViewController, animated: true)
@@ -300,8 +300,8 @@ extension SDCSignInViewController: UITextFieldDelegate {
 extension SDCSignInViewController: UITabBarControllerDelegate {
     
     internal func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        // @todo: Need a more elegant way to do this
-        guard tabBarController.viewControllers?.indexOf(viewController) == 1 else {
+        guard tabBarController.viewControllers?.indexOf(viewController)
+            == SDCConfiguration.UI.TabBarMenu.Record else {
             return true
         }
         

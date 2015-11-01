@@ -14,7 +14,7 @@ class SDCDashboardImportLogDetailsCell: UITableViewCell, SDCDashboardImportLogCe
     // IB variable
     @IBOutlet var detailLabel: UILabel!
     
-    var importLog: SDCImport! {
+    var importLog: SDCImportLog! {
         didSet {
             detailLabel.text        = importLog.details
             detailLabel.textColor   = UIColor(named: .Text)

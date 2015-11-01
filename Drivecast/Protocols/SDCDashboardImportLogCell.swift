@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SDCDashboardImportLogCell {
-    var importLog: SDCImport! { get set }
+    var importLog: SDCImportLog! { get set }
 }
