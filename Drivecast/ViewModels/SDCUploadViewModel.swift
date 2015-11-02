@@ -120,14 +120,14 @@ extension SDCUploadViewModel {
                         
                         KVNProgress.showSuccess()
                         
-                        sendNext(sink, importLog)
+                        sink.sendNext(importLog)
                     case .Failure(let error):
                         KVNProgress.showError()
                         
                         log(error)
                     }
 
-                    sendCompleted(sink)
+                    sink.sendCompleted()
                 }
             }
         }

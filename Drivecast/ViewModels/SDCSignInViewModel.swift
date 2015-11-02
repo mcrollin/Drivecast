@@ -79,11 +79,11 @@ struct SDCSignInViewModel {
                 self.signIn(email, password: password) { result in
                     switch result {
                     case .Success(_):
-                        sendNext(sink, true)
-                        sendCompleted(sink)
+                        sink.sendNext(true)
+                        sink.sendCompleted()
                     case .Failure(let error):
-                        sendNext(sink, false)
-                        sendError(sink, error as! SDCSafecastAPI.UserError)
+                        sink.sendNext(false)
+                        sink.sendFailed(error as! SDCSafecastAPI.UserError)
                     }
                 }
             }

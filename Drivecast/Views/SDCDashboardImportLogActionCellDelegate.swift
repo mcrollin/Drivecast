@@ -21,7 +21,7 @@ class SDCDashboardImportLogActionCell: UITableViewCell, SDCDashboardImportLogCel
         didSet {
             actionButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
                 .subscribeNext { _ in
-                    delegate?.executeImportLogAction(self.importLog)
+                    self.delegate?.executeImportLogAction(self.importLog)
             }
         }
     }

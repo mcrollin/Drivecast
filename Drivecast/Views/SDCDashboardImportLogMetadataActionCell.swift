@@ -50,12 +50,12 @@ extension SDCDashboardImportLogMetadataActionCell {
     private func actionButtonSignal() {
         actionButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
             .subscribeNext { _ in
-                delegate?.executeMetadataImportLogAction(
+                self.delegate?.executeMetadataImportLogAction(
                     self.importLog,
-                    cities: citiesTextField.text!,
-                    credits: creditsTextField.text!,
-                    name: nameTextField.text!,
-                    description: descriptionTextField.text ?? ""
+                    cities: self.citiesTextField.text!,
+                    credits: self.creditsTextField.text!,
+                    name: self.nameTextField.text!,
+                    description: self.descriptionTextField.text ?? ""
                 )
         }
     }

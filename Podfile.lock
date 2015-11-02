@@ -2,25 +2,25 @@ PODS:
   - Alamofire (3.0.0)
   - AngleGradientLayer (1.2.3)
   - BEMSimpleLineGraph (4.1)
-  - IQKeyboardManagerSwift (3.3.2)
+  - IQKeyboardManagerSwift (3.3.4)
   - KVNProgress (2.2.1)
-  - ReactiveCocoa (3.0.0-swift2):
-    - ReactiveCocoa/UI (= 3.0.0-swift2)
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/Core (3.0.0-swift2):
+  - ReactiveCocoa (4.0.0-alpha-3):
+    - ReactiveCocoa/UI (= 4.0.0-alpha-3)
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/Core (4.0.0-alpha-3):
     - ReactiveCocoa/no-arc
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/no-arc (3.0.0-swift2):
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/UI (3.0.0-swift2):
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/no-arc (4.0.0-alpha-3):
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/UI (4.0.0-alpha-3):
     - ReactiveCocoa/Core
-    - Result (~> 0.6-beta.1)
+    - Result (~> 0.6-beta.4)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
   - Realm/Headers (0.96.2)
   - RealmSwift (0.96.2):
     - Realm (= 0.96.2)
-  - Result (0.6.0-beta.4)
+  - Result (0.6.0-beta.6)
   - SnapKit (0.15.0)
   - SpinKit (1.2.0)
   - SwiftyJSON (2.3.0)
@@ -29,9 +29,9 @@ DEPENDENCIES:
   - Alamofire (= 3.0.0)
   - AngleGradientLayer (= 1.2.3)
   - BEMSimpleLineGraph (= 4.1)
-  - IQKeyboardManagerSwift (= 3.3.2)
+  - IQKeyboardManagerSwift (= 3.3.4)
   - KVNProgress (= 2.2.1)
-  - ReactiveCocoa (= 3.0.0-swift2)
+  - ReactiveCocoa (= 4.0.0-alpha-3)
   - RealmSwift (= 0.96.2)
   - SnapKit (= 0.15.0)
   - SpinKit (= 1.2.0)
@@ -41,12 +41,12 @@ SPEC CHECKSUMS:
   Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
   AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
   BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
-  IQKeyboardManagerSwift: 40a9f6a3a5f60bc311aad5ab3265b9de5ecb9367
+  IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
-  ReactiveCocoa: b17191e37a655ff35d095040a203ecd9dd04e8bd
+  ReactiveCocoa: f03dcfd385b0e4ee5b7a323f5e0b146a498e12d3
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
-  Result: f7927152cbaec0c043abb06ba0bc432678818418
+  Result: dc390d0b58f9ec43fcd536f1ebdd130803cc6cbc
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4

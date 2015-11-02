@@ -173,7 +173,7 @@ extension SDCDashboardTableViewController {
                 self.recordButton.isRounded = true
                 self.recordButton.hidden    = false
                 self.recordButton.snp_makeConstraints { make in
-                    make.center.equalTo(view)
+                    make.center.equalTo(self.view)
                 }
             } else {
                 self.recordButton.hidden    = true

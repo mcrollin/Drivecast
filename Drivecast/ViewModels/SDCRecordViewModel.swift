@@ -74,8 +74,8 @@ class SDCRecordViewModel: NSObject {
                     self.actionButtonString.value = "resume recording".uppercaseString
                 }
                 
-                sendNext(sink, true)
-                sendCompleted(sink)
+                sink.sendNext(true)
+                sink.sendCompleted()
             }
         }
     }
