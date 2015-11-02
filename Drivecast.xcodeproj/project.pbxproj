@@ -3,77 +3,77 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B41BD42C62001D3C16 /* UIViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */; settings = {ASSET_TAGS = (); }; };
-		4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */; settings = {ASSET_TAGS = (); }; };
-		4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BC1BD470A3001D3C16 /* UILabel.swift */; settings = {ASSET_TAGS = (); }; };
-		4925AF671BD687310078922D /* SCRMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF641BD687310078922D /* SCRMeasurementOverlay.swift */; settings = {ASSET_TAGS = (); }; };
-		4925AF681BD687310078922D /* SCRMultiMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */; settings = {ASSET_TAGS = (); }; };
-		4925AF691BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */; settings = {ASSET_TAGS = (); }; };
-		4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */; settings = {ASSET_TAGS = (); }; };
-		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; settings = {ASSET_TAGS = (); }; };
-		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; settings = {ASSET_TAGS = (); }; };
-		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
-		494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769C1BD0EBC100B86491 /* JSONEncodable.swift */; settings = {ASSET_TAGS = (); }; };
-		494C769F1BD1329F00B86491 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769E1BD1329F00B86491 /* UIView.swift */; settings = {ASSET_TAGS = (); }; };
-		494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */; settings = {ASSET_TAGS = (); }; };
-		4975CECB1BE61A6800FF6943 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975CECA1BE61A6800FF6943 /* UIApplication.swift */; settings = {ASSET_TAGS = (); }; };
-		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; settings = {ASSET_TAGS = (); }; };
-		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; settings = {ASSET_TAGS = (); }; };
-		4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A0571BD66FF200854DC7 /* Persistable.swift */; settings = {ASSET_TAGS = (); }; };
-		4995A05C1BD67B0D00854DC7 /* RealmPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2C1BD00FDB0078490C /* SDCAboutTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */; settings = {ASSET_TAGS = (); }; };
-		49B948051BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B948041BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49C04EBD1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49D619E91BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */; settings = {ASSET_TAGS = (); }; };
-		49D619EB1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		49D619ED1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49D619EF1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */; settings = {ASSET_TAGS = (); }; };
-		49DAC9CC1BD4E66D00CD300F /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CB1BD4E66D00CD300F /* UIControl.swift */; settings = {ASSET_TAGS = (); }; };
-		49DAC9CE1BD5A90600CD300F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CD1BD5A90600CD300F /* UIButton.swift */; settings = {ASSET_TAGS = (); }; };
-		49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CF1BD5B48400CD300F /* CLLocationDistance.swift */; settings = {ASSET_TAGS = (); }; };
-		49DAC9D21BD5B58E00CD300F /* NSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9D11BD5B58E00CD300F /* NSTimeInterval.swift */; settings = {ASSET_TAGS = (); }; };
-		49DAC9D41BD5B75E00CD300F /* NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9D31BD5B75E00CD300F /* NSTimer.swift */; settings = {ASSET_TAGS = (); }; };
+		4920F8B31BD415F8001D3C16 /* SDCConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B21BD415F7001D3C16 /* SDCConsoleViewController.swift */; };
+		4920F8B51BD42C62001D3C16 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B41BD42C62001D3C16 /* UIViewController.swift */; };
+		4920F8B91BD46162001D3C16 /* SDCMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8B81BD46162001D3C16 /* SDCMeasurement.swift */; };
+		4920F8BB1BD461A4001D3C16 /* SDCLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */; };
+		4920F8BD1BD470A3001D3C16 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F8BC1BD470A3001D3C16 /* UILabel.swift */; };
+		4925AF671BD687310078922D /* SCRMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF641BD687310078922D /* SCRMeasurementOverlay.swift */; };
+		4925AF681BD687310078922D /* SCRMultiMeasurementOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF651BD687310078922D /* SCRMultiMeasurementOverlay.swift */; };
+		4925AF691BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF661BD687310078922D /* SCRMultiMeasurementOverlayRenderer.swift */; };
+		4925AF6B1BD6E1510078922D /* SDCMeasurementScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4925AF6A1BD6E1510078922D /* SDCMeasurementScaleView.swift */; };
+		494C76901BD05AB600B86491 /* SDCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C768F1BD05AB600B86491 /* SDCUser.swift */; };
+		494C76921BD05F6000B86491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76911BD05F6000B86491 /* String.swift */; };
+		494C76971BD074FB00B86491 /* SDCCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76961BD074FB00B86491 /* SDCCircleTransitionAnimator.swift */; };
+		494C769D1BD0EBC100B86491 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769C1BD0EBC100B86491 /* JSONEncodable.swift */; };
+		494C769F1BD1329F00B86491 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769E1BD1329F00B86491 /* UIView.swift */; };
+		494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */; };
+		49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */; };
+		4975CECB1BE61A6800FF6943 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975CECA1BE61A6800FF6943 /* UIApplication.swift */; };
+		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; };
+		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; };
+		4995A0581BD66FF200854DC7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A0571BD66FF200854DC7 /* Persistable.swift */; };
+		4995A05C1BD67B0D00854DC7 /* RealmPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995A05B1BD67B0D00854DC7 /* RealmPersistable.swift */; };
+		49B0FA271BD007F50078490C /* SDCUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA261BD007F50078490C /* SDCUploadViewController.swift */; };
+		49B0FA291BD00F5D0078490C /* SDCUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA281BD00F5D0078490C /* SDCUploadViewModel.swift */; };
+		49B0FA2B1BD00F920078490C /* SDCDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2A1BD00F920078490C /* SDCDashboardViewModel.swift */; };
+		49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2C1BD00FDB0078490C /* SDCAboutTableViewController.swift */; };
+		49B0FA2F1BD0105A0078490C /* SDCAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA2E1BD0105A0078490C /* SDCAboutViewModel.swift */; };
+		49B0FA311BD01CF10078490C /* SDCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA301BD01CF10078490C /* SDCSignInViewController.swift */; };
+		49B0FA331BD051AF0078490C /* SDCMeasurementColorLUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0FA321BD051AF0078490C /* SDCMeasurementColorLUT.swift */; };
+		49B948051BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B948041BE4CD380019507C /* SDCDashboardImportLogOpenMapCell.swift */; };
+		49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EB81BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift */; };
+		49C04EBB1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBA1BE11285002B7703 /* SDCDashboardImportLogHeaderCell.swift */; };
+		49C04EBD1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04EBC1BE112AF002B7703 /* SDCConsoleLogEntryCell.swift */; };
+		49D619E91BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619E81BE22B60005F8B11 /* SDCDashboardImportLogOpenAPICell.swift */; };
+		49D619EB1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EA1BE22B87005F8B11 /* SDCDashboardImportLogActionCellDelegate.swift */; };
+		49D619ED1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EC1BE233B8005F8B11 /* SDCDashboardImportLogCell.swift */; };
+		49D619EF1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D619EE1BE234C7005F8B11 /* SDCDashboardImportLogMetadataActionCell.swift */; };
+		49DAC9CC1BD4E66D00CD300F /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CB1BD4E66D00CD300F /* UIControl.swift */; };
+		49DAC9CE1BD5A90600CD300F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CD1BD5A90600CD300F /* UIButton.swift */; };
+		49DAC9D01BD5B48400CD300F /* CLLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9CF1BD5B48400CD300F /* CLLocationDistance.swift */; };
+		49DAC9D21BD5B58E00CD300F /* NSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9D11BD5B58E00CD300F /* NSTimeInterval.swift */; };
+		49DAC9D41BD5B75E00CD300F /* NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAC9D31BD5B75E00CD300F /* NSTimer.swift */; };
 		49FC9A221BCFB5D4006FA40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A211BCFB5D4006FA40E /* AppDelegate.swift */; };
 		49FC9A371BCFB5D4006FA40E /* DrivecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A361BCFB5D4006FA40E /* DrivecastTests.swift */; };
 		49FC9A421BCFB5D4006FA40E /* DrivecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A411BCFB5D4006FA40E /* DrivecastUITests.swift */; };
 		49FC9A581BCFB79D006FA40E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FC9A571BCFB79D006FA40E /* MapKit.framework */; };
-		49FC9A901BCFB852006FA40E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A6F1BCFB852006FA40E /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A921BCFB852006FA40E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A711BCFB852006FA40E /* UIColor.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A721BCFB852006FA40E /* UIImage.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A731BCFB852006FA40E /* UIStoryboard.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A751BCFB852006FA40E /* DCTLog.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A961BCFB852006FA40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A771BCFB852006FA40E /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		49FC9A971BCFB852006FA40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A791BCFB852006FA40E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7C1BCFB852006FA40E /* SDCBluetoothManager.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A991BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7D1BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9A1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7E1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9D1BCFB852006FA40E /* SDCImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A821BCFB852006FA40E /* SDCImport.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9A9F1BCFB852006FA40E /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A851BCFB852006FA40E /* JSONDecodable.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA01BCFB852006FA40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A871BCFB852006FA40E /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA11BCFB852006FA40E /* Colors in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A881BCFB852006FA40E /* Colors */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A891BCFB852006FA40E /* SDCConfiguration.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8C1BCFB852006FA40E /* SDCDashboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		49FC9AA51BCFB852006FA40E /* SDCRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8E1BCFB852006FA40E /* SDCRecordViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		8401316E6602AC5695AE1162 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257394F867C97FD4FC62AE03 /* Pods.framework */; };
+		49FC9A901BCFB852006FA40E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A6F1BCFB852006FA40E /* JSON.swift */; };
+		49FC9A921BCFB852006FA40E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A711BCFB852006FA40E /* UIColor.swift */; };
+		49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A721BCFB852006FA40E /* UIImage.swift */; };
+		49FC9A941BCFB852006FA40E /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A731BCFB852006FA40E /* UIStoryboard.swift */; };
+		49FC9A951BCFB852006FA40E /* DCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A751BCFB852006FA40E /* DCTLog.swift */; };
+		49FC9A961BCFB852006FA40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A771BCFB852006FA40E /* LaunchScreen.storyboard */; };
+		49FC9A971BCFB852006FA40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A791BCFB852006FA40E /* Main.storyboard */; };
+		49FC9A981BCFB852006FA40E /* SDCBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7C1BCFB852006FA40E /* SDCBluetoothManager.swift */; };
+		49FC9A991BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7D1BCFB852006FA40E /* SDCBluetoothManagerConfiguration.swift */; };
+		49FC9A9A1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7E1BCFB852006FA40E /* SDCBluetoothRemotePeripheral.swift */; };
+		49FC9A9B1BCFB852006FA40E /* SDCSafecastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */; };
+		49FC9A9C1BCFB852006FA40E /* SDCSafecastAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */; };
+		49FC9A9D1BCFB852006FA40E /* SDCImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A821BCFB852006FA40E /* SDCImport.swift */; };
+		49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */; };
+		49FC9A9F1BCFB852006FA40E /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A851BCFB852006FA40E /* JSONDecodable.swift */; };
+		49FC9AA01BCFB852006FA40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A871BCFB852006FA40E /* Assets.xcassets */; };
+		49FC9AA11BCFB852006FA40E /* Colors in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A881BCFB852006FA40E /* Colors */; };
+		49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A891BCFB852006FA40E /* SDCConfiguration.swift */; };
+		49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */; };
+		49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8C1BCFB852006FA40E /* SDCDashboardViewController.swift */; };
+		49FC9AA51BCFB852006FA40E /* SDCRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8E1BCFB852006FA40E /* SDCRecordViewModel.swift */; };
+		B8F6CAC158ACE4A419ECC58F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257394F867C97FD4FC62AE03 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +112,8 @@
 		494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewModel.swift; sourceTree = "<group>"; };
 		49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementCircleView.swift; sourceTree = "<group>"; };
 		4975CECA1BE61A6800FF6943 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		497CA82E1BE76AB300B75BD9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		497CA82F1BE76AB300B75BD9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		498274201BD16D3B003445B0 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
 		498274221BD16F66003445B0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4995A0571BD66FF200854DC7 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -179,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC9A581BCFB79D006FA40E /* MapKit.framework in Frameworks */,
-				8401316E6602AC5695AE1162 /* Pods.framework in Frameworks */,
+				B8F6CAC158ACE4A419ECC58F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +396,8 @@
 		7BB9A93BEB34EB81D32D5871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				497CA82E1BE76AB300B75BD9 /* Realm.framework */,
+				497CA82F1BE76AB300B75BD9 /* RealmSwift.framework */,
 				49FC9A571BCFB79D006FA40E /* MapKit.framework */,
 				257394F867C97FD4FC62AE03 /* Pods.framework */,
 			);
@@ -418,13 +422,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49FC9A461BCFB5D4006FA40E /* Build configuration list for PBXNativeTarget "Drivecast" */;
 			buildPhases = (
-				913E7A30E20C27C0ECED9C8E /* Check Pods Manifest.lock */,
+				18CC9F258CDDEB031FAD62B0 /* Check Pods Manifest.lock */,
 				49FC9A1A1BCFB5D4006FA40E /* Sources */,
 				49FC9A1B1BCFB5D4006FA40E /* Frameworks */,
 				49FC9A1C1BCFB5D4006FA40E /* Resources */,
-				CAA5D2D00E21CAD13DE15A3B /* Embed Pods Frameworks */,
-				5FAA808051319E6B38A6614A /* Copy Pods Resources */,
 				49FC9AA61BCFDA37006FA40E /* Run Swiftgen Script */,
+				29BA2CF5D07A835971CF9C3A /* Embed Pods Frameworks */,
+				305FA8DFCDA9A1AF1A9453D9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -503,7 +507,7 @@
 				};
 			};
 			buildConfigurationList = 49FC9A191BCFB5D4006FA40E /* Build configuration list for PBXProject "Drivecast" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -551,36 +555,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49FC9AA61BCFDA37006FA40E /* Run Swiftgen Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Swiftgen Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "swiftgen-storyboard \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen-colors \"${SRCROOT}/Drivecast/Ressources/Colors\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen-assets \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
-		};
-		5FAA808051319E6B38A6614A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		913E7A30E20C27C0ECED9C8E /* Check Pods Manifest.lock */ = {
+		18CC9F258CDDEB031FAD62B0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,7 +570,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CAA5D2D00E21CAD13DE15A3B /* Embed Pods Frameworks */ = {
+		29BA2CF5D07A835971CF9C3A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -609,6 +584,35 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		305FA8DFCDA9A1AF1A9453D9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49FC9AA61BCFDA37006FA40E /* Run Swiftgen Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftgen Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen-storyboard \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen-colors \"${SRCROOT}/Drivecast/Ressources/Colors\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen-assets \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -747,7 +751,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Momoko Ito Foundation (7S5AAN8833)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -770,7 +774,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PROVISIONING_PROFILE = "e6ba0011-b0d0-4389-9b2c-20ed8744dfcf";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -793,12 +796,13 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Momoko Ito Foundation (7S5AAN8833)";
-				COPY_PHASE_STRIP = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -809,7 +813,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "e6ba0011-b0d0-4389-9b2c-20ed8744dfcf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -821,6 +824,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
@@ -834,6 +842,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
@@ -906,7 +919,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Momoko Ito Foundation (7S5AAN8833)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -929,7 +942,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DSTAGING -DDEBUG";
-				PROVISIONING_PROFILE = "e6ba0011-b0d0-4389-9b2c-20ed8744dfcf";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -941,6 +953,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
@@ -989,12 +1006,13 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Momoko Ito Foundation (7S5AAN8833)";
-				COPY_PHASE_STRIP = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1006,7 +1024,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DSTAGING";
-				PROVISIONING_PROFILE = "e6ba0011-b0d0-4389-9b2c-20ed8744dfcf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1018,6 +1035,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Drivecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momokoito.drivecast;
