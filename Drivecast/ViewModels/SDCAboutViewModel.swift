@@ -91,19 +91,21 @@ extension SDCAboutViewModel {
                 openURL("https://cocoapods.org", viewController: viewController)
             case 11: // IQ KEYBOARDMANAGER
                 openURL("https://github.com/hackiftekhar/IQKeyboardManager", viewController: viewController)
-            case 12: // REALM SWIFT
+            case 12: // KVNProgress
+                openURL("https://github.com/kevin-hirsch/KVNProgress", viewController: viewController)
+            case 13: // REALM SWIFT
                 openURL("https://realm.io", viewController: viewController)
-            case 13: // SPINKIT
+            case 14: // SPINKIT
                 openURL("https://github.com/raymondjavaxx/SpinKit-ObjC", viewController: viewController)
-            case 14: // SNAPKIT
+            case 15: // SNAPKIT
                 openURL("https://github.com/SnapKit/SnapKit", viewController: viewController)
-            case 15: // SWIFTY JSON
+            case 16: // SWIFTY JSON
                 openURL("https://github.com/SwiftyJSON/SwiftyJSON", viewController: viewController)
-            case 16: // SWIFT GEN
+            case 17: // SWIFT GEN
                 openURL("https://github.com/AliSoftware/SwiftGen", viewController: viewController)
-            case 17: // REACTIVE COCOA
+            case 18: // REACTIVE COCOA
                 openURL("https://github.com/ReactiveCocoa/ReactiveCocoa", viewController: viewController)
-            case 19: // ICONS8
+            case 20: // ICONS8
                 openURL("https://icons8.com/", viewController: viewController)
             default:
                 break

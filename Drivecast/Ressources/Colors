@@ -1,7 +1,7 @@
-Main        : #2ecc71
+Main        : #3498db
 Text        : #333333
-Background  : #f4f8f8
-LightText   : #cccccc
+Background  : #f8fcff
+LightText   : #aaaaaa
 Separator   : #dddddd
 Notice      : #95a5a6
 Awaiting    : #e98b39
