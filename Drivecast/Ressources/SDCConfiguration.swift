@@ -70,7 +70,7 @@ struct SDCConfiguration {
                 CBUUID(string: "A1E8F5B1-696B-4E4C-87C6-69DFE0B0093B"),
                 
                 // BLEBee Service v2.0.0 / Characteristic Data
-                // https://github.com/michaelkroll/BLEbee/blob/master/firmware/BLEbee-v1.0.0/gatt.xml
+                // https://github.com/michaelkroll/BLEbee/blob/master/firmware/BLEbee-v2.0.0/BLEBee-gatt.xml
                 CBUUID(string: "067978AC-B99F-4EC9-9C09-2AB6E5BDAD0B"),
             ]
         }

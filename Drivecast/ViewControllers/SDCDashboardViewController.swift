@@ -336,7 +336,13 @@ extension SDCDashboardTableViewController {
         let array       = viewModel.importLogs.value!
         let importLog   = array[indexPath.section]
         let count       = self.tableView(tableView, numberOfRowsInSection: indexPath.section)
-
+        
+        if indexPath.row == 0
+        || (indexPath.row == 1 && importLog.details != "")
+        || (indexPath.row == count - 1 && importLog.hasAction) {
+            return
+        }
+        
         var urlString: String!
         
         if indexPath.row == count - (importLog.hasAction ? 2 : 1) {
