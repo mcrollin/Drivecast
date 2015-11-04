@@ -461,6 +461,15 @@
                                 <rect key="frame" x="298" y="298" width="4" height="4"/>
                                 <animations/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aX-r6-4YH">
+                                <rect key="frame" x="193.5" y="342" width="213" height="38"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.15040109360000001" blue="0.372382398" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="SIMULATE BGEIGIE DATA">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.98431372549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-6j-JGo" userLabel="RecordView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
@@ -779,9 +788,11 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.70734298949999996" blue="0.44432321009999998" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="4aX-r6-4YH" firstAttribute="centerX" secondItem="JuI-0S-q7s" secondAttribute="centerX" id="0Ln-b3-yVz"/>
                             <constraint firstItem="Cot-6j-JGo" firstAttribute="leading" secondItem="JuI-0S-q7s" secondAttribute="leading" id="B0a-ia-Ecx"/>
                             <constraint firstItem="FhV-7c-adv" firstAttribute="leading" secondItem="JuI-0S-q7s" secondAttribute="leading" constant="30" id="FgG-1u-xSh"/>
                             <constraint firstItem="Ete-bn-keQ" firstAttribute="top" secondItem="Cot-6j-JGo" secondAttribute="bottom" id="NlD-5g-S9G"/>
+                            <constraint firstItem="4aX-r6-4YH" firstAttribute="top" secondItem="tFt-ke-CHd" secondAttribute="bottom" constant="40" id="Sby-fH-kZK"/>
                             <constraint firstAttribute="trailing" secondItem="FhV-7c-adv" secondAttribute="trailing" constant="30" id="ULf-7P-4ng"/>
                             <constraint firstItem="FhV-7c-adv" firstAttribute="centerX" secondItem="JuI-0S-q7s" secondAttribute="centerX" id="YOY-7k-9DS"/>
                             <constraint firstItem="tFt-ke-CHd" firstAttribute="top" secondItem="FhV-7c-adv" secondAttribute="bottom" constant="40" id="dLw-yr-Oby"/>
@@ -810,6 +821,7 @@
                         <outlet property="noticeView" destination="7Rb-Aq-hc8" id="w7k-9T-Xtd"/>
                         <outlet property="recordView" destination="Cot-6j-JGo" id="Ke8-tw-YcE"/>
                         <outlet property="separatorView" destination="2iW-dT-3Cf" id="QRZ-Su-FKz"/>
+                        <outlet property="simulateButton" destination="4aX-r6-4YH" id="3lk-s0-a5e"/>
                         <outlet property="usvhLabel" destination="LLB-su-KZn" id="jpo-Ql-TcU"/>
                         <outlet property="usvhUnitLabel" destination="zvz-7X-MUI" id="T5h-zq-jgt"/>
                         <segue destination="5fM-FH-Mol" kind="show" identifier="OpenConsole" id="kAm-OY-HxX"/>

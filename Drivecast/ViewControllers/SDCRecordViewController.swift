@@ -19,8 +19,9 @@ class SDCRecordViewController: UIViewController {
     // Activity monitor spinner
     let activityMonitor:RTSpinKitView = RTSpinKitView(style: .StyleBounce, color: UIColor(named: .Main).colorWithAlphaComponent(0.1))
     
-    // Toggle recording action
+    // Actions
     var toggleRecordingCocoaAction: CocoaAction!
+    var simulateDeviceCocoaAction: CocoaAction!
     
     // IB variables
     @IBOutlet var activityDetailsLabel: UILabel!
@@ -40,6 +41,7 @@ class SDCRecordViewController: UIViewController {
     @IBOutlet var distanceDescriptionLabel: UILabel!
     @IBOutlet var separatorView: UIView!
     @IBOutlet var dotView: UIImageView!
+    @IBOutlet var simulateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,8 @@ extension SDCRecordViewController {
         actionButton.isRounded              = true
         actionButton.backgroundColor        = UIColor(named: .Main)
         separatorView.backgroundColor       = UIColor(named: .Separator)
+        simulateButton.backgroundColor      = UIColor(named: .Main)
+        simulateButton.isRounded            = true
         
         // Left button opens a console listing all occuring events
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -133,10 +137,28 @@ extension SDCRecordViewController {
         actionButton.rac_title          <~ viewModel.actionButtonString
         noticeLabel.rac_text            <~ viewModel.noticeString
         
-        // Binding the signIn action
+        recordAction()
+        simulateDeviceAction()
+        lastMeasurement()
+        noticeVisibility()
+        readyToRecord()
+        isRecording()
+    }
+
+    // Binding the record action
+    private func recordAction() {
         toggleRecordingCocoaAction = CocoaAction(viewModel.toggleRecordingAction!, input:nil)
         actionButton.addTarget(toggleRecordingCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
-        
+    }
+    
+    // Binding the simulate device action
+    private func simulateDeviceAction() {
+        simulateDeviceCocoaAction = CocoaAction(viewModel.simulateDeviceAction!, input:nil)
+        simulateButton.addTarget(simulateDeviceCocoaAction, action: CocoaAction.selector, forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    // Last Measurement
+    private func lastMeasurement() {
         viewModel.lastMeasurement.producer
             .startWithNext { measurement in
                 guard let measurement = measurement else {
@@ -146,8 +168,10 @@ extension SDCRecordViewController {
                 // Updates the measurement circle value
                 self.measurementCircleView.cpm  = measurement.cpm
         }
-        
-        // Display/Hide a notice message when needed
+    }
+    
+    // Display/Hide a notice message when needed
+    private func noticeVisibility() {
         viewModel.noticeIsVisible.producer
             .skip(1)
             .skipRepeats()
@@ -166,8 +190,11 @@ extension SDCRecordViewController {
                         }, completion: nil)
                 }
         }
-        
-        // Switches between the connection and record screens
+    }
+    
+    
+    // Switches between the connection and record screens
+    private func readyToRecord() {
         viewModel.isReadyToRecord.producer
             .skipRepeats()
             .startWithNext { ready in
@@ -188,6 +215,10 @@ extension SDCRecordViewController {
                             self.activityDetailsLabel.alpha = 0.0
                             self.dotView.alpha              = 0.0
                         }, completion: nil)
+                    
+                    #if DEBUG
+                        self.simulateButton.hidden  = true
+                    #endif
                 } else {
                     UIView.animateWithDuration(0.5, delay: 0.0,
                         options: [.CurveEaseInOut],
@@ -198,10 +229,15 @@ extension SDCRecordViewController {
                         }, completion: { _ in
                             self.activityMonitor.startAnimating()
                     })
-                                        
+                    
+                    #if DEBUG
+                        self.simulateButton.hidden  = false
+                    #endif
                 }
         }
-        
+    }
+    
+    private func isRecording() {
         viewModel.isRecording.producer
             .skipRepeats()
             .startWithNext { recording in

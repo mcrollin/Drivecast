@@ -38,8 +38,9 @@ class SDCRecordViewModel: NSObject {
     let isRecording             = MutableProperty<Bool>(false)
     let noticeIsVisible         = MutableProperty<Bool>(false)
     
-    // Action
+    // Actions
     private(set) var toggleRecordingAction: Action<AnyObject?, Bool, NoError>? = nil
+    private(set) var simulateDeviceAction: Action<AnyObject?, Bool, NoError>? = nil
     
     struct ConsoleEntry {
         let text: String
@@ -57,6 +58,7 @@ class SDCRecordViewModel: NSObject {
         super.init()
         
         initializeToggleRecordingAction()
+        initializeSimulateDeviceAction()
     }
     
     // Initializes the toogle recording button action
@@ -73,6 +75,62 @@ class SDCRecordViewModel: NSObject {
                     self.printOnConsole("stopped recording", type: .Emphasys)
                     self.actionButtonString.value = "resume recording".uppercaseString
                 }
+                
+                sink.sendNext(true)
+                sink.sendCompleted()
+            }
+        }
+    }
+    
+    private func generateSimulationMeasurement(deviceId: String, latitude: Double, longitude: Double) -> SDCMeasurement {
+        let measurement             = SDCMeasurement()
+        
+        measurement.deviceId        = deviceId
+        measurement.cpm             = Int(arc4random_uniform(75) + 25)
+        measurement.latitude        = latitude
+        measurement.longitude       = longitude
+        measurement.date            = NSDate()
+        measurement.dataValidity    = true
+        measurement.gpsValidity     = true
+        measurement.data            = "SIMULATED DATA"
+        
+        return measurement
+    }
+    
+    // Simulates Device Measurements (only used in DEBUG mode)
+    private func simulateDevice() -> NSTimer {
+        
+        let precision               = 100000.0
+        let deviceId                = "42"
+        var latitude                = 52.507534 // Checkpoint Charlie
+        var longitude               = 13.390375 // location in Berlin
+        
+        handleMeasurement(generateSimulationMeasurement(deviceId,
+            latitude: latitude, longitude: longitude))
+        
+        return NSTimer.schedule(repeatInterval: 1.0) { timer in
+            let deltaLatitude: Double   = Double(arc4random_uniform(10)) * (arc4random_uniform(2) == 0 ? 1.0 : -1.0) / precision
+            let deltaLongitude: Double  = Double(arc4random_uniform(10)) * (arc4random_uniform(2) == 0 ? 1.0 : -1.0) / precision
+            
+            latitude    += deltaLatitude
+            longitude   += deltaLongitude
+            
+            self.handleMeasurement(self.generateSimulationMeasurement(deviceId,
+                latitude: latitude, longitude: longitude))
+        }
+    }
+    
+    // Initializes the toogle recording button action
+    private func initializeSimulateDeviceAction() {
+        simulateDeviceAction = Action() { _ in
+            return SignalProducer { sink, _ in
+                
+                self.disconnect()
+                
+                self.title.value            = "Device Simulator"
+                self.isReadyToRecord.value  = true
+                
+                self.simulateDevice()
                 
                 sink.sendNext(true)
                 sink.sendCompleted()
@@ -123,6 +181,25 @@ class SDCRecordViewModel: NSObject {
         } catch {
             log(error)
         }
+    }
+    
+    private func handleData(data: String) {
+        // Parse raw data into a dictionary
+        guard let measurement = SDCMeasurement.fromData(data) else {
+            return
+        }
+        
+        handleMeasurement(measurement)
+    }
+    
+    private func handleMeasurement(measurement: SDCMeasurement) {
+        // Record measurement
+        record(measurement)
+        
+        // Save last measurement
+        lastMeasurement.value   = measurement
+        
+        printOnConsole(measurement.data)
     }
     
     private func record(measurement: SDCMeasurement) {
@@ -282,20 +359,6 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     }
     
     internal func remotePeripheralDidSendNewData(peripheral: SDCBluetoothRemotePeripheral, data: String) {
-        // Parse raw data into a dictionary
-        guard let measurementDictionary = data.parseMeasurementData() else {
-            return
-        }
-
-        // Construct the measurement
-        let measurement = SDCMeasurement(value: measurementDictionary)
-        
-        // Record measurement
-        record(measurement)
-        
-        // Save last measurement
-        lastMeasurement.value   = measurement
-        
-        printOnConsole(measurement.data)
+        handleData(data)
     }
 }

@@ -28,6 +28,22 @@ class SDCMeasurement: Object {
     var usvh: Double { return Double(cpm) / 334 }
 }
 
+
+// MARK - Parsing
+extension SDCMeasurement {
+    
+    static func fromData(data: String) -> SDCMeasurement? {
+        // Parse raw data into a dictionary
+        guard let measurementDictionary = data.parseMeasurementData() else {
+            return nil
+        }
+        
+        // Construct the measurement
+        return SDCMeasurement(value: measurementDictionary)
+    }
+}
+
+
 // MARK - Realm
 extension SDCMeasurement {
 
