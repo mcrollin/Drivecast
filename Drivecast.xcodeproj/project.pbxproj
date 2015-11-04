@@ -612,7 +612,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen-storyboard \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen-colors \"${SRCROOT}/Drivecast/Ressources/Colors\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen-assets \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
+			shellScript = "swiftgen storyboards \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen colors \"${SRCROOT}/Drivecast/Ressources/Colors\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen images \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
