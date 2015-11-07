@@ -52,8 +52,6 @@ Licensing can be confusing. This is why we provide a [handy little guide](http:/
 
 # Learn more about us
 
-![bGeigieNano](Assets/insitu.png)
-
 Safecast is an international, volunteer-centered organization devoted to open citizen science for the environment. After the devastating earthquake and tsunami which struck eastern Japan on March 11, 2011, and the subsequent meltdown of the Fukushima Daiichi Nuclear Power Plant, accurate and trustworthy radiation information was publicly unavailable. Safecast was formed in response, and quickly began monitoring, collecting, and openly sharing information on environmental radiation and other pollutants, growing quickly in size, scope, and geographical reach. Our mission is to provide citizens worldwide with the tools they need to inform themselves by gathering and sharing accurate environmental data in an open and participatory fashion.
 
 ![Drivecast](Assets/radiation.png)
