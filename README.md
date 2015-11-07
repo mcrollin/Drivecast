@@ -23,11 +23,11 @@ Other ressources about the BLE Bee module.
 - [Seeed Studio wiki](http://www.seeedstudio.com/wiki/BLE_Bee)
 - [Where to buy it?](https://www.seeedstudio.com/depot/BLEbee-v20-p-2461.html)
 
-### Technical details
+# Technical details
 
 This app is writen in swift 2.1 using the MVVM design pattern with some use of functional reactive programming.
 
-### External tools and libraries
+## External tools and libraries
 
 For external library management, we rely on CocoaPods. If you are not familiar with the process, please refer to the (https://cocoapods.org/ "documentation"):
 
