@@ -10,6 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 extension UIButton {
+    
+    // Simplifies button title update with RAC
     public var rac_title: MutableProperty<String> {
         return lazyMutableProperty(self, key: &AssociationKey.title, setter: { self.setTitle($0, forState: .Normal) }, getter: { self.titleForState(.Normal) ?? "" })
     }

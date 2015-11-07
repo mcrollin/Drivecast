@@ -48,10 +48,10 @@ class SDCDashboardImportLogHeaderCell: UITableViewCell, SDCDashboardImportLogCel
                 color = UIColor(named: .Awaiting)
             }
             
-            statusLabel.textColor = color.colorWithAlphaComponent(0.5)
-            statusContainerView.backgroundColor = color.colorWithAlphaComponent(0.05)
+            statusLabel.textColor = color.colorWithAlphaComponent(0.8)
+            statusContainerView.backgroundColor = color.colorWithAlphaComponent(0.1)
             statusContainerView.layer.cornerRadius = 10
-            statusContainerView.layer.borderColor = color.colorWithAlphaComponent(0.4).CGColor
+            statusContainerView.layer.borderColor = color.colorWithAlphaComponent(0.5).CGColor
             statusContainerView.layer.borderWidth   = 1
             statusContainerView.clipsToBounds = true
         }

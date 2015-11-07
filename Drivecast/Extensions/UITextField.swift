@@ -10,6 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 extension UITextField {
+    
+    // Simplifies updating a textfield's text with RAC
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, key: &AssociationKey.text) {
             

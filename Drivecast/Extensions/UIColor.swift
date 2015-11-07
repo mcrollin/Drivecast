@@ -3,30 +3,30 @@
 import UIKit
 
 extension UIColor {
-    convenience init(rgbaValue: UInt32) {
-        let red   = CGFloat((rgbaValue >> 24) & 0xff) / 255.0
-        let green = CGFloat((rgbaValue >> 16) & 0xff) / 255.0
-        let blue  = CGFloat((rgbaValue >>  8) & 0xff) / 255.0
-        let alpha = CGFloat((rgbaValue      ) & 0xff) / 255.0
-        
-        self.init(red: red, green: green, blue: blue, alpha: alpha)
-    }
+  convenience init(rgbaValue: UInt32) {
+    let red   = CGFloat((rgbaValue >> 24) & 0xff) / 255.0
+    let green = CGFloat((rgbaValue >> 16) & 0xff) / 255.0
+    let blue  = CGFloat((rgbaValue >>  8) & 0xff) / 255.0
+    let alpha = CGFloat((rgbaValue      ) & 0xff) / 255.0
+
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
+  }
 }
 
 extension UIColor {
-    enum Name : UInt32 {
-        case Background = 0xf8fcffff
-        case Notice = 0x95a5a6ff
-        case Alert = 0xe74c3cff
-        case Text = 0x333333ff
-        case Separator = 0xddddddff
-        case Main = 0x3498dbff
-        case Awaiting = 0xe98b39ff
-        case LightText = 0xaaaaaaff
-    }
+  enum Name : UInt32 {
+    case Background = 0xf8fcffff
+    case Notice = 0xf39c12ff
+    case Alert = 0xe74c3cff
+    case Text = 0x333333ff
+    case Separator = 0xddddddff
+    case Main = 0x3498dbff
+    case Awaiting = 0xe98b39ff
+    case LightText = 0xaaaaaaff
+  }
 
-    convenience init(named name: Name) {
-        self.init(rgbaValue: name.rawValue)
-    }
+  convenience init(named name: Name) {
+    self.init(rgbaValue: name.rawValue)
+  }
 }
 

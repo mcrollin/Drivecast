@@ -10,6 +10,7 @@ import Foundation
 
 extension NSTimeInterval {
     
+    // Displays the interval with a clock like format 00:00:00
     func clockString() -> String {
         let calendar = NSCalendar.currentCalendar()
         let referenceDate = NSDate()

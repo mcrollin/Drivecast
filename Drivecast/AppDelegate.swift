@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // Setting up the general look and feel of the app
     private func appearanceSetup() {
         let mainColor           = UIColor(named: .Main)
         let fontSize:CGFloat    = UIFont.systemFontSize()
@@ -54,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
     }
     
+    // Configurating the progress activity screen
     private func progressSetup() {
         let configuration:KVNProgressConfiguration = KVNProgressConfiguration()
         let backgroundColor = UIColor(named: .Background)

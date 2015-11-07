@@ -59,8 +59,10 @@ class SDCSignInViewController: UIViewController {
 
 // MARK - UIView
 extension SDCSignInViewController {
+    
+    // Center icons on the tabbar and remove titles
     func configureTabBar() {
-        menuViewController = UIStoryboard.Scene.Main.menuViewController() as? UITabBarController
+        menuViewController = UIStoryboard.Scene.Main.menuViewController()
         
         menuViewController?.delegate    = self
         navigationController?.delegate  = self
@@ -87,6 +89,7 @@ extension SDCSignInViewController {
         resetView()
     }
     
+    // Called uppon view appearing
     func resetView() {
         logoImageView.alpha     = 1.0
         dotImageView.alpha      = 1.0
@@ -115,6 +118,7 @@ extension SDCSignInViewController {
         resetConstraints()
     }
     
+    // Called uppon view appearing
     func resetConstraints() {
         signInFormView.snp_removeConstraints()
         signInFormView.snp_makeConstraints { make in
@@ -122,6 +126,7 @@ extension SDCSignInViewController {
         }
     }
     
+    // Display the sign in form
     func presentSignInForm() {
         activityMonitor.stopAnimating()
         
@@ -143,6 +148,7 @@ extension SDCSignInViewController {
             }, completion: nil)
     }
     
+    // Dismiss the sign in form
     func dismissSignInForm() {
         // Dismiss the keyboard and resign first responder
         view.endEditing(true)
@@ -158,6 +164,7 @@ extension SDCSignInViewController {
             }, completion: nil)
     }
     
+    // If the user authenticates, display the tabbar controller
     func presentMenu() {
         activityMonitor.stopAnimating()
         
@@ -176,6 +183,7 @@ extension SDCSignInViewController {
         })
     }
     
+    // Animates the sign in button based if enabled or disabled
     func animateSignInButton(enabled: Bool) {
         UIView.animateWithDuration(0.3, delay: 0.0,
             options: [.CurveEaseInOut],

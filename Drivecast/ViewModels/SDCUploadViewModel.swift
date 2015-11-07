@@ -68,6 +68,7 @@ extension SDCUploadViewModel {
 // MARK - Import
 extension SDCUploadViewModel {
     
+    // Post form generation
     private func generateUploadData(data: NSData, filename: String,
         parameters: Dictionary<String, String>, boundaryConstant: String) -> NSData {
             let uploadData  = NSMutableData()

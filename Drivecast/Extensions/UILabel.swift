@@ -10,6 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 extension UILabel {
+    
+    // Simplifies updating a label's text with RAC
     public var rac_text: MutableProperty<String> {
         return lazyMutableProperty(self, key: &AssociationKey.text, setter: { self.text = $0 }, getter: { self.text ?? "" })
     }

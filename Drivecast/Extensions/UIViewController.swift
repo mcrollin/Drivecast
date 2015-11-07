@@ -10,6 +10,8 @@ import Foundation
 import ReactiveCocoa
 
 extension UIViewController {
+    
+    // Simplifies updating the title property with RAC
     public var rac_title: MutableProperty<String> {
         return lazyMutableProperty(self, key: &AssociationKey.title, setter: { self.title = $0 }, getter: { self.title ?? "" })
     }

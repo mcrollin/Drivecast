@@ -10,12 +10,14 @@ import Foundation
 import CoreLocation
 
 extension CLLocationDistance {
+    // Retrieves the unit based on your device configuration
     static func distanceUnit() -> String {
         let metric:Bool = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue
         
         return metric ? "km" : "mi"
     }
     
+    // Transforms the distance into a human readable string
     func stringWithUnit() -> String {
         let metric:Bool = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue
         let distance    = self / (metric ? 1000 : 1609.34)

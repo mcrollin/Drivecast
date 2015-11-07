@@ -3,6 +3,6 @@ Text        : #333333
 Background  : #f8fcff
 LightText   : #aaaaaa
 Separator   : #dddddd
-Notice      : #95a5a6
+Notice      : #f39c12
 Awaiting    : #e98b39
 Alert       : #e74c3c

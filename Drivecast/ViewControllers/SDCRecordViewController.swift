@@ -241,7 +241,8 @@ extension SDCRecordViewController {
         viewModel.isRecording.producer
             .skipRepeats()
             .startWithNext { recording in
-                self.durationLabel.textColor = UIColor(named: recording ? .Text : .LightText)
+                self.durationLabel.textColor        = UIColor(named: recording ? .Text : .LightText)
+                self.actionButton.backgroundColor   = UIColor(named: recording ? .Notice : .Main)
         }
     }
 }

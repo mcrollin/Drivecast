@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIApplication {
+    
+    // Switches between tabs
     static func showTab(index: Int) {
         let application = self.sharedApplication()
         let window      = application.keyWindow

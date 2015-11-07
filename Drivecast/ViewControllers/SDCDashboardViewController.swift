@@ -282,26 +282,26 @@ extension SDCDashboardTableViewController {
         
         var cell: SDCDashboardImportLogCell!
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 { // Header with Name, Date, Credits, Cities and Status
             cell    = tableView.dequeueReusableCellWithIdentifier(
                 SDCDashboardImportLogHeaderCell.identifier,
                 forIndexPath: indexPath) as! SDCDashboardImportLogHeaderCell
             
-        } else if indexPath.row == 1 && importLog.details != "" {
+        } else if indexPath.row == 1 && importLog.details != "" { // Displays the details
             cell    = tableView.dequeueReusableCellWithIdentifier(
                 SDCDashboardImportLogDetailsCell.identifier,
                 forIndexPath: indexPath) as! SDCDashboardImportLogDetailsCell
             
-        } else if indexPath.row == count - 1 && importLog.hasAction {
+        } else if indexPath.row == count - 1 && importLog.hasAction { // If an action is available on the log import
             
-            if importLog.progress == .Processed {
+            if importLog.progress == .Processed { // Prompts fiels for metadata and a button to submit them
                 cell    = tableView.dequeueReusableCellWithIdentifier(
                     SDCDashboardImportLogMetadataActionCell.identifier,
                     forIndexPath: indexPath) as! SDCDashboardImportLogMetadataActionCell
                 
                 (cell as! SDCDashboardImportLogMetadataActionCell).delegate = self
                 
-            } else {
+            } else { // Otherwise prompts an action button alone
                 cell    = tableView.dequeueReusableCellWithIdentifier(
                     SDCDashboardImportLogActionCell.identifier,
                     forIndexPath: indexPath) as! SDCDashboardImportLogActionCell
@@ -309,13 +309,13 @@ extension SDCDashboardTableViewController {
                 (cell as! SDCDashboardImportLogActionCell).delegate     = self
             }
             
-        } else {
+        } else { // Then displays a link to the API
             if indexPath.row == count - (importLog.hasAction ? 2 : 1) {
                 cell    = tableView.dequeueReusableCellWithIdentifier(
                     SDCDashboardImportLogOpenAPICell.identifier,
                     forIndexPath: indexPath) as! SDCDashboardImportLogOpenAPICell
                 
-            } else {
+            } else { // And one to the map
                 cell    = tableView.dequeueReusableCellWithIdentifier(
                     SDCDashboardImportLogOpenMapCell.identifier,
                     forIndexPath: indexPath) as! SDCDashboardImportLogOpenMapCell

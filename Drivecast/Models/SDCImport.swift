@@ -34,6 +34,7 @@ final class SDCImportLog: Object {
     dynamic var mapCreated: Bool                = false
     dynamic var measurementsAdded: Bool         = false
     
+    // Available progress status
     enum ProgressStatus {
         case Uploaded
         case Processed
@@ -44,6 +45,7 @@ final class SDCImportLog: Object {
         case Live
     }
     
+    // Progress status
     var progress: ProgressStatus {
         if (!fileProcessed || !logsImported) {
             return .Uploaded
@@ -62,25 +64,23 @@ final class SDCImportLog: Object {
         return .Live
     }
     
+    // Used to check if an action available based on the status
     var hasAction: Bool {
         switch progress {
-        case .Uploaded:
-            return true
-        case .Processed:
-            return true
-        case .MetadataAdded:
+        case .Uploaded, .MetadataAdded, .Processed:
             return true
         default:
             return false
         }
     }
     
+    // Title displayed for the available action
     var actionTitle: String {
         switch progress {
         case .Uploaded:
             return "Update status"
         case .Processed:
-            return "Fill in metadata"
+            return "Add details"
         case .MetadataAdded:
             return "Submit for approval"
         default:
@@ -90,6 +90,7 @@ final class SDCImportLog: Object {
 
 }
 
+// Decodes the object from a JSON object
 extension SDCImportLog: JSONDecodable {
     
     static func json(json: JSON) -> SDCImportLog {

@@ -71,6 +71,7 @@ class SDCRecordViewModel: NSObject {
                     self.printOnConsole("started recording", type: .Emphasys)
                     self.actionButtonString.value = "pause recording".uppercaseString
                     self.timer = self.resumeTimer()
+
                 } else {
                     self.printOnConsole("stopped recording", type: .Emphasys)
                     self.actionButtonString.value = "resume recording".uppercaseString
@@ -210,10 +211,13 @@ class SDCRecordViewModel: NSObject {
         if !measurement.dataValidity {
             showNotice("device is starting up")
         } else if !measurement.gpsValidity {
-            showNotice("gps information is currently unavailable")
+            showNotice("gps is unavailable")
         } else {
             hideNotice()
         }
+        
+        // Setting the screen's title using the device id
+        title.value             = "bGeigie Nano #\(measurement.deviceId)".uppercaseString
         
         // Update displayed information about the measurement
         cpmString.value         = "\(measurement.cpm)"
@@ -283,7 +287,7 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
     internal func managerStateDidChange(manager: SDCBluetoothManager, state: SDCBluetoothManager.State) {
         switch state {
         case .Unavailable, .Stopped:
-            let activity = "your Bluetooth is turned OFF or disabled\nplease turn it back ON to continue"
+            let activity = "please turn your bluetooth on to continue"
              
             printOnConsole(activity, type: .Emphasys)
             updateActivity(activity)
@@ -311,11 +315,11 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
 
         var activity: String
         
+        title.value = "connecting".uppercaseString
+        
         if let peripheralName = peripheral.peripheral.name {
-            title.value = peripheralName.uppercaseString
             activity    = "connecting to \(peripheralName)."
         } else {
-            title.value = "connecting".uppercaseString
             activity    = "connecting to the device."
         }
         
@@ -334,12 +338,12 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
 
         var activity: String
         
+        title.value = "connected".uppercaseString
+        
         if let peripheralName = peripheral.peripheral.name {
-            title.value = peripheralName.uppercaseString
             printOnConsole("connected to \(peripheralName).", type: .Emphasys)
             activity    = "awaiting a first measurement from \(peripheralName)."
         } else {
-            title.value = "connected".uppercaseString
             printOnConsole("connected to the device.", type: .Emphasys)
             activity    = "awaiting a first measurement."
         }

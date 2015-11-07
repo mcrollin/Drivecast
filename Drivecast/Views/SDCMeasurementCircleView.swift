@@ -9,6 +9,7 @@
 import UIKit
 import AngleGradientLayer
 
+// Circular gradient (based on LUT) onto which a mask is applied
 class SDCMeasurementCircleGradientView: UIView {
     let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
     
@@ -31,6 +32,7 @@ class SDCMeasurementCircleGradientView: UIView {
     }
 }
 
+// Full circle used as a background track
 class SDCMeasurementCircleBackgroundView: UIView {
     
     override func drawRect(rect: CGRect) {
@@ -45,9 +47,11 @@ class SDCMeasurementCircleBackgroundView: UIView {
     }
 }
 
+// Partial circle used as a mask on the gradient view
 class SDCMeasurementCircleView: UIView {
     private let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
     
+    // CPM value based on which we decide how much of the circle to display
     var cpm: Int = 0 {
         didSet {
             let progress = CGFloat(lut.indexForValue(cpm)) / CGFloat(lut.n)
@@ -62,6 +66,7 @@ class SDCMeasurementCircleView: UIView {
         }
     }
     
+    // Progress indicator of the circle in percent (0.01 to 0.99) based on CPM value
     private var progress: CGFloat = 0.01 {
         willSet {
             let animation = CABasicAnimation(keyPath: "strokeEnd")

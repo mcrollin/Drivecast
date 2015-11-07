@@ -47,6 +47,8 @@ class SDCDashboardImportLogMetadataActionCell: UITableViewCell, SDCDashboardImpo
 }
 
 extension SDCDashboardImportLogMetadataActionCell {
+    
+    // Called when an the action button is triggered
     private func actionButtonSignal() {
         actionButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
             .subscribeNext { _ in
@@ -88,6 +90,7 @@ extension SDCDashboardImportLogMetadataActionCell {
 
 // Handle return key on keyboard
 extension SDCDashboardImportLogMetadataActionCell: UITextFieldDelegate {
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField {
         case citiesTextField:

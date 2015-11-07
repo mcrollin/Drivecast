@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 
 extension JSON: JSONCollectionDecodable {
+    
+    // Simplifies decoding a JSON array of objects
     static func collection<T: JSONDecodable>(json: Array<JSON>) -> [T] {
         var collection = [T]()
         

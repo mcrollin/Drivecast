@@ -10,6 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 extension UIView {
+    
+    // Sets radius for the view's corners
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -19,6 +21,7 @@ extension UIView {
         }
     }
     
+    // Rounds a button
     var isRounded: Bool {
         get {
             let radius = min(CGRectGetHeight(self.bounds), CGRectGetWidth(self.bounds)) / 2.0
@@ -35,10 +38,13 @@ extension UIView {
 }
 
 extension UIView {
+    
+    // Simplifies updating the alpha's view with RAC
     public var rac_alpha: MutableProperty<CGFloat> {
         return lazyMutableProperty(self, key: &AssociationKey.alpha, setter: { self.alpha = $0 }, getter: { self.alpha })
     }
     
+    // Simplifies updating the hidden property of a view with RAC
     public var rac_hidden: MutableProperty<Bool> {
         return lazyMutableProperty(self, key: &AssociationKey.hidden, setter: { self.hidden = $0 }, getter: { self.hidden })
     }

@@ -17,6 +17,7 @@ struct AssociationKey {
     static var title: UInt8             = 5
 }
 
+// Enables to dynamically associating objects on RAC
 func lazyAssociatedProperty<T: AnyObject>(host: AnyObject,
     key: UnsafePointer<Void>, factory: () -> T) -> T {
         var associatedProperty = objc_getAssociatedObject(host, key) as? T
@@ -30,6 +31,7 @@ func lazyAssociatedProperty<T: AnyObject>(host: AnyObject,
         return associatedProperty!
 }
 
+// Same but mutable
 func lazyMutableProperty<T>(host: AnyObject, key: UnsafePointer<Void>,
     setter: T -> (), getter: () -> T) -> MutableProperty<T> {
         return lazyAssociatedProperty(host, key: key) {

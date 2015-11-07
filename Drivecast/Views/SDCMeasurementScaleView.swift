@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Gradient line (based on LUT) onto which a mask is applied
 class SDCMeasurementScaleGradientView: UIView {
     
     override func drawRect(rect: CGRect) {
@@ -25,6 +26,7 @@ class SDCMeasurementScaleGradientView: UIView {
     }
 }
 
+// Full line used as a background track
 class SDCMeasurementScaleBackgroundView: UIView {
     
     override func drawRect(rect: CGRect) {
@@ -33,6 +35,7 @@ class SDCMeasurementScaleBackgroundView: UIView {
     }
 }
 
+// Line used as a mask with lenght based on the CPM value
 class SDCMeasurementScaleView: UIView {
     private let lut: SDCMeasurementColorLUT = SDCMeasurementColorLUT()
     
