@@ -12,7 +12,7 @@ Safecast Drive is an app that enables you to:
 
 In the current version, Safecast Drive is only compatible with the [bGeigieNano geiger counter](http://blog.safecast.org/bgeigie-nano/) equipped with a [BLEBee module](https://github.com/michaelkroll/BLEbee).
 
-![bGeigieNano](Assets/bgeigienano.png)
+![bGeigieNano and BLEBee module](Assets/bgeigienano+blebee.png)
 
 Other ressources about the BLE Bee module.
 - [Dr Michael Kroll's blog](http://www.mkroll.mobi/?page_id=1834)
