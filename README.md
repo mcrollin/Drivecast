@@ -25,7 +25,7 @@ This app is writen in swift 2.1 using the MVVM design pattern with some use of f
 
 ## External tools and libraries
 
-For external library management, we rely on CocoaPods. If you are not familiar with the process, please refer to the (https://cocoapods.org/ "documentation"):
+For external library management, we rely on CocoaPods. If you are not familiar with the process, please refer to the [cocoapods documentation](https://cocoapods.org):
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [AngleGradientLayer](https://github.com/paiv/AngleGradientLayer)
