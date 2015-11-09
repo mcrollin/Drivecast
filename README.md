@@ -23,6 +23,10 @@ Other ressources about the BLE Bee module.
 
 This app is writen in swift 2.1 using the MVVM design pattern with some use of functional reactive programming.
 
+## Requirements
+
+The code-base works under Xcode 7.1 for iOS devices 8.0+.
+
 ## External tools and libraries
 
 For external library management, we rely on CocoaPods. If you are not familiar with the process, please refer to the [cocoapods documentation](https://cocoapods.org):
@@ -43,8 +47,9 @@ For external library management, we rely on CocoaPods. If you are not familiar w
 Most of the assets we use in the app for icons are generously provided by [Icons8](https://icons8.com) in support to our open-source initiative.
 
 # Licenses we use
+This project is licensed under [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).  However, it is appreciated if you provide attribution, by linking to the project page from your application.
 
-Licensing can be confusing. This is why we provide a [handy little guide](http://blog.safecast.org/faq/licenses) about what licenses we use and how we use them.
+For the rest, licensing can be confusing. This is why we provide a [handy little guide](http://blog.safecast.org/faq/licenses) about what licenses we use and how we use them.
 
 # Learn more about us
 

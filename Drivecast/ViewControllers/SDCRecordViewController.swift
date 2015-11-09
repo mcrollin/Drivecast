@@ -93,6 +93,24 @@ extension SDCRecordViewController {
         activityMonitor.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(self.view)
         }
+        
+        // Scaling labels for 6/6+ screens
+        let device          = Device()
+        var scale: CGFloat  = 1.0
+        
+        switch device {
+        case .iPhone6, .iPhone6s:
+            scale   = 1.2
+        case .iPhone6Plus, .iPhone6sPlus:
+            scale   = 1.4
+        default:
+            break
+        }
+    
+        cpmLabel.font       = cpmLabel.font.fontWithSize(cpmLabel.font.pointSize * scale)
+        cpmUnitLabel.font   = cpmUnitLabel.font.fontWithSize(cpmUnitLabel.font.pointSize * scale)
+        usvhLabel.font      = usvhLabel.font.fontWithSize(usvhLabel.font.pointSize * scale)
+        usvhUnitLabel.font  = usvhUnitLabel.font.fontWithSize(usvhUnitLabel.font.pointSize * scale)
     }
     
     // Cancels the connection and dismisses the current screen

@@ -23,6 +23,7 @@
 		494C769F1BD1329F00B86491 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C769E1BD1329F00B86491 /* UIView.swift */; };
 		494C76A31BD1648700B86491 /* SDCSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */; };
 		49590B5A1BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */; };
+		496D6C9B1BF0AC7600E68C3E /* SDCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D6C9A1BF0AC7600E68C3E /* SDCDevice.swift */; };
 		4975CECB1BE61A6800FF6943 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975CECA1BE61A6800FF6943 /* UIApplication.swift */; };
 		498274211BD16D3B003445B0 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274201BD16D3B003445B0 /* RACHelpers.swift */; };
 		498274231BD16F66003445B0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498274221BD16F66003445B0 /* UITextField.swift */; };
@@ -111,6 +112,7 @@
 		494C769E1BD1329F00B86491 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		494C76A21BD1648700B86491 /* SDCSignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCSignInViewModel.swift; sourceTree = "<group>"; };
 		49590B591BD4DD6A00A032A1 /* SDCMeasurementCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCMeasurementCircleView.swift; sourceTree = "<group>"; };
+		496D6C9A1BF0AC7600E68C3E /* SDCDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDevice.swift; sourceTree = "<group>"; };
 		4975CECA1BE61A6800FF6943 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		497CA82E1BE76AB300B75BD9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		497CA82F1BE76AB300B75BD9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				49FC9A7F1BCFB852006FA40E /* SDCSafecastAPI.swift */,
 				49FC9A801BCFB852006FA40E /* SDCSafecastAPIRouter.swift */,
 				4920F8BA1BD461A4001D3C16 /* SDCLogParser.swift */,
+				496D6C9A1BF0AC7600E68C3E /* SDCDevice.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */,
 				494C769F1BD1329F00B86491 /* UIView.swift in Sources */,
 				49C04EB91BE11268002B7703 /* SDCDashboardImportLogDetailsCell.swift in Sources */,
+				496D6C9B1BF0AC7600E68C3E /* SDCDevice.swift in Sources */,
 				49DAC9D41BD5B75E00CD300F /* NSTimer.swift in Sources */,
 				49B0FA2D1BD00FDB0078490C /* SDCAboutTableViewController.swift in Sources */,
 				49FC9A931BCFB852006FA40E /* UIImage.swift in Sources */,
