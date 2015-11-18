@@ -200,7 +200,7 @@ extension SDCSafecastAPI {
                     guard let _ = string.regexpFind("(Retrieve your API key)") else {
                         // Retrieve the error message
                         guard let message = string.regexpFind("\"alert\">&times;</button>([^<]*)") else {
-                            log(string)
+                            dlog(string)
                             
                             return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound("Something wrong happened, please try again later.")))
                         }

@@ -171,7 +171,7 @@ class SDCRecordViewModel: NSObject {
             
             try manager.start()
         } catch {
-            log(error)
+            dlog(error)
         }
     }
     
@@ -180,7 +180,7 @@ class SDCRecordViewModel: NSObject {
         do {
             try manager.stop()
         } catch {
-            log(error)
+            dlog(error)
         }
     }
     
@@ -304,7 +304,7 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
                 
                 try manager.startScanning()
             } catch {
-                log(error)
+                dlog(error)
             }
         default:
             return
@@ -330,7 +330,7 @@ extension SDCRecordViewModel: SDCBluetoothManagerDelegate {
             try manager.stopScanning()
             try manager.connect(peripheral)
         } catch {
-            log(error)
+            dlog(error)
         }
     }
     

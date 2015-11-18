@@ -90,7 +90,8 @@ extension SDCBluetoothRemotePeripheral {
         
         // Sending data by chunk based on the endOfDataMark
         for dataString in dataArray {
-            self.delegate?.remotePeripheralDidSendNewData(self, data: dataString)
+            let trimmedDataString   = dataString.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            self.delegate?.remotePeripheralDidSendNewData(self, data: trimmedDataString)
         }
     }
 }

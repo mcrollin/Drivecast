@@ -34,7 +34,7 @@ struct SDCMeasurementColorLUT {
     }
     
     // Retrieves the color based on the index in the table
-    func colorForIndex(index:Int) -> UIColor {
+    func colorForIndex(index: Int) -> UIColor {
         return UIColor(red: CGFloat(self.r[index]) / 255,
             green: CGFloat(self.g[index]) / 255,
             blue: CGFloat(self.b[index]) / 255,
@@ -42,7 +42,7 @@ struct SDCMeasurementColorLUT {
     }
     
     // Compute the index for a specific CPM value
-    func indexForValue(cpm:Int) -> Int {
+    func indexForValue(cpm: Int) -> Int {
         var value = (Double(cpm) - min) * rdiff
         
         if value > 1 {

@@ -64,11 +64,11 @@ extension SDCDashboardViewModel {
         SDCSafecastAPI.retrieveUser(user.id, email: user.email, key: user.key) { result in
             switch result {
             case .Success(let user):
-                log(user)
+                dlog(user)
 
                 self.updateUser()
             case .Failure(let error):
-                log(error)
+                dlog(error)
             }
             
             completion(result)
@@ -106,7 +106,7 @@ extension SDCDashboardViewModel {
                 
                 self.updateImportLogs()
             case .Failure(let error):
-                log(error)
+                dlog(error)
             }
             
             completion(result)
@@ -127,7 +127,7 @@ extension SDCDashboardViewModel {
                 
                 KVNProgress.showSuccess()
             case .Failure(let error):
-                log(error)
+                dlog(error)
                 
                 KVNProgress.showError()
             }
@@ -146,7 +146,7 @@ extension SDCDashboardViewModel {
                 
                 KVNProgress.showSuccess()
             case .Failure(let error):
-                log(error)
+                dlog(error)
                 
                 KVNProgress.showError()
             }
@@ -187,7 +187,7 @@ extension SDCDashboardViewModel {
                     
                     KVNProgress.showSuccess()
                 case .Failure(let error):
-                    log(error)
+                    dlog(error)
                     
                     KVNProgress.showError()
                 }

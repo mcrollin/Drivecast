@@ -194,7 +194,7 @@ extension SDCBluetoothManager: CBCentralManagerDelegate {
             
             try remotePeripheral?.discover()
         } catch {
-            log(error)
+            dlog(error)
         }
     }
     

@@ -125,7 +125,7 @@ extension SDCUploadViewModel {
                     case .Failure(let error):
                         KVNProgress.showError()
                         
-                        log(error)
+                        dlog(error)
                     }
 
                     sink.sendCompleted()

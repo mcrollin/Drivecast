@@ -8,9 +8,9 @@
 
 import Foundation
 
-/*  The format is as follow: $BNRDD,0210,2013-04-11T05:40:51Z,35,0,736,A,3516.1459,N,13614.9700,E,73.50,A,125,0*64
+/*  The format is as follow: BNRDD,0210,2013-04-11T05:40:51Z,35,0,736,A,3516.1459,N,13614.9700,E,73.50,A,125,0*64
 
-0 - Header : $BNRDD
+0 - Header : BNRDD
 1 - Device ID : Device serial number. 0210
 2 - Date : Date formatted according to iso-8601 standard. Usually uses GMT. 2013-04-11T05:40:51Z
 3 - Radiation 1 minute : number of pulses given by the Geiger tube in the last minute. 35 (cpm)
@@ -30,7 +30,7 @@ import Foundation
 
 extension String {
     func parseMeasurementData() -> Dictionary<String, AnyObject>? {
-        guard self.hasPrefix("$BNRDD") else {
+        guard self.hasPrefix("BNRDD") else {
             return nil
         }
         
@@ -83,10 +83,10 @@ extension String {
         dateStringFormatter.dateFormat  = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         dateStringFormatter.timeZone    = NSTimeZone(name: "UTC")
         
-        if let date = dateStringFormatter.dateFromString(self) {
-            return date
+        guard let date = dateStringFormatter.dateFromString(self) else {
+            return NSDate()
         }
         
-        return NSDate()
+        return date
     }
 }

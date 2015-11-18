@@ -20,7 +20,7 @@ extension String {
                 return (self as NSString).substringWithRange(matched.rangeAtIndex(1))
             }
         } catch {
-            log(error)
+            dlog(error)
         }
         
         return nil

@@ -46,7 +46,7 @@ struct SDCConfiguration {
         
         struct BGeigie {
             // End mark used to parse received data from the device
-            static let endOfDataMark    = "\r\n"
+            static let endOfDataMark    = "$"
             
             // UUID of compatible services for BLE devices
             static let dataServiceIdentifiers = [

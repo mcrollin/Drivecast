@@ -51,12 +51,12 @@ struct SDCSignInViewModel {
         SDCSafecastAPI.signInUser(email, password: password) { result in
             switch result {
             case .Success(let user):
-                log(user)
+                dlog(user)
                 
                 SDCUser.authenticatedUser       = user
                 self.userIsAuthenticated.value  = true
             case .Failure(let error):
-                log(error)
+                dlog(error)
                 
                 self.signInButtonEnabled.value  = true
                 self.emailTextEnabled.value     = true
