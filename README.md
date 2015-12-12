@@ -1,7 +1,7 @@
 Safecast Drive iOS app
 =======================
 
-[![Available on the app store](Assets/appstore.svg)](https://itunes.apple.com/us/app/safecast-drive/id996229604)
+[![Available on the app store](Assets/appstore.png)](https://itunes.apple.com/us/app/safecast-drive/id996229604)
 
 ![Drivecast](Assets/drivecast.png)
 
