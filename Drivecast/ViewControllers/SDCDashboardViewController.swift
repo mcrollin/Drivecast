@@ -121,7 +121,7 @@ extension SDCDashboardTableViewController {
     }
     
     func openAboutModal() {
-        let about = UIStoryboard.Scene.Main.aboutViewController()
+        let about = StoryboardScene.Main.aboutViewController()
         
         presentViewController(about, animated: true, completion: nil)
     }
@@ -209,7 +209,7 @@ extension SDCDashboardTableViewController {
         recordButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside)
             .subscribeNext { _ in
                 // Presents the recording screen
-                let recordController = UIStoryboard.Scene.Main.recordViewController()
+                let recordController = StoryboardScene.Main.recordViewController()
                 
                 self.tabBarController?.presentViewController(recordController, animated: true, completion: nil)
         }

@@ -43,7 +43,7 @@ extension String {
         
         var dataDictionary: Dictionary<String, AnyObject> = Dictionary()
         
-        dataDictionary["data"]              = self
+        dataDictionary["data"]              = "$\(self)"
         dataDictionary["date"]              = dataArray[2].dateInUTC()
         dataDictionary["deviceId"]          = dataArray[1]
         dataDictionary["cpm"]               = Int(dataArray[3])!

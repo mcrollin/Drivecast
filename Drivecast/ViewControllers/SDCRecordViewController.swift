@@ -125,13 +125,13 @@ extension SDCRecordViewController {
     
     // Displays a console of events
     func openConsole() {
-        let console = UIStoryboard.Segue.Main.OpenConsole.rawValue
+        let console = StoryboardSegue.Main.OpenConsole.rawValue
     
         performSegueWithIdentifier(console, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch UIStoryboard.Segue.Main(rawValue: segue.identifier!)! {
+        switch StoryboardSegue.Main(rawValue: segue.identifier!)! {
             case .OpenConsole:
             // Pass down the current viewModel to display logs from this screen
             let controller = segue.destinationViewController as! SDCConsoleViewController

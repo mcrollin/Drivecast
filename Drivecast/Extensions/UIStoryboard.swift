@@ -3,15 +3,11 @@
 import Foundation
 import UIKit
 
-protocol StoryboardScene : RawRepresentable {
+protocol StoryboardSceneType {
   static var storyboardName : String { get }
-  static func storyboard() -> UIStoryboard
-  static func initialViewController() -> UIViewController
-  func viewController() -> UIViewController
-  static func viewController(identifier: Self) -> UIViewController
 }
 
-extension StoryboardScene where Self.RawValue == String {
+extension StoryboardSceneType {
   static func storyboard() -> UIStoryboard {
     return UIStoryboard(name: self.storyboardName, bundle: nil)
   }
@@ -19,7 +15,9 @@ extension StoryboardScene where Self.RawValue == String {
   static func initialViewController() -> UIViewController {
     return storyboard().instantiateInitialViewController()!
   }
+}
 
+extension StoryboardSceneType where Self: RawRepresentable, Self.RawValue == String {
   func viewController() -> UIViewController {
     return Self.storyboard().instantiateViewControllerWithIdentifier(self.rawValue)
   }
@@ -28,32 +26,38 @@ extension StoryboardScene where Self.RawValue == String {
   }
 }
 
-extension UIStoryboard {
-  struct Scene {
-    enum Main : String, StoryboardScene {
-      static let storyboardName = "Main"
+protocol StoryboardSegueType : RawRepresentable { }
 
-      case About = "About"
-      static func aboutViewController() -> UINavigationController {
-        return Main.About.viewController() as! UINavigationController
-      }
+extension UIViewController {
+  func performSegue<S : StoryboardSegueType where S.RawValue == String>(segue: S, sender: AnyObject? = nil) {
+    performSegueWithIdentifier(segue.rawValue, sender: sender)
+  }
+}
 
-      case Menu = "Menu"
-      static func menuViewController() -> UITabBarController {
-        return Main.Menu.viewController() as! UITabBarController
-      }
+struct StoryboardScene {
+  enum Main : String, StoryboardSceneType {
+    static let storyboardName = "Main"
 
-      case Record = "Record"
-      static func recordViewController() -> UINavigationController {
-        return Main.Record.viewController() as! UINavigationController
-      }
+    case About = "About"
+    static func aboutViewController() -> UINavigationController {
+      return Main.About.viewController() as! UINavigationController
+    }
+
+    case Menu = "Menu"
+    static func menuViewController() -> UITabBarController {
+      return Main.Menu.viewController() as! UITabBarController
+    }
+
+    case Record = "Record"
+    static func recordViewController() -> UINavigationController {
+      return Main.Record.viewController() as! UINavigationController
     }
   }
+}
 
-  struct Segue {
-    enum Main : String {
-      case OpenConsole = "OpenConsole"
-    }
+struct StoryboardSegue {
+  enum Main : String, StoryboardSegueType {
+    case OpenConsole = "OpenConsole"
   }
 }
 
