@@ -17,7 +17,10 @@ class SDCMeasurementScaleGradientView: UIView {
         let count       = lut.n
         var i           = 0
         
-        gradient.colors = (1...count).map { _ in return lut.colorForIndex(lut.n - 1 - i++).CGColor }
+        gradient.colors = (1...count).map { _ in
+            i           += 1
+            return lut.colorForIndex(lut.n - 1 - (i - 1)).CGColor
+        }
         gradient.frame  = CGRectMake(0, 0, frame.width, frame.height)
         
         layer.insertSublayer(gradient, atIndex: 0)

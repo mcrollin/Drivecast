@@ -101,7 +101,7 @@ extension SDCUploadViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.More.image,
             style: UIBarButtonItemStyle.Plain,
-            target: self, action: Selector("openAboutModal")
+            target: self, action: #selector(SDCUploadViewController.openAboutModal)
         )
         
         // Action Buttons

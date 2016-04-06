@@ -83,7 +83,7 @@ extension SDCRecordViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage.Asset.Console.image,
             style: UIBarButtonItemStyle.Plain,
-            target: self, action: Selector("openConsole")
+            target: self, action: #selector(SDCRecordViewController.openConsole)
         )
 
         // Add the activity monitor to the screen
@@ -220,7 +220,7 @@ extension SDCRecordViewController {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(
                     barButtonSystemItem: ready ? .Done : .Cancel,
                     target: self,
-                    action: Selector("cancelConnection")
+                    action: #selector(SDCRecordViewController.cancelConnection)
                 )
                 
                 // Switch views between connection and recording

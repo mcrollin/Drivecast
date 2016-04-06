@@ -9,6 +9,7 @@
 import Foundation
 import CoreBluetooth
 import ReactiveCocoa
+import enum Result.NoError
 
 class SDCRecordViewModel: NSObject {
     private let manager = SDCBluetoothManager()
@@ -147,7 +148,7 @@ class SDCRecordViewModel: NSObject {
         return NSTimer.schedule(repeatInterval: 1.0) { timer in
             if (self.isReadyToRecord.value
                 && self.isRecording.value) {
-                self.duration++
+                self.duration += 1
             } else if !self.isRecording.value {
                 self.timer?.invalidate()
             }
@@ -227,7 +228,7 @@ class SDCRecordViewModel: NSObject {
         if isRecording.value {
             
             // Update the count
-            count++
+            count += 1
             
             // Update the distance
             if let lastRecordedMeasurement = self.lastRecordedMeasurement,

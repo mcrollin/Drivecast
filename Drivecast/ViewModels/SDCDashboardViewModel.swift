@@ -102,7 +102,7 @@ extension SDCDashboardViewModel {
                     }
                 }
                 
-                self.page++
+                self.page += 1
                 
                 self.updateImportLogs()
             case .Failure(let error):

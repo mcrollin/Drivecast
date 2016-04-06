@@ -185,33 +185,46 @@ extension SDCSafecastAPI {
                 }
         }
     }
-    
+
     // Signin in
     static func signInUser(email: String, password: String, completion: ResultUser) {
-        // Trim the email from any whitespace character
-        let email   = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        let request = SDCSafecastAPIRouter.SignIn(email, password)
+        let request = SDCSafecastAPIRouter.SignOut()
         
         Alamofire.request(request)
             .validate()
             .responseString { response in
                 switch response.result {
-                case .Success(let string):
-                    guard let _ = string.regexpFind("(Retrieve your API key)") else {
-                        // Retrieve the error message
-                        guard let message = string.regexpFind("\"alert\">&times;</button>([^<]*)") else {
-                            dlog(string)
-                            
-                            return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound("Something wrong happened, please try again later.")))
-                        }
-                        
-                        // Trimming white spaces and return characters from the error message
-                        let trimmedMessage = message.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                        
-                        return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(trimmedMessage)))
-                    }
+                case .Success(_):
                     
-                    retrieveUserId(email, completion: completion)
+                    // Trim the email from any whitespace character
+                    let email   = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                    let request = SDCSafecastAPIRouter.SignIn(email, password)
+                    
+                    Alamofire.request(request)
+                        .validate()
+                        .responseString { response in
+                            switch response.result {
+                            case .Success(let string):
+                                guard let _ = string.regexpFind("(Retrieve your API key)") else {
+                                    // Retrieve the error message
+                                    guard let message = string.regexpFind("\"alert\">&times;</button>([^<]*)") else {
+                                        dlog(string)
+                                        
+                                        return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound("Something wrong happened, please try again later.")))
+                                    }
+                                    
+                                    // Trimming white spaces and return characters from the error message
+                                    let trimmedMessage = message.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                                    
+                                    return completion(.Failure(SDCSafecastAPI.UserError.APIKeyCouldNotBeFound(trimmedMessage)))
+                                }
+                                
+                                retrieveUserId(email, completion: completion)
+                                
+                            case .Failure(let error):
+                                completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))
+                            }
+                    }
                     
                 case .Failure(let error):
                     completion(.Failure(SDCSafecastAPI.UserError.Network(error.localizedDescription)))

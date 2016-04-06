@@ -11,6 +11,7 @@ import ReactiveCocoa
 import RealmSwift
 import BEMSimpleLineGraph
 import KVNProgress
+import enum Result.NoError
 
 class SDCUploadViewModel: NSObject {
     
@@ -157,7 +158,9 @@ extension SDCUploadViewModel: BEMSimpleLineGraphDelegate {
 extension SDCUploadViewModel: BEMSimpleLineGraphDataSource {
     
     // Retrieves the measurement based on the number of displayed points
-    private func measurementForIndex(var index: Int) -> SDCMeasurement? {
+    private func measurementForIndex(index: Int) -> SDCMeasurement? {
+        var index   = index
+        
         guard let validMeasurements = validMeasurements.value else {
             return nil
         }

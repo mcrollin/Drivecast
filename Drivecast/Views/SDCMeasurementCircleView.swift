@@ -20,11 +20,12 @@ class SDCMeasurementCircleGradientView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let steps       = 64
-        let stepSize    = lut.n / steps
-        var i           = 0
-        let colors      = (1...steps).map { _ in
-            return self.lut.colorForIndex(self.lut.n - 1 - stepSize * i++).CGColor
+        let steps               = 64
+        let stepSize            = lut.n / steps
+        var i                   = 0
+        let colors:[CGColor]    = (1...steps).map { _ in
+            i           += 1
+            return self.lut.colorForIndex(self.lut.n - 1 - stepSize * (i - 1)).CGColor
         }
         
         let l: AngleGradientLayer = (self.layer as? AngleGradientLayer)!

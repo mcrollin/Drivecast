@@ -36,7 +36,7 @@ extension SDCAboutTableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .Done,
             target: self,
-            action: Selector("closeAbout")
+            action: #selector(SDCAboutTableViewController.closeAbout)
         )
         
         donateButton.isRounded          = true

@@ -9,7 +9,7 @@
 import Foundation
 
 // Log function displaying details about the dumped object
-func dlog<T>(object: T, filename: NSString = __FILE__, line: Int = __LINE__, funcname: String = __FUNCTION__) {
+func dlog<T>(object: T, filename: NSString = #file, line: Int = #line, funcname: String = #function) {
     #if DEBUG
         print(">>> \(filename.lastPathComponent)(\(line)) \(funcname):")
         dump(object)

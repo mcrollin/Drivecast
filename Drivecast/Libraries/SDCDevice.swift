@@ -224,6 +224,7 @@ public enum Device {
             case .Phone:        self = .Phone
             case .TV:           self = .TV
             case .Unspecified:  self = .Unspecified
+            default:            self = .Phone
             }
         }
         

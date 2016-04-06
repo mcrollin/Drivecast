@@ -47,12 +47,14 @@ class SCRMultiMeasurementOverlayRenderer: MKOverlayRenderer {
         var measurementsCount       = 0
         
         for measurement in measurements {
-            if frequency < 1 || measurementsCount++ % frequency == 0 {
+            if frequency < 1 || measurementsCount % frequency == 0 {
                 drawMeasurement(measurement,
                     rectForMapRect: rectForMapRect,
                     zoomScale: zoomScale,
                     inContext: context)
             }
+            
+            measurementsCount   += 1
         }
     }
 }
