@@ -2,6 +2,9 @@ PODS:
   - Alamofire (3.3.0)
   - AngleGradientLayer (1.2.3)
   - BEMSimpleLineGraph (4.1)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - IQKeyboardManagerSwift (4.0.1)
   - KVNProgress (2.2.4)
   - ReactiveCocoa (4.1.0):
@@ -26,21 +29,25 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire (>= 3.1.1)
+  - Alamofire (>= 3.2.0)
   - AngleGradientLayer (>= 1.2.3)
   - BEMSimpleLineGraph (>= 4.1)
-  - IQKeyboardManagerSwift (>= 3.3.4)
-  - KVNProgress (>= 2.2.1)
-  - ReactiveCocoa (>= 4.0.0-alpha-3)
-  - RealmSwift (>= 0.96.2)
-  - SnapKit (>= 0.16.0)
+  - Crashlytics
+  - Fabric
+  - IQKeyboardManagerSwift (>= 4.0.1)
+  - KVNProgress (>= 2.2.4)
+  - ReactiveCocoa (>= 4.1.0)
+  - RealmSwift (>= 0.98.6)
+  - SnapKit (>= 0.20.0)
   - SpinKit (>= 1.2.0)
-  - SwiftyJSON (>= 2.3.1)
+  - SwiftyJSON (>= 2.3.2)
 
 SPEC CHECKSUMS:
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
   AngleGradientLayer: 085302f7f9764735762f83642e86cababfec1d37
   BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   IQKeyboardManagerSwift: e92246955e21dad73ad9dc89b80adb134d8bb395
   KVNProgress: 541edcea5a1fef592aceac8d791a410d38cb499d
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949

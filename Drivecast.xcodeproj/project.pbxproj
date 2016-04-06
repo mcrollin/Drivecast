@@ -461,6 +461,7 @@
 				49FC9AA61BCFDA37006FA40E /* Run Swiftgen Script */,
 				29BA2CF5D07A835971CF9C3A /* Embed Pods Frameworks */,
 				305FA8DFCDA9A1AF1A9453D9 /* Copy Pods Resources */,
+				49D0268C1CB5051A00BABEC4 /* Fabric Run Script */,
 			);
 			buildRules = (
 			);
@@ -632,6 +633,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		49D0268C1CB5051A00BABEC4 /* Fabric Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 358aba0b68b30486e45765ffa24670ae72b7755c f9b8abece53ea3a8b66f3ed2ecb34e93a04a1c62760ec2d2784f3786d8d66e1c";
 		};
 		49FC9AA61BCFDA37006FA40E /* Run Swiftgen Script */ = {
 			isa = PBXShellScriptBuildPhase;
