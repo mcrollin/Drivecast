@@ -98,13 +98,35 @@ extension SDCImportLog: JSONDecodable {
         let utcFormatter        = NSDateFormatter()
         utcFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         utcFormatter.timeZone   = NSTimeZone(name: "UTC")
+        let utcFormatterMS        = NSDateFormatter()
+        utcFormatterMS.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        utcFormatterMS.timeZone   = NSTimeZone(name: "UTC")
+        
+        // 2011-06-23T13:13:00Z
+        // 01234567890123456789
         
         var value: Dictionary<String, AnyObject> = [:]
         
         value["id"]                 = json["id"].intValue
         value["userId"]             = json["userId"].intValue
-        value["createdAt"]          = utcFormatter.dateFromString(json["created_at"].stringValue)!
-        value["updatedAt"]          = utcFormatter.dateFromString(json["updated_at"].stringValue)!
+        //value["createdAt"]          = utcFormatter.dateFromString(json["created_at"].stringValue)!
+        //value["updatedAt"]          = utcFormatter.dateFromString(json["updated_at"].stringValue)!
+        if (json["created_at"].stringValue.characters.count > 20)
+        {
+            value["createdAt"] = utcFormatterMS.dateFromString(json["created_at"].stringValue)!
+        }
+        else
+        {
+            value["createdAt"] = utcFormatter.dateFromString(json["created_at"].stringValue)!
+        }
+        if (json["updated_at"].stringValue.characters.count > 20)
+        {
+            value["updatedAt"] = utcFormatterMS.dateFromString(json["updated_at"].stringValue)!
+        }
+        else
+        {
+            value["updatedAt"] = utcFormatter.dateFromString(json["updated_at"].stringValue)!
+        }
         value["name"]               = json["name"].stringValue
         value["cities"]             = json["cities"].stringValue
         value["credits"]            = json["credits"].stringValue
