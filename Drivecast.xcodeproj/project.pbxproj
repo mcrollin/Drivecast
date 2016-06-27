@@ -76,7 +76,7 @@
 		49FC9A9E1BCFB852006FA40E /* JSONCollectionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */; };
 		49FC9A9F1BCFB852006FA40E /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A851BCFB852006FA40E /* JSONDecodable.swift */; };
 		49FC9AA01BCFB852006FA40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A871BCFB852006FA40E /* Assets.xcassets */; };
-		49FC9AA11BCFB852006FA40E /* Colors in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A881BCFB852006FA40E /* Colors */; };
+		49FC9AA11BCFB852006FA40E /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49FC9A881BCFB852006FA40E /* Colors.txt */; };
 		49FC9AA21BCFB852006FA40E /* SDCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A891BCFB852006FA40E /* SDCConfiguration.swift */; };
 		49FC9AA31BCFB852006FA40E /* SDCRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */; };
 		49FC9AA41BCFB852006FA40E /* SDCDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC9A8C1BCFB852006FA40E /* SDCDashboardViewController.swift */; };
@@ -176,7 +176,7 @@
 		49FC9A841BCFB852006FA40E /* JSONCollectionDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCollectionDecodable.swift; sourceTree = "<group>"; };
 		49FC9A851BCFB852006FA40E /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		49FC9A871BCFB852006FA40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49FC9A881BCFB852006FA40E /* Colors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors; sourceTree = "<group>"; };
+		49FC9A881BCFB852006FA40E /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		49FC9A891BCFB852006FA40E /* SDCConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCConfiguration.swift; sourceTree = "<group>"; };
 		49FC9A8B1BCFB852006FA40E /* SDCRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCRecordViewController.swift; sourceTree = "<group>"; };
 		49FC9A8C1BCFB852006FA40E /* SDCDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDCDashboardViewController.swift; sourceTree = "<group>"; };
@@ -374,7 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				49FC9A871BCFB852006FA40E /* Assets.xcassets */,
-				49FC9A881BCFB852006FA40E /* Colors */,
+				49FC9A881BCFB852006FA40E /* Colors.txt */,
 				49FC9A891BCFB852006FA40E /* SDCConfiguration.swift */,
 			);
 			path = Ressources;
@@ -565,7 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FC9AA11BCFB852006FA40E /* Colors in Resources */,
+				49FC9AA11BCFB852006FA40E /* Colors.txt in Resources */,
 				49FC9A961BCFB852006FA40E /* LaunchScreen.storyboard in Resources */,
 				49FC9AA01BCFB852006FA40E /* Assets.xcassets in Resources */,
 				49FC9A971BCFB852006FA40E /* Main.storyboard in Resources */,
@@ -660,7 +660,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen storyboards \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen colors \"${SRCROOT}/Drivecast/Ressources/Colors\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen images \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
+			shellScript = "swiftgen storyboards \"${SRCROOT}/Drivecast/Interfaces/Base.lproj/Main.storyboard\" > \"${SRCROOT}/Drivecast/Extensions/UIStoryboard.swift\"\n\nswiftgen colors \"${SRCROOT}/Drivecast/Ressources/Colors.txt\" > \"${SRCROOT}/Drivecast/Extensions/UIColor.swift\"\n\nswiftgen images \"${SRCROOT}/Drivecast/Ressources/Assets.xcassets\" > \"${SRCROOT}/Drivecast/Extensions/UIImage.swift\"\n\n#swiftgen-l10n \"${SRCROOT}/Drivecast/Ressources/Localizable.strings\" > \"${SRCROOT}/Drivecast/Extensions/L10n.swift\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
